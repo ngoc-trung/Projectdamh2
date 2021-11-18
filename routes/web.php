@@ -1,6 +1,11 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\Auth\AuthController;
+use App\Http\Controllers\Admin\Product\ProductController;
+use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,80 +19,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get("/test1",[TestController::class, "test1"]);
+// Route::get("/test2/{data1}/{data2}",[TestController::class, "test2"]);
+
+
+Route::get("/login" , [AuthController::class , "getLogin"]) ;
+Route::post("/login", [AuthController::class , "postLogin"]);
+
+Route::prefix('admin')->group(function () {
+    Route::get("/" ,[AdminController::class , "index"]) ;
+    Route::get("/logout" ,[AdminController::class , "logout"]) ;
+
+    Route::group(['prefix' => 'product'], function() {
+        Route::get("/" , [ProductController::class , "index"]);
+        Route::get("/create" , [ProductController::class , "create"]);
+        Route::post("/store" , [ProductController::class , "store"]);
+        Route::get("/edit" , [ProductController::class , "edit"]);
+        Route::post("/update" , [ProductController::class , "update"]);
+        Route::get("/delete" , [ProductController::class , "delete"]);
+    });
+
+    Route::group(['prefix' => 'user'], function() {
+        Route::get("/" , [UserController::class , "index"]);
+        Route::get("/create" , [UserController::class , "create"]);
+        Route::post("/store" , [UserController::class , "store"]);
+        Route::get("/edit" , [UserController::class , "edit"]);
+        Route::post("/update" , [UserController::class , "update"]);
+        Route::get("/delete" , [UserController::class , "delete"]);
+    });
+
+    Route::group(['prefix' => 'category'], function() {
+        Route::get("/" , [CategoryController::class , "index"]);
+        Route::get("/create" , [CategoryController::class , "create"]);
+        Route::post("/store" , [CategoryController::class , "store"]);
+        Route::get("/edit" , [CategoryController::class , "edit"]);
+        Route::post("/update" , [CategoryController::class , "update"]);
+        Route::get("/delete" , [CategoryController::class , "delete"]);
+    });
+
+
 });
-
-Auth::routes();
-
-//fontend
-
-Route::get('/wellcome', [App\Http\Controllers\HomeController::class, 'index'])->name('wellcome');
-
-
-
-
-
-
- 
-// backend
-Route::get('/admin_login', [App\Http\Controllers\AdminController::class, 'Admin']);
-
-
-Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'show_dashboard']);
-
-Route::get('/logout', [App\Http\Controllers\AdminController::class, 'logout']);
-
-Route::post('/admin-dashboard', [App\Http\Controllers\AdminController::class, 'dashboard']);
-
-
-// category-product
-
-Route::get('/add-category-product', [App\Http\Controllers\CategoryProductCon::class, 'add_category_product']);
-
-Route::get('/all-category-product', [App\Http\Controllers\CategoryProductCon::class, 'all_category_product']);
-
-Route::get('/unactive-category-product/{category_product_id}', [App\Http\Controllers\CategoryProductCon::class, 'unactive_category_product']);
-Route::get('/active-category-product/{category_product_id}', [App\Http\Controllers\CategoryProductCon::class, 'active_category_product']);
-
-Route::post('/save-category-product', [App\Http\Controllers\CategoryProductCon::class, 'save_category_product']);
-
-Route::get('/edit-category-product/{category_product_id}', [App\Http\Controllers\CategoryProductCon::class, 'edit_category_product']);
-
-Route::get('/delete-category-product/{category_product_id}', [App\Http\Controllers\CategoryProductCon::class, 'delete_category_product']);
-
-Route::post('/update-category-product/{category_product_id}', [App\Http\Controllers\CategoryProductCon::class, 'update_category_product']);
-
-
-// brand-product
-Route::get('/add-brand-product', [App\Http\Controllers\BrandProductCon::class, 'add_brand_product']);
-
-Route::get('/all-brand-product', [App\Http\Controllers\BrandProductCon::class, 'all_brand_product']);
-
-Route::get('/unactive-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'unactive_brand_product']);
-Route::get('/active-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'active_brand_product']);
-
-Route::post('/save-brand-product', [App\Http\Controllers\BrandProductCon::class, 'save_brand_product']);
-
-Route::get('/edit-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'edit_brand_product']);
-
-Route::get('/delete-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'delete_brand_product']);
-
-Route::post('/update-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'update_brand_product']);
-
-
-//product
-Route::get('/add-product', [App\Http\Controllers\ProductCon::class, 'add_product']);
-
-Route::get('/all-product', [App\Http\Controllers\ProductCon::class, 'all_product']);
-
-Route::get('/unactive-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'unactive_product']);
-Route::get('/active-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'active_product']);
-
-Route::post('/save-product', [App\Http\Controllers\ProductCon::class, 'save_product']);
-
-Route::get('/edit-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'edit_brand_product']);
-
-Route::get('/delete-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'delete_brand_product']);
-
-Route::post('/update-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'update_brand_product']);
