@@ -16,15 +16,28 @@ session_start();
 
 class AdminController extends Controller
 {
+    public function AuthLoign(){
+        $admin_id = Session::get('admin_id');
+        if ($admin_id) {
+            return Redirect::to('dashboard');
+        }else{
+            return Redirect::to('admin_login')->send();
+        }
+    }
+
     public function Admin(){
+
         return view('admin_login');
     }
 
     public function show_dashboard(){
+        $this->AuthLoign();
+
         return view('admin.dashboard');
     }
 
     public function dashboard(Request $request){
+
         $admim_email = $request->admin_email;
         $admin_password = md5($request->admin_password);
 
@@ -39,6 +52,8 @@ class AdminController extends Controller
         }
      }
      public function logout(){
+        $this->AuthLoign();
+
         Session::put('admin_name',null);
         Session::put('admin_id',null);
         return Redirect::to('/admin_login');

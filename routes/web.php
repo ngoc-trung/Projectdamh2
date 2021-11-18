@@ -31,6 +31,8 @@ Route::get('/wellcome', [App\Http\Controllers\HomeController::class, 'index'])->
 
  
 // backend
+
+
 Route::get('/admin_login', [App\Http\Controllers\AdminController::class, 'Admin']);
 
 
@@ -86,8 +88,8 @@ Route::get('/active-product/{product_id}', [App\Http\Controllers\ProductCon::cla
 
 Route::post('/save-product', [App\Http\Controllers\ProductCon::class, 'save_product']);
 
-Route::get('/edit-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'edit_brand_product']);
+Route::get('/edit-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'edit_product']);
 
-Route::get('/delete-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'delete_brand_product']);
+Route::get('/delete-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'delete_product']);
 
-Route::post('/update-brand-product/{brand_product_id}', [App\Http\Controllers\BrandProductCon::class, 'update_brand_product']);
+Route::post('/update-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'update_product']);

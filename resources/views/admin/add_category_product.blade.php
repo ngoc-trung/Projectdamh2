@@ -33,7 +33,7 @@
                                     </select>
                                 </div>
                                 <button type="submit" name="add_category_product" class="btn btn-info">Thêm</button>
-                            </form>
+                                </form>
                             </div>
 
                         </div>

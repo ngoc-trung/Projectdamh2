@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô Tả Danh Mục</label>
-                                    <textarea class="form-control" name="category_product_desc" value="{{$edit_value->category_desc}}" id="" cols="30" rows="10" placeholder="Mô Tả Danh Mục"></textarea>
+                                    <textarea class="form-control" name="category_product_desc" value="{{$edit_value->category_desc}}" id="" cols="30" rows="10" placeholder="Mô Tả Danh Mục">{{$edit_value->category_desc}}</textarea>
                                 </div>
                 
                                 <button type="submit" name="update_category_product" class="btn btn-info">Cập Nhập</button>
