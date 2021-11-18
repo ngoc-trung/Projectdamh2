@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Shop\ContactController;
+use App\Http\Controllers\Shop\HomeController;
+use App\Http\Controllers\Shop\PageController;
+use App\Http\Controllers\Shop\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,22 +18,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+// Route::get('/', function () {
+//     return view('layout');
+// });
 
 Auth::routes();
 
 //fontend
 
-Route::get('/wellcome', [App\Http\Controllers\HomeController::class, 'index'])->name('wellcome');
+Route::prefix('shop')->group(function () {
+    // Trang chủ
+    Route::get('/',[HomeController::class ,'index'])->name('home');
+
+    //Trang liên hệ
+    Route::get('/lien-he',[ContactController::class , 'index'])->name('lien-he');
+    // Route::post();
+
+    //Trang bài viết
+    Route::get('/bai-viet',[PostController::class,'index'] )->name('post.index');
+    Route::get('/bai-viet-chi-tiet',[PostController::class, 'show'])->name('post.show') ;
+
+    //Trang trắng thông tin
+    Route::get('/trang' ,[PageController::class,'index'] )->name('page.index');
+
+    //Trang sản phẩm
+});
 
 
 
 
 
-
- 
 // backend
 
 

@@ -27,13 +27,13 @@ class AdminController extends Controller
 
     public function Admin(){
 
-        return view('admin_login');
+        return view('backend.admin_login');
     }
 
     public function show_dashboard(){
         $this->AuthLoign();
 
-        return view('admin.dashboard');
+        return view('backend.admin.dashboard');
     }
 
     public function dashboard(Request $request){

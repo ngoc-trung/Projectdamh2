@@ -27,8 +27,8 @@ class ProductCon extends Controller
         $this->AuthLoign();
 
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get(); // Lay id tu bang catagory_product
-        $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get(); 
-        return view('admin.add_product')->with('cate_product', $cate_product)->with('brand_product', $brand_product);
+        $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
+        return view('backend.admin.add_product')->with('cate_product', $cate_product)->with('brand_product', $brand_product);
     }
 
     public function all_product(){
@@ -38,8 +38,8 @@ class ProductCon extends Controller
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
         ->orderby('tbl_product.product_id','desc')->get();
-        $manager_product = view('admin.all_product')->with('all_product', $all_product);
-        return view('admin_layout')->with('admin.all_product', $manager_product);
+        $manager_product = view('backend.admin.all_product')->with('all_product', $all_product);
+        return view('backend.admin_layout')->with('admin.all_product', $manager_product);
     }
 
 
@@ -72,7 +72,7 @@ class ProductCon extends Controller
         DB::table('tbl_product')->insert($data);
         Session::put('message','Thêm Thuong Hieu Sản Phẩm Thành Công');
         return Redirect::to('/all-product');
-        
+
     }
 
     public function unactive_product($product_id){
@@ -96,10 +96,10 @@ class ProductCon extends Controller
 
         $edit_product = DB::table('tbl_product')->where('product_id',$product_id)->get();
 
-        $manager_product = view('admin.edit_product')->with('edit_product', $edit_product)->with('cate_product',$cate_product)
+        $manager_product = view('backend.admin.edit_product')->with('edit_product', $edit_product)->with('cate_product',$cate_product)
         ->with('brand_product',$brand_product);
 
-        return view('admin_layout')->with('admin.edit_product', $manager_product);
+        return view('backend.admin_layout')->with('admin.edit_product', $manager_product);
     }
 
     public function update_product(Request $request, $product_id){
@@ -113,7 +113,7 @@ class ProductCon extends Controller
         $data['category_id'] = $request->product_cate;
         $data['product_status'] = $request->product_status;
         $data['brand_id'] = $request->product_brand;
-        
+
         $get_image = $request->file('product_image');
 
         if ($get_image) {
@@ -126,7 +126,7 @@ class ProductCon extends Controller
             Session::put('message','Thêm Sản Phẩm Thành Công');
             return Redirect::to('/all-product');
         }
-        
+
 
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
         Session::put('message','Thêm Thuong Hieu Sản Phẩm Thành Công');

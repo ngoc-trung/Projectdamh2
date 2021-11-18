@@ -26,15 +26,15 @@ class BrandProductCon extends Controller
     public function add_brand_product(){
         $this->AuthLoign();
 
-        return view('admin.add_brand_product');
+        return view('backend.admin.add_brand_product');
     }
 
     public function all_brand_product(){
         $this->AuthLoign();
 
         $all_brand_product = DB::table('tbl_brand')->get();
-        $manager_brand_product = view('admin.all_brand_product')->with('all_brand_product', $all_brand_product);
-        return view('admin_layout')->with('admin.all_brand_product', $manager_brand_product);
+        $manager_brand_product = view('backend.admin.all_brand_product')->with('all_brand_product', $all_brand_product);
+        return view('backend.admin_layout')->with('admin.all_brand_product', $manager_brand_product);
     }
 
 
@@ -47,10 +47,10 @@ class BrandProductCon extends Controller
         $data['brand_status'] = $request->brand_product_status;
 
         DB::table('tbl_brand')->insert($data);
-        
+
         Session::put('message','Thêm Thuong Hieu Sản Phẩm Thành Công');
         return Redirect::to('/all-brand-product');
-        
+
     }
 
     public function unactive_brand_product($brand_product_id){
@@ -74,8 +74,8 @@ class BrandProductCon extends Controller
         $this->AuthLoign();
 
         $edit_brand_product = DB::table('tbl_brand')->where('brand_id',$brand_product_id)->get();
-        $manager_brand_product = view('admin.edit_brand_product')->with('edit_brand_product', $edit_brand_product);
-        return view('admin_layout')->with('admin.edit_brand_product', $manager_brand_product);
+        $manager_brand_product = view('backend.admin.edit_brand_product')->with('edit_brand_product', $edit_brand_product);
+        return view('backend.admin_layout')->with('admin.edit_brand_product', $manager_brand_product);
     }
 
     public function update_brand_product(Request $request, $brand_product_id){

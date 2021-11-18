@@ -26,15 +26,15 @@ class CategoryProductCon extends Controller
     public function add_category_product(){
         $this->AuthLoign();
 
-        return view('admin.add_category_product');
+        return view('backend.admin.add_category_product');
     }
 
     public function all_category_product(){
         $this->AuthLoign();
 
         $all_category_product = DB::table('tbl_category_product')->get();
-        $manager_category_product = view('admin.all_category_product')->with('all_category_product', $all_category_product);
-        return view('admin_layout')->with('admin.all_category_product', $manager_category_product);
+        $manager_category_product = view('backend.admin.all_category_product')->with('all_category_product', $all_category_product);
+        return view('backend.admin_layout')->with('admin.all_category_product', $manager_category_product);
     }
 
 
@@ -49,7 +49,7 @@ class CategoryProductCon extends Controller
         DB::table('tbl_category_product')->insert($data);
         Session::put('message','Thêm Danh Mục Sản Phẩm Thành Công');
         return Redirect::to('/all-category-product');
-        
+
     }
 
     public function unactive_category_product($category_product_id){
@@ -69,8 +69,8 @@ class CategoryProductCon extends Controller
         $this->AuthLoign();
 
         $edit_category_product = DB::table('tbl_category_product')->where('category_id',$category_product_id)->get();
-        $manager_category_product = view('admin.edit_category_product')->with('edit_category_product', $edit_category_product);
-        return view('admin_layout')->with('admin.edit_category_product', $manager_category_product);
+        $manager_category_product = view('backend.admin.edit_category_product')->with('edit_category_product', $edit_category_product);
+        return view('backend.admin_layout')->with('admin.edit_category_product', $manager_category_product);
     }
 
     public function update_category_product(Request $request, $category_product_id){
