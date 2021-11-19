@@ -9,7 +9,7 @@
     <title>Oregon - Multipurpose eCommerce Bootstrap 5 Template</title>
 
     <!--=== Favicon ===-->
-    <link rel="shortcut icon" href="{{ asset('frontend/assets/img/favicon.ico') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('public/frontend/assets/img/favicon.ico') }}" type="image/x-icon" />
 
     <!-- Google fonts include -->
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,900" rel="stylesheet">

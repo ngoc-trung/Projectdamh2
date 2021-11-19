@@ -3,7 +3,7 @@
     <!-- main header start -->
     <div class="main-header d-none d-lg-block">
         <!-- header top start -->
-        <div class="header-top theme-color">
+        {{--  <div class="header-top theme-color">
             <div class="container bdr-bottom">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  --}}
         <!-- header top end -->
 
         <!-- header middle area start -->
@@ -50,7 +50,7 @@
                     <!-- start logo area -->
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ asset('public/frontend/assets/img/logo/logo.png') }}" alt="">
                             </a>
                         </div>
