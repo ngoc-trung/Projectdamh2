@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="meta description">
-    <title>Oregon - Multipurpose eCommerce Bootstrap 5 Template</title>
+    <title>@yield('title')</title>
 
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="{{ asset('public/frontend/assets/img/favicon.ico') }}" type="image/x-icon" />

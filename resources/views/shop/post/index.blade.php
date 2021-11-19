@@ -1,4 +1,5 @@
 @extends('shop.layouts.app')
+@section('title','Bài viết')
 @section('content')
     <!-- breadcrumb area start -->
     <div class="breadcrumb-area">
@@ -117,7 +118,7 @@
                         <!-- blog single item start -->
                         <div class="blog-post-item mb-30">
                             <div class="blog-post-thumb">
-                                <a href="blog-details.html">
+                                <a href="{{ route('post.show') }}">
                                     <img src="{{ asset('public/frontend/assets/img/blog/blog-details-4.jpg') }}" alt="">
                                 </a>
                             </div>
@@ -144,69 +145,22 @@
                                         hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio.
                                     </p>
                                 </div>
-                                <a href="blog-details.html" class="btn btn-read">read more</a>
+                                <a href="{{ route('post.show') }}" class="btn btn-read">Đọc thêm</a>
                             </div>
                         </div> <!-- blog single item end -->
-                        <!-- blog single item start -->
-                        <div class="blog-post-item mb-30">
-                            <div class="blog-post-thumb">
-                                <div class="blog-carousel-active slick-arrow-style slick-dot-style">
-                                    <div class="blog-single-slide">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('public/frontend/assets/img/blog/blog-details-1.jpg') }}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="blog-single-slide">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('public/frontend/assets/img/blog/blog-details-4.jpg') }}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="blog-single-slide">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('public/frontend/assets/img/blog/blog-details-2.jpg') }}" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-info-wrapper">
-                                <div class="entry-header">
-                                    <div class="post-date">
-                                        <span class="date">15</span>
-                                        <span class="month">mar</span>
-                                    </div>
-                                    <div class="post-meta">
-                                        <h2 class="entry-title">
-                                            <a href="blog-details.html">pretium gravida mas</a>
-                                        </h2>
-                                        <div class="post-meta-small">
-                                            <div class="post-author">
-                                                Written by: <a href="#">Admin</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="entry-summary">
-                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean
-                                        posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas
-                                        hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio.
-                                    </p>
-                                </div>
-                                <a href="blog-details.html" class="btn btn-read">read more</a>
-                            </div>
-                        </div> <!-- blog single item end -->
-                        <!-- blog single item start -->
 
                         <!-- blog single item start -->
                         <div class="blog-post-item mb-30">
-                            <div class="blog-post-thumb ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/4qNHr0W6F0o" allow="autoplay; encrypted-media"
-                                    allowfullscreen></iframe>
+                            <div class="blog-post-thumb">
+                                <a href="{{ route('post.show') }}">
+                                    <img src="{{ asset('public/frontend/assets/img/blog/blog-details-4.jpg') }}" alt="">
+                                </a>
                             </div>
                             <div class="post-info-wrapper">
                                 <div class="entry-header">
                                     <div class="post-date">
                                         <span class="date">10</span>
-                                        <span class="month">apr</span>
+                                        <span class="month">mar</span>
                                     </div>
                                     <div class="post-meta">
                                         <h2 class="entry-title">
@@ -225,7 +179,41 @@
                                         hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio.
                                     </p>
                                 </div>
-                                <a href="blog-details.html" class="btn btn-read">read more</a>
+                                <a href="{{ route('post.show') }}" class="btn btn-read">Đọc thêm</a>
+                            </div>
+                        </div> <!-- blog single item end -->
+
+                        <!-- blog single item start -->
+                        <div class="blog-post-item mb-30">
+                            <div class="blog-post-thumb">
+                                <a href="{{ route('post.show') }}">
+                                    <img src="{{ asset('public/frontend/assets/img/blog/blog-details-4.jpg') }}" alt="">
+                                </a>
+                            </div>
+                            <div class="post-info-wrapper">
+                                <div class="entry-header">
+                                    <div class="post-date">
+                                        <span class="date">10</span>
+                                        <span class="month">mar</span>
+                                    </div>
+                                    <div class="post-meta">
+                                        <h2 class="entry-title">
+                                            <a href="blog-details.html">Auctor gravida enim</a>
+                                        </h2>
+                                        <div class="post-meta-small">
+                                            <div class="post-author">
+                                                Written by: <a href="#">Admin</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="entry-summary">
+                                    <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean
+                                        posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas
+                                        hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio.
+                                    </p>
+                                </div>
+                                <a href="{{ route('post.show') }}" class="btn btn-read">Đọc thêm</a>
                             </div>
                         </div> <!-- blog single item end -->
                         <!-- blog single item start -->

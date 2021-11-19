@@ -1,4 +1,5 @@
 @extends('shop.layouts.app')
+@section('title','Liên hệ')
 @section('content')
 <!-- breadcrumb area start -->
 <div class="breadcrumb-area breadcrumb-area-style_2">
@@ -7,10 +8,10 @@
             <div class="col-12">
                 <div class="breadcrumb-wrap">
                     <nav aria-label="breadcrumb">
-                        <h1>contact us</h1>
+                        <h1>Liên hệ chúng tôi</h1>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">contact us</li>
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Liên hệ chúng tôi</li>
                         </ul>
                     </nav>
                 </div>
