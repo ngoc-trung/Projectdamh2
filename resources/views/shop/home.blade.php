@@ -1,4 +1,5 @@
 @extends('shop.layouts.app')
+@section('title','Trang chủ')
 @section('content')
 
     <!-- main wrapper start -->
