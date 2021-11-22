@@ -5,6 +5,7 @@ use App\Http\Controllers\Shop\ContactController;
 use App\Http\Controllers\Shop\HomeController;
 use App\Http\Controllers\Shop\PageController;
 use App\Http\Controllers\Shop\PostController;
+use App\Http\Controllers\Shop\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,7 @@ Route::prefix('shop')->group(function () {
     Route::get('/trang' ,[PageController::class,'index'] )->name('page.index');
 
     //Trang sản phẩm
+    Route::get('/san-pham' ,[ProductController::class,'index'] )->name('san-pham');
 });
 
 
@@ -111,3 +113,7 @@ Route::get('/edit-product/{product_id}', [App\Http\Controllers\ProductCon::class
 Route::get('/delete-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'delete_product']);
 
 Route::post('/update-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'update_product']);
+
+//Product-detail
+
+Route::get('/product-detail/{product_id}', [App\Http\Controllers\ProductCon::class, 'detail_product']);

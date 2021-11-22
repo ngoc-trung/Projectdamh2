@@ -284,7 +284,7 @@
                                 <ul>
                                     <li class="active"><a href="{{ route('home') }}">Trang chủ</a>
                                     </li>
-                                    <li><a href="#">Sản phẩm </a>
+                                    <li><a href="{{route('san-pham')}}">Sản phẩm </a>
                                     </li>
                                     <li><a href="{{ route('post.index') }}">Bài viết </a>
                                     </li>
