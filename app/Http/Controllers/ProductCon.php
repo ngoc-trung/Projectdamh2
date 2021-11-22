@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Session as FacadesSession;
 class ProductCon extends Controller
 {
     public function AuthLoign(){
-        $admin_id = Session::get('admin_login');
+        $admin_id = Session::get('admin_id');
         if ($admin_id) {
             return Redirect::to('dashboard');
         }else{
