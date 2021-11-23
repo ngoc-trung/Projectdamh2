@@ -25,6 +25,6 @@ class ProductController extends Controller
         // Hiển Thị Sản Phẩm ra trang san pham
         $all_product = DB::table('tbl_product')->where('product_status','0')->orderby('product_id','desc')->limit(10)->get();
 
-        return view('shop.page.product')->with('category',$cate_product)->with('brand',$brand_product)->with('all_product',$all_product);
+        return view('shop.product.product')->with('category',$cate_product)->with('brand',$brand_product)->with('all_product',$all_product);
     }
 }

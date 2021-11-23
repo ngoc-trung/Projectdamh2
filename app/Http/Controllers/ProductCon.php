@@ -28,7 +28,7 @@ class ProductCon extends Controller
 
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get(); // Lay id tu bang catagory_product
         $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
-        
+
         return view('backend.admin.add_product')->with('cate_product', $cate_product)->with('brand_product', $brand_product);
     }
 
@@ -158,11 +158,11 @@ class ProductCon extends Controller
         foreach($detail_product as $key => $value){
             $category_id = $value->category_id;
         }
-        $related_product = DB::table('tbl_product') 
+        $related_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
         ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->get();
 
-        return view('shop.page.product_detail')->with('category',$cate_product)->with('brand',$brand_product)->with('product_detail',$detail_product)->with('relate',$related_product);
+        return view('shop.product.product_detail')->with('category',$cate_product)->with('brand',$brand_product)->with('product_detail',$detail_product)->with('relate',$related_product);
     }
 }
