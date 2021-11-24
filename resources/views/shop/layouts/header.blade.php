@@ -7,30 +7,6 @@
             <div class="container bdr-bottom">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <div class="header-top-settings">
-                            <ul class="nav align-items-center">
-                                <li class="language">
-                                    <span>Language:</span>
-                                    <img src="assets/img/icon/en.png" alt=""> English
-                                    <i class="fa fa-angle-down"></i>
-                                    <ul class="dropdown-list">
-                                        <li><a href="#"><img src="assets/img/icon/en.png" alt=""> english</a></li>
-                                        <li><a href="#"><img src="assets/img/icon/fr.png" alt=""> french</a></li>
-                                    </ul>
-                                </li>
-                                <li class="curreny-wrap">
-                                    <span>Currency:</span>
-                                    $ USD
-                                    <i class="fa fa-angle-down"></i>
-                                    <ul class="dropdown-list curreny-list">
-                                        <li><a href="#">$ usd</a></li>
-                                        <li><a href="#"> € EURO</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
                         <div class="header-links">
                             <ul class="nav justify-content-end">
                                 <li><a href="login-register.html">Đăng kí</a></li>
@@ -88,7 +64,6 @@
                                             <span class="notify">0</span>
                                         </a>
                                     </li>
-                                    
                                         <li class="mini-cart-wrap">
                                         <a href="{{URL::to('/gio-hang')}}"><i class="ion-bag"></i></a>
                                         <button></button>
@@ -237,7 +212,6 @@
                                     <li><a href="{{ route('page.index') }}">Về chúng tôi </a>
                                     </li>
                                     <li><a href="{{ route('lien-he') }}">Liên hệ</a></li>
-                                    
                                 </ul>
                             </nav>
                             <!-- main menu navbar end -->
@@ -249,5 +223,4 @@
         <!-- main menu area end -->
     </div>
     <!-- main header start -->
-
     </header>

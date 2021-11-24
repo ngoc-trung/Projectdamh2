@@ -10,7 +10,7 @@
                     <nav aria-label="breadcrumb">
                         <h1>Chúng tôi là</h1>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Về chúng tôi</li>
                         </ul>
                     </nav>
@@ -28,7 +28,7 @@
             <!-- About Text Start -->
             <div class="col-xl-6 col-lg-6">
                 <div class="about-text-wrap">
-                    <h2><span>Provide Best</span>Product For You</h2>
+                    <h2><span>Cung cấp tốt nhất</span>Những sản phẩm cho bạn </h2>
                     <p>We provide the best Beard oile all over the world. We are the worldd best store in indi
                         for Beard Oil. You can buy our product without any hegitation because they truste us
                         and buy our product without any hagitation because they belive and always happy buy our
@@ -58,11 +58,29 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title-2">
-                    <h2>our creative team</h2>
+                    <h2>Các thành viên của nhóm</h2>
                 </div>
             </div>
         </div>
         <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team-member mb-30">
+                    <div class="team-thumb">
+                        <img src="{{ asset('public/frontend/assets/img/team/team_member_2.png') }}" alt="">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content text-center">
+                        <h3>Nguyễn Ngọc Trung/h3>
+                        <h6>Trưởng nhóm</h6>
+                        <p>Phụ trách về giao nhiệm vụ cho các thành viên, tạo giao diện và thiết kế backend.</p>
+                    </div>
+                </div>
+            </div> <!-- end single team member -->
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb">
@@ -75,29 +93,9 @@
                         </div>
                     </div>
                     <div class="team-content text-center">
-                        <h3>Jonathan Scott</h3>
-                        <h6>CEO</h6>
-                        <p>Amadea Shop is a very slick and clean e-commerce template with endless
-                            possibilities.</p>
-                    </div>
-                </div>
-            </div> <!-- end single team member -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="team-member mb-30">
-                    <div class="team-thumb">
-                        <img src="{{ asset('public/frontend/assets/img/team/team_member_2.jpg') }}" alt="">
-                        <div class="team-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h3>oliver bastin</h3>
-                        <h6>designer</h6>
-                        <p>Amadea Shop is a very slick and clean e-commerce template with endless
-                            possibilities.</p>
+                        <h3>Trần Hữu Định</h3>
+                        <h6>Thành viên nhóm</h6>
+                        <p>Phụ trách về liên kết backend và frontend.</p>
                     </div>
                 </div>
             </div> <!-- end single team member -->
@@ -113,10 +111,9 @@
                         </div>
                     </div>
                     <div class="team-content text-center">
-                        <h3>erik jonson</h3>
-                        <h6>developer</h6>
-                        <p>Amadea Shop is a very slick and clean e-commerce template with endless
-                            possibilities.</p>
+                        <h3>Bùi Minh Đức</h3>
+                        <h6>Thành viên nhóm</h6>
+                        <p>Phụ trách thiết kế frontend, giao diện các trang.</p>
                     </div>
                 </div>
             </div> <!-- end single team member -->
@@ -132,10 +129,9 @@
                         </div>
                     </div>
                     <div class="team-content text-center">
-                        <h3>maria mandy</h3>
-                        <h6>marketing officer</h6>
-                        <p>Amadea Shop is a very slick and clean e-commerce template with endless
-                            possibilities.</p>
+                        <h3>Phùng Minh Đức</h3>
+                        <h6>Thành viên nhóm</h6>
+                        <p>Phụ trách thiết kế CSDL, thiết kế backend.</p>
                     </div>
                 </div>
             </div> <!-- end single team member -->
@@ -150,7 +146,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title-2">
-                    <h2>why choose us</h2>
+                    <h2>Lí do bạn chọn cửa hàng chúng tôi </h2>
                 </div>
             </div>
         </div>
@@ -158,22 +154,22 @@
             <div class="col-lg-4">
                 <div class="single-choose-item text-center mb-30">
                     <i class="fa fa-globe"></i>
-                    <h4>free shipping</h4>
-                    <p>Amadea Shop is a very slick and clean e-commerce template with endless possibilities.</p>
+                    <h4>Miễn phí vận chuyển</h4>
+                    <p>Group 3 luôn luôn miễn phí vận chuyển cho mọi đơn hàng.</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="single-choose-item text-center mb-30">
                     <i class="fa fa-plane"></i>
-                    <h4>fast delivery</h4>
-                    <p>Amadea Shop is a very slick and clean e-commerce template with endless possibilities.</p>
+                    <h4>Vận chuyển nhanh</h4>
+                    <p>Group 3 sẽ luôn chuyển sản phẩm đến tay khách hàng một cách nhanh chóng nhất.</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="single-choose-item text-center mb-30">
                     <i class="fa fa-comments"></i>
-                    <h4>customers support</h4>
-                    <p>Amadea Shop is a very slick and clean e-commerce template with endless possibilities.</p>
+                    <h4>Hỗ trợ khách hàng</h4>
+                    <p>Group 3 luôn hỗ trợ khách hàng tận tình và nhanh chóng</p>
                 </div>
             </div>
         </div>

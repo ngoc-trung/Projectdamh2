@@ -13,7 +13,7 @@
                                 </div>
                                 <div class="features-content">
                                     <h5>0123456789</h5>
-                                    <p>Free support line!</p>
+                                    <p>Cuộc gọi hỗ trợ miễn phí</p>
                                 </div>
                             </div>
                         </div>
@@ -24,8 +24,8 @@
                                     <i class="ion-help-buoy"></i>
                                 </div>
                                 <div class="features-content">
-                                    <h5>mail@yourdomain.com</h5>
-                                    <p>Orders Support!</p>
+                                    <h5>hust@sis.hust.edu.vn</h5>
+                                    <p>Hỗ trợ đặt hàng</p>
                                 </div>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                                     <i class="ion-clock"></i>
                                 </div>
                                 <div class="features-content">
-                                    <h5>Mon - Fri / 8:00 - 18:00</h5>
-                                    <p>Working Days/Hours!</p>
+                                    <h5>Thứ 2- Thứ 6 / 8:00 - 18:00</h5>
+                                    <p>Ngày làm việc</p>
                                 </div>
                             </div>
                         </div>
@@ -55,21 +55,19 @@
                         <!-- footer widget item start -->
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-widget-item">
-                                <div class="footer-widget-logo">
-                                    <a href="index.html">
-                                        <img src="{{ asset('public/frontend/assets/img/logo/logo.png') }}" alt="">
-                                    </a>
+                                <div class="footer-widget-title">
+                                    <h5>Group 3</h5>
                                 </div>
                                 <div class="footer-widget-body">
-                                    <p>We are a team of designers and developers that create high quality Magento, Prestashop, Opencart.</p>
-                                    <h6 class="contact-info-title">Contact info:</h6>
-                                    <p>169-C, Technohub, Dubai Silicon Oasis.</p>
+                                    <p>Chúng tôi nhóm 3 môn Đồ Án Môn học</p>
+                                    <h6 class="contact-info-title">Thông tin liên hệ</h6>
+                                    <p>Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội</p>
                                     <div class="footer-social-link">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-youtube"></i></a>
-                                        <a href="#"><i class="fa fa-rss"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-youtube"></i></a>
+                                        <a href=""><i class="fa fa-rss"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -80,14 +78,13 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-widget-item">
                                 <div class="footer-widget-title">
-                                    <h5>information</h5>
+                                    <h5>Thông tin</h5>
                                 </div>
                                 <ul class="footer-widget-body">
-                                    <li><a href="#">Specials</a></li>
-                                    <li><a href="#">New products</a></li>
-                                    <li><a href="#">Top sellers</a></li>
-                                    <li><a href="#">Our stores</a></li>
-                                    <li><a href="#">About us</a></li>
+                                    <li><a href="">Sản phẩm mới</a></li>
+                                    <li><a href="">Top bán chạy</a></li>
+                                    <li><a href="">Chuỗi cửa hàng của chúng tôi</a></li>
+                                    <li><a href="">About us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -97,14 +94,13 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-widget-item">
                                 <div class="footer-widget-title">
-                                    <h5>my account</h5>
+                                    <h5>Tài khoản của tôi</h5>
                                 </div>
                                 <ul class="footer-widget-body">
-                                    <li><a href="my-account.html">my account</a></li>
-                                    <li><a href="login-register.html">login/register</a></li>
-                                    <li><a href="#">my orders</a></li>
-                                    <li><a href="#">my credit slips</a></li>
-                                    <li><a href="#">my addresses</a></li>
+                                    <li><a href="my-account.html">Tài khoản của tôi</a></li>
+                                    <li><a href="login-register.html">Đăng nhập,Đăng kí</a></li>
+                                    <li><a href="">Đơn hàng của tôi</a></li>
+                                    <li><a href="">Địa chỉ của tôi</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -114,14 +110,12 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-widget-item">
                                 <div class="footer-widget-title">
-                                    <h5>customer service</h5>
+                                    <h5> Dịch vụ chăm sóc khách hàng</h5>
                                 </div>
                                 <ul class="footer-widget-body">
-                                    <li><a href="#">site map</a></li>
-                                    <li><a href="#">special</a></li>
-                                    <li><a href="#">returns</a></li>
-                                    <li><a href="#">Order history</a></li>
-                                    <li><a href="#">my account</a></li>
+                                    <li><a href="">Bản đồ</a></li>
+                                     <li><a href="">Lịch sử đặt hàng</a></li>
+                                    <li><a href="">Tài khoản của tôi</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -132,55 +126,6 @@
         </div>
         <!-- footer widget area end -->
 
-        <!-- newsletter area start -->
-        <div class="newsletter-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-3 col-lg-4 col-md-5">
-                        <div class="newsletter-title">
-                            <div class="newsletter-icon">
-                                <i class="ion-ios-email"></i>
-                            </div>
-                            <h3>join Oregon newsletter</h3>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-5 col-md-7">
-                        <div class="newsletter-inner">
-                            <form id="mc-form">
-                                <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Enter your email address">
-                                <button class="news-btn" id="mc-submit">Subscribe</button>
-                            </form>
-                            <!-- mailchimp-alerts Start -->
-                            <div class="mailchimp-alerts">
-                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
-                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
-                            </div>
-                            <!-- mailchimp-alerts end -->
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-12">
-                        <div class="payment-method">
-                            <img src="{{ asset('public/frontend/assets/img/payment.png') }}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- newsletter area end -->
-
-        <!-- footer bottom area start -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="copyright-text text-center">
-                            <p>&copy; 2021 <b>Oregon</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/"><b>HasThemes</b></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- footer bottom area end -->
 
     </footer>
