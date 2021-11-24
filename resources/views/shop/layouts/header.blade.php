@@ -64,17 +64,9 @@
                                             <span class="notify">0</span>
                                         </a>
                                     </li>
-<<<<<<< HEAD
-                                        <li class="mini-cart-wrap">
-                                        <a href="{{URL::to('/gio-hang')}}"><i class="ion-bag"></i></a>
-                                        <button></button>
-=======
-
                                     <li class="mini-cart-wrap">
                                         <a href="{{ route('cart') }}"><i class="ion-bag"></i></a>
                                         <button></button>
-
->>>>>>> f5dc7f2b9b90355f9f2731edb66936030222c54f
                                     </li>
 
                                 </ul>
@@ -220,10 +212,6 @@
                                     <li><a href="{{ route('page.index') }}">Về chúng tôi </a>
                                     </li>
                                     <li><a href="{{ route('lien-he') }}">Liên hệ</a></li>
-<<<<<<< HEAD
-=======
-
->>>>>>> f5dc7f2b9b90355f9f2731edb66936030222c54f
                                 </ul>
                             </nav>
                             <!-- main menu navbar end -->
