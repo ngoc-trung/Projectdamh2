@@ -88,64 +88,13 @@
                                             <span class="notify">0</span>
                                         </a>
                                     </li>
+                                    
                                     <li class="mini-cart-wrap">
-                                        <a href="cart.html">
-                                            <i class="ion-bag"></i>
-                                            <span class="notify">2</span>
-                                        </a>
-                                        <div class="cart-list-wrapper">
-                                            <ul class="cart-list">
-                                                <li>
-                                                    <div class="cart-img">
-                                                        <a href="product-details.html"><img src="{{ asset('public/frontendassets/img/cart/cart-1.jpg') }}" alt=""></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="product-details.html">7th Generation classic smart headset</a></h4>
-                                                        <span class="cart-qty">Qty: 1</span>
-                                                        <span>$60.00</span>
-                                                    </div>
-                                                    <div class="del-icon">
-                                                        <i class="fa fa-times"></i>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="cart-img">
-                                                        <a href="product-details.html"><img src="public/frontend" alt=""></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="product-details.html">Digital 8th generation gadget product</a></h4>
-                                                        <span class="cart-qty">Qty: 2</span>
-                                                        <span>$70.00</span>
-                                                    </div>
-                                                    <div class="del-icon">
-                                                        <i class="fa fa-times"></i>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="minicart-pricing-box">
-                                                <li>
-                                                    <span>sub-total</span>
-                                                    <span><strong>$300.00</strong></span>
-                                                </li>
-                                                <li>
-                                                    <span>Eco Tax (-2.00)</span>
-                                                    <span><strong>$10.00</strong></span>
-                                                </li>
-                                                <li>
-                                                    <span>VAT (20%)</span>
-                                                    <span><strong>$60.00</strong></span>
-                                                </li>
-                                                <li class="total">
-                                                    <span>total</span>
-                                                    <span><strong>$370.00</strong></span>
-                                                </li>
-                                            </ul>
-                                            <div class="minicart-button">
-                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
-                                                <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
-                                            </div>
-                                        </div>
+                                        <a href="{{URL::to('/gio-hang')}}"><i class="ion-bag"></i></a>
+                                        <button></button>
+                            
                                     </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -291,6 +240,7 @@
                                     <li><a href="{{ route('page.index') }}">Về chúng tôi </a>
                                     </li>
                                     <li><a href="{{ route('lien-he') }}">Liên hệ</a></li>
+                                    
                                 </ul>
                             </nav>
                             <!-- main menu navbar end -->

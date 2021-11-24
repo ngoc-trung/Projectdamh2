@@ -25,6 +25,33 @@ class ProductController extends Controller
         // Hiển Thị Sản Phẩm ra trang san pham
         $all_product = DB::table('tbl_product')->where('product_status','0')->orderby('product_id','desc')->limit(10)->get();
 
-        return view('shop.page.product')->with('category',$cate_product)->with('brand',$brand_product)->with('all_product',$all_product);
+        return view('shop.product.product')->with('category',$cate_product)->with('brand',$brand_product)->with('all_product',$all_product);
+
+        
+    }
+
+    public function detail_product($product_id){
+
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); // Lay id tu bang catagory_product
+
+        //Hien Thi thuong hieu ra trang san pham
+        $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get();
+
+        $detail_product = DB::table('tbl_product')
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+        ->where('tbl_product.product_id',$product_id)->get();
+
+
+        // Lấy nhừng sản phẩm liên quan
+        foreach($detail_product as $key => $value){
+            $category_id = $value->category_id;
+        }
+        $related_product = DB::table('tbl_product') 
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
+        ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->get();
+
+        return view('shop.product.product_detail')->with('category',$cate_product)->with('brand',$brand_product)->with('product_detail',$detail_product)->with('relate',$related_product);
     }
 }

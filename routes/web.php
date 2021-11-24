@@ -6,6 +6,7 @@ use App\Http\Controllers\Shop\HomeController;
 use App\Http\Controllers\Shop\PageController;
 use App\Http\Controllers\Shop\PostController;
 use App\Http\Controllers\Shop\ProductController;
+use App\Http\Controllers\Shop\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,28 @@ Route::prefix('shop')->group(function () {
     //Trang sản phẩm
     Route::get('/san-pham' ,[ProductController::class,'index'] )->name('san-pham');
 });
+//Chi tiết sản phẩm
+Route::get('/product-detail/{product_id}', [App\Http\Controllers\Shop\ProductController::class, 'detail_product']);
+
+// Cart (Thêm Sp vào giỏ hàng bằng session)
+Route::post('/save-cart', [App\Http\Controllers\Shop\CartController::class, 'save_cart']);
+
+Route::post('/add-cart-ajax', [App\Http\Controllers\Shop\CartController::class, 'add_cart_ajax']);
+
+Route::get('/gio-hang', [App\Http\Controllers\Shop\CartController::class, 'gio_hang']);
+
+Route::get('/del-product/{session_id}', [App\Http\Controllers\Shop\CartController::class, 'del_product']);
+
+Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
+
+
+
+
+
+
+
+
+
 
 
 
@@ -114,6 +137,6 @@ Route::get('/delete-product/{product_id}', [App\Http\Controllers\ProductCon::cla
 
 Route::post('/update-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'update_product']);
 
-//Product-detail
 
-Route::get('/product-detail/{product_id}', [App\Http\Controllers\ProductCon::class, 'detail_product']);
+
+

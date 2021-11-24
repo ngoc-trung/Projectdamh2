@@ -85,14 +85,29 @@
                                     <i class="ion-checkmark-circled"></i>
                                     <span>200 in stock</span>
                                 </div>
+
+                                <form >
+                                    {{ csrf_field() }}
+
+                                    <input type="hidden" value="{{$value->product_id}}" class="cart_product_id_{{$value->product_id}}">
+                                    <input type="hidden" value="{{$value->product_name}}" class="cart_product_name_{{$value->product_id}}">
+                                    <input type="hidden" value="{{$value->product_image}}" class="cart_product_image_{{$value->product_id}}">
+                                    <input type="hidden" value="{{$value->product_price}}" class="cart_product_price_{{$value->product_id}}">
+                                    <input type="hidden" value="1" class="cart_product_qty_{{$value->product_id}}">
+
                                 <div class="quantity-cart-box d-flex align-items-center">
-                                    <div class="quantity">
-                                        <div class="pro-qty"><input type="text" value="1"></div>
+                                    <div class="quantity" name="qty" > 
+                                        <div class="pro-qty"><input  type="number" value="1"></div>
                                     </div>
-                                    <div class="action_link">
-                                        <a class="btn btn-cart" href="#"><i class="ion-bag"></i>Add to cart</a>
-                                    </div>
+                                    <input type="hidden" name="productid_hidden" value="{{$value->product_id}}" />
+
+                                    <a class="btn btn-cart" type="submit"><i class="ion-bag"></i>
+                                    <button class="add-to-cart2" name="add-to-cart2" type="button" data-id_product="{{$value->product_id}}"> Add to cart</button></a>
+      
                                 </div>
+
+                                </form>
+
                                 <div class="pro-size mb-26 mt-26">
                                     <h5>Danh Mục: {{$value->category_name}}</h5> 
                                 </div>

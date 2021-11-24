@@ -217,10 +217,18 @@
                             
                             <!-- product grid start -->
                             <div class="product-item">
+
+                                <form>
+                                    @csrf
+                                    <input type="hidden" value="{{$pro->product_id}}" class="cart_product_id_{{$pro->product_id}}">
+                                    <input type="hidden" value="{{$pro->product_name}}" class="cart_product_name_{{$pro->product_id}}">
+                                    <input type="hidden" value="{{$pro->product_image}}" class="cart_product_image_{{$pro->product_id}}">
+                                    <input type="hidden" value="{{$pro->product_price}}" class="cart_product_price_{{$pro->product_id}}">
+                                    <input type="hidden" value="1" class="cart_product_qty_{{$pro->product_id}}">
+
                                 <div class="product-thumb">
                                     <a href="{{URL::to('/product-detail/'.$pro->product_id)}}">
-                                        <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" alt="">
-                                    </a>
+                                        <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" alt="">                                
                                     <div class="add-to-links">
                                         <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a>
                                         <a href="compare.html" data-bs-toggle="tooltip" title="Add to Compare"><i class="ion-stats-bars"></i></a>
@@ -228,14 +236,19 @@
                                     </div>
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="product-name"><a href="product-details.html">{{$pro->product_name}}</a></h5>
+                                    <h5 class="product-name"><a>{{$pro->product_name}}</a></h5>
                                     <div class="price-box">
                                         <span class="price-regular">{{number_format($pro->product_price).' '.'VND'}}</span>
                                     </div>
+                                    </a>
+                                    <button class="add-to-cart" name="add-to-cart" type="button" data-id_product="{{$pro->product_id}}">
                                     <div class="product-item-action">
-                                        <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i> Add To Cart</a>
+                                        <a class="btn btn-cart" ><i class="ion-bag"></i> Add To Cart</a>
                                     </div>
+                                    </button>
                                 </div>
+
+                                </form>
                             </div>
                             
                             <!-- product grid end -->
