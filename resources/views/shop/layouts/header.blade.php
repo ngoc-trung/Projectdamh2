@@ -1,7 +1,7 @@
 <!-- Start Header Area -->
 <header class="header-area">
     <!-- main header start -->
-    <div class="main-header d-none d-lg-block">
+    <div class="lg-block">
         <!-- header top start -->
         {{--  <div class="header-top theme-color">
             <div class="container bdr-bottom">
@@ -33,8 +33,8 @@
                     <div class="col-lg-6">
                         <div class="header-links">
                             <ul class="nav justify-content-end">
-                                <li><a href="login-register.html">Register</a></li>
-                                <li><a href="login-register.html">Login</a></li>
+                                <li><a href="login-register.html">Đăng kí</a></li>
+                                <li><a href="login-register.html">Đăng nhập</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="col-lg-3">
                         <div class="logo">
                             <a href="{{ route('home') }}">
-                                <img src="{{ asset('public/frontend/assets/img/logo/logo.png') }}" alt="">
+                                <h5>LOGO</h5>
                             </a>
                         </div>
                     </div>
@@ -76,8 +76,8 @@
                                     <i class="ion-android-call"></i>
                                 </div>
                                 <div class="support-info">
-                                    <p>Free support call:</p>
-                                    <strong><a href="tel:+881234567899">+88 123 456 7899</a></strong>
+                                    <p>Gọi tư vấn miễn phí:</p>
+                                    <strong><a href="tel:+881234567899">0123456789</a></strong>
                                 </div>
                             </div>
                             <div class="header-configure-area">
@@ -89,10 +89,9 @@
                                         </a>
                                     </li>
                                     
-                                    <li class="mini-cart-wrap">
+                                        <li class="mini-cart-wrap">
                                         <a href="{{URL::to('/gio-hang')}}"><i class="ion-bag"></i></a>
                                         <button></button>
-                            
                                     </li>
                                     
                                 </ul>
@@ -112,9 +111,7 @@
                     <div class="col-lg-3">
                         <div class="category-toggle-wrap">
                             <div class="category-toggle">
-                                <i class="ion-android-menu"></i>
-                                shop by categories
-                            </div>
+                                <i class="ion-android-menu"></i>Danh mục sản phẩm </div>
                             <nav class="category-menu">
                                 <ul class="categories-list">
                                     <li class="menu-item-has-children"><a href="shop.html">Fruits & Vegetables</a>
@@ -180,7 +177,7 @@
                                                     <li><a href="shop.html">LED Headphone</a></li>
                                                     <li><a href="shop.html">Over-ear</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> 
                                             <li class="menu-item-has-children">
                                                 <a href="shop.html">accessories</a>
                                                 <ul class="dropdown">
@@ -253,4 +250,4 @@
     </div>
     <!-- main header start -->
 
-</header>
+    </header>
