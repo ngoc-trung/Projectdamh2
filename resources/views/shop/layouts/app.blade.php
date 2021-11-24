@@ -35,10 +35,6 @@
     @include('shop.layouts.footer');
 
 
-
-
-
-
     <!-- Scroll to top start -->
     <div class="scroll-top not-visible">
         <i class="fa fa-angle-up"></i>
@@ -65,7 +61,7 @@
                 var _token = $('input[name="_token"]').val();
 
                 $.ajax({
-                    url: "{{url('/add-cart-ajax')}}",
+                    url: "{{ route('add-cart-ajax') }}",
                     method: 'POST',
                     data:{cart_product_id:cart_product_id,cart_product_name:cart_product_name,cart_product_image:cart_product_image,
                         cart_product_price:cart_product_price,cart_product_qty:cart_product_qty,_token :_token },
@@ -80,7 +76,7 @@
                                     closeOnConfirm: false
                                     },
                                     function(){
-                                    window.location.href = "{{url('/gio-hang')}}"
+                                    window.location.href = "{{ route('cart') }}"
                                  });
                         }
                 });
@@ -100,7 +96,7 @@
                 var _token = $('input[name="_token"]').val();
 
                 $.ajax({
-                    url: "{{url('/add-cart-ajax')}}",
+                    url: "{{ route('add-cart-ajax') }}",
                     method: 'POST',
                     data:{cart_product_id:cart_product_id,cart_product_name:cart_product_name,cart_product_image:cart_product_image,
                         cart_product_price:cart_product_price,cart_product_qty:cart_product_qty,_token :_token },
@@ -115,7 +111,7 @@
                                     closeOnConfirm: false
                                     },
                                     function(){
-                                    window.location.href = "{{url('/gio-hang')}}"
+                                    window.location.href = "{{ route('cart') }}"
                                  });
                         }
                 });

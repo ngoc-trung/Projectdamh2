@@ -163,7 +163,7 @@
                     <div class="sidebar-banner">
                         <div class="img-container">
                             <a href="#">
-                                <img src="assets/img/banner/sidebar-banner.jpg" alt="">
+                                <img src="{{ asset('public/frontend/assets/img/banner/sidebar-banner.jpg') }}" alt="">
                             </a>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                         <!-- product single item start -->
                         @foreach($all_product as $key => $pro)
                         <div class="col-md-4 col-sm-6">
-                            
+
                             <!-- product grid start -->
                             <div class="product-item">
 
@@ -227,8 +227,8 @@
                                     <input type="hidden" value="1" class="cart_product_qty_{{$pro->product_id}}">
 
                                 <div class="product-thumb">
-                                    <a href="{{URL::to('/product-detail/'.$pro->product_id)}}">
-                                        <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" alt="">                                
+                                    <a href="{{URL::to('/shop/product-detail/'.$pro->product_id)}}">
+                                        <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" alt="">
                                     <div class="add-to-links">
                                         <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a>
                                         <a href="compare.html" data-bs-toggle="tooltip" title="Add to Compare"><i class="ion-stats-bars"></i></a>
@@ -250,7 +250,7 @@
 
                                 </form>
                             </div>
-                            
+
                             <!-- product grid end -->
                         </div>
                         @endforeach

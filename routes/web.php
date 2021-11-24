@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Shop\CartController;
 use App\Http\Controllers\Shop\ContactController;
 use App\Http\Controllers\Shop\HomeController;
 use App\Http\Controllers\Shop\PageController;
 use App\Http\Controllers\Shop\PostController;
 use App\Http\Controllers\Shop\ProductController;
-use App\Http\Controllers\Shop\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,30 +43,27 @@ Route::prefix('shop')->group(function () {
     //Trang trắng thông tin
     Route::get('/trang' ,[PageController::class,'index'] )->name('page.index');
 
+    //e cho vào no ko nhận id đâu Ctrl Z lại đi
+
     //Trang sản phẩm
     Route::get('/san-pham' ,[ProductController::class,'index'] )->name('san-pham');
-});
-//Chi tiết sản phẩm
-Route::get('/product-detail/{product_id}', [App\Http\Controllers\Shop\ProductController::class, 'detail_product']);
 
-// Cart (Thêm Sp vào giỏ hàng bằng session)
-Route::post('/save-cart', [App\Http\Controllers\Shop\CartController::class, 'save_cart']);
+    //Chi tiết sản phẩm
+    Route::get('/product-detail/{product_id}', [ProductController::class, 'detail_product']) ;
 
-Route::post('/add-cart-ajax', [App\Http\Controllers\Shop\CartController::class, 'add_cart_ajax']);
+    // Cart (Thêm Sp vào giỏ hàng bằng session)
+    Route::post('/save-cart', [CartController::class, 'save_cart']);
 
-Route::get('/gio-hang', [App\Http\Controllers\Shop\CartController::class, 'gio_hang']);
+    Route::post('/add-cart-ajax', [CartController::class, 'add_cart_ajax'])->name('add-cart-ajax');
 
-Route::get('/del-product/{session_id}', [App\Http\Controllers\Shop\CartController::class, 'del_product']);
+    Route::get('/gio-hang', [CartController::class, 'gio_hang'])-> name('cart');
 
-Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
+    Route::get('/del-product/{session_id}', [CartController::class, 'del_product']);
 
-
+    Route::post('/update-cart', [CartController::class, 'update_cart']);
 
 
-
-
-
-
+    });
 
 
 
