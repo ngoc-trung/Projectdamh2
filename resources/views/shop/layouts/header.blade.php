@@ -88,13 +88,13 @@
                                             <span class="notify">0</span>
                                         </a>
                                     </li>
-                                    
+
                                     <li class="mini-cart-wrap">
-                                        <a href="{{URL::to('/gio-hang')}}"><i class="ion-bag"></i></a>
+                                        <a href="{{ route('cart') }}"><i class="ion-bag"></i></a>
                                         <button></button>
-                            
+
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -240,7 +240,7 @@
                                     <li><a href="{{ route('page.index') }}">Về chúng tôi </a>
                                     </li>
                                     <li><a href="{{ route('lien-he') }}">Liên hệ</a></li>
-                                    
+
                                 </ul>
                             </nav>
                             <!-- main menu navbar end -->
