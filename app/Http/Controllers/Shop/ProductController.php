@@ -27,6 +27,7 @@ class ProductController extends Controller
 
         return view('shop.product.product')->with('category',$cate_product)->with('brand',$brand_product)->with('all_product',$all_product);
 
+
         
     }
 
@@ -53,5 +54,6 @@ class ProductController extends Controller
         ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->get();
 
         return view('shop.product.product_detail')->with('category',$cate_product)->with('brand',$brand_product)->with('product_detail',$detail_product)->with('relate',$related_product);
+
     }
 }

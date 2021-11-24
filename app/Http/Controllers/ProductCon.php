@@ -28,7 +28,7 @@ class ProductCon extends Controller
 
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get(); // Lay id tu bang catagory_product
         $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
-        
+
         return view('backend.admin.add_product')->with('cate_product', $cate_product)->with('brand_product', $brand_product);
     }
 
@@ -141,5 +141,5 @@ class ProductCon extends Controller
         return Redirect::to('all-product');
     }
 
-    
+
 }
