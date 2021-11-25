@@ -48,8 +48,42 @@ Route::prefix('shop')->group(function () {
     //Trang sản phẩm
     Route::get('/san-pham' ,[ProductController::class,'index'] )->name('san-pham');
 
+<<<<<<< Updated upstream
     //Chi tiết sản phẩm
     Route::get('/product-detail/{product_id}', [ProductController::class, 'detail_product']) ;
+=======
+// Tìm Kiếm Sản Phẩm
+
+Route::post('/tim-kiem', [App\Http\Controllers\Shop\SearchController::class, 'tim_kiem']);
+
+//Login-Checkout -- Đăng Nhập Để Thanh Toán
+
+Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'login_checkout']);
+
+// Dang kys tai khoan de thanh toan
+Route::post('/add-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'add_customer']);
+
+Route::get('/checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'checkout']);
+
+Route::post('/save-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'save_checkout']);
+
+Route::get('/logout-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'logout_checkout']);
+
+Route::post('/login-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'login_customer']);
+
+// Thanh Toan San Pham
+
+Route::get('/payment', [App\Http\Controllers\Shop\CheckoutController::class, 'payment']);
+
+Route::post('/order-place', [App\Http\Controllers\Shop\CheckoutController::class, 'order_place']);
+
+// Thêm Mã Giảm Giá
+
+
+Route::post('/check-coupon', [App\Http\Controllers\Shop\CouponController::class, 'check_coupon']);
+
+
+>>>>>>> Stashed changes
 
     // Cart (Thêm Sp vào giỏ hàng bằng session)
     Route::post('/save-cart', [CartController::class, 'save_cart']);
@@ -124,6 +158,7 @@ Route::get('/add-product', [App\Http\Controllers\ProductCon::class, 'add_product
 Route::get('/all-product', [App\Http\Controllers\ProductCon::class, 'all_product']);
 
 Route::get('/unactive-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'unactive_product']);
+
 Route::get('/active-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'active_product']);
 
 Route::post('/save-product', [App\Http\Controllers\ProductCon::class, 'save_product']);
@@ -136,4 +171,13 @@ Route::post('/update-product/{product_id}', [App\Http\Controllers\ProductCon::cl
 
 
 
+// Thêm mã giảm giá
+
+Route::get('/add-coupon', [App\Http\Controllers\CouponCon::class, 'add_coupon']);
+
+Route::get('/all-coupon', [App\Http\Controllers\CouponCon::class, 'all_coupon']);
+
+Route::post('/save-coupon', [App\Http\Controllers\CouponCon::class, 'save_coupon']);
+
+Route::get('/delete-coupon/{coupon_id}', [App\Http\Controllers\CouponCon::class, 'delete_coupon']);
 

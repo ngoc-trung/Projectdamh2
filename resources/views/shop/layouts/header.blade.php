@@ -3,20 +3,41 @@
     <!-- main header start -->
     <div class="lg-block">
         <!-- header top start -->
-        {{--  <div class="header-top theme-color">
+          <div class="header-top theme-color">
             <div class="container bdr-bottom">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="header-links">
                             <ul class="nav justify-content-end">
+<<<<<<< Updated upstream
                                 <li><a href="login-register.html">Đăng kí</a></li>
                                 <li><a href="login-register.html">Đăng nhập</a></li>
+=======
+
+                            <?php
+                                $customer_id = Session::get('customer_id');
+                                if($customer_id!=NULL){ 
+                                    ?>
+
+                                    <li>
+                                        <a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a>
+
+                                    </li>
+                                  <?php
+                                }else{
+                                   ?>
+                                   <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                                   <?php 
+                               }
+                               ?>
+                                <li><a href="{{URL::to('/login-checkout')}}">Tài Khoản</a></li>
+>>>>>>> Stashed changes
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>  --}}
+        </div>  
         <!-- header top end -->
 
         <!-- header middle area start -->
@@ -34,13 +55,14 @@
                     <!-- start logo area -->
 
                     <!-- start search box area -->
-                    <div class="col-lg-5">
-                        <div class="search-box-wrapper">
-                            <form class="search-box-inner">
-                                <input type="text" class="search-field" placeholder="Enter your search key">
-                                <button class="search-btn"><i class="ion-ios-search"></i></button>
-                            </form>
-                        </div>
+                    <div class="col-lg-5"> 
+                         <form class="search-box-inner" action="{{URL::to('/tim-kiem')}}" method="POST">         
+                             {{ csrf_field() }}            
+                             <div class="search-box-wrapper">
+                                <input type="text" class="search-field" placeholder="Tìm kiếm sản phẩm" name="keywords_submit">
+                                <button class="search-btn" name="search_items" value="Tìm Kiếm"><i class="ion-ios-search"></i></button>
+                            </div>
+                        </form>
                     </div>
                     <!-- start search box end -->
 

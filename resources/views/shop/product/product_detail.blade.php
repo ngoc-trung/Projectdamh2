@@ -97,7 +97,7 @@
 
                                 <div class="quantity-cart-box d-flex align-items-center">
                                     <div class="quantity" name="qty" > 
-                                        <div class="pro-qty"><input  type="number" value="1"></div>
+                                        <div class="pro-qty"><input  type="number" value="1" class="cart_product_qty_{{$value->product_id}}" ></div>
                                     </div>
                                     <input type="hidden" name="productid_hidden" value="{{$value->product_id}}" />
 

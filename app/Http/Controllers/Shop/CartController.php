@@ -21,7 +21,7 @@ class CartController extends Controller
     // Thêm sản phẩm vào giỏ hàng
     public function add_cart_ajax(Request $request){
         $data = $request->all();
-        $session_id = substr(md5(microtime()),rand(0,26),5);
+        $session_id = substr(md5(microtime()),rand(0,36),10);
 
         $cart = Session::get('cart');
 

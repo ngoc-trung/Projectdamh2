@@ -60,8 +60,11 @@
                                         $total = 0;
                                    
                                      ?>
-                                     @foreach (Session::get('cart') as $key => $val)
+
+                                     @foreach(Session::get('cart') as $key => $val)
+                                     
                                      <?php
+                                        
                                         $subtotal = $val['product_price']*$val['product_qty'];
                                         $total+=$subtotal;
                                      ?>
@@ -88,12 +91,6 @@
                             </div>
                             <!-- Cart Update Option -->
                             <div class="cart-update-option d-block d-md-flex justify-content-between">
-                                <div class="apply-coupon-wrapper">
-                                    <form action="#" method="post" class=" d-block d-md-flex">
-                                        <input type="text"  />
-                                        <button class="btn btn__bg btn__sqr">Thêm Mã Giảm Giá</button>
-                                    </form>
-                                </div>
                                 <div class="cart-update">
                                     <input type="submit" value="Cap Nhap" name="update_qty" class="btn btn__bg">
                                     
@@ -102,6 +99,14 @@
                         </div>
                         </form>
                     </div>
+                            <!-- Ma Giam Gia -->
+                                <div class="apply-coupon-wrapper">
+                                    <form action="{{URL::to('/check-coupon')}}" method="POST" >
+                                        {{ csrf_field()}}
+                                        <input type="text" name="coupon" />
+                                        <button class="btn btn__bg btn__sqr" >Thêm Mã Giảm Giá</button>
+                                    </form>
+                                </div>
                     <div class="row">
                         <div class="col-lg-5 ml-auto">
                             <!-- Cart Calculation Area -->
@@ -118,14 +123,53 @@
                                                 <td>Shipping</td>
                                                 <td>$70</td>
                                             </tr>
+                                            <tr>
+                                                <td>Mã giảm</td>
+                                                <td>
+                                                    @if(Session::get('coupon'))
+                                                        @foreach(Session::get('coupon') as $key => $cou)
+                                                            @if($cou['coupon_condition']==0)
+                                                                {{$cou['coupon_number']}} %
+                                                                <?php
+                                                                    $total_coupon = ($total*$cou['coupon_number'])/100;
+                                                                ?>
+
+                                                               
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tiền được giảm</td>
+                                                <td>
+                                                    
+                                                {{number_format($total_coupon,0,',','.')}} đ
+
+                                                
+                                                </td>
+                                            </tr>
                                             <tr class="total">
                                                 <td>Total</td>
-                                                <td class="total-amount">$300</td>
+                                                <td class="total-amount"><span>{{number_format($total-$total_coupon,0,',','.')}} đ</span></td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
-                                <a href="checkout.html" class="btn btn__bg d-block">Proceed To Checkout</a>
+
+                                <?php
+                                $customer_id = Session::get('customer_id');
+                                if($customer_id!=NULL){ 
+                                    ?>                               
+                                    <a href="{{URL::to('/checkout')}}" class="btn btn__bg d-block">Đi Đến Thanh Toán</a>
+                                    <?php
+                                }else{
+                                   ?>
+                                   <a href="{{URL::to('/login-checkout')}}" class="btn btn__bg d-block">Đi Đến Thanh Toán</a>
+                                   <?php 
+                               }
+                               ?>
+                                
                             </div>
                         </div>
                     </div>
