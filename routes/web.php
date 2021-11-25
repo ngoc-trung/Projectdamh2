@@ -48,17 +48,56 @@ Route::prefix('shop')->group(function () {
     //Trang sản phẩm
     Route::get('/san-pham' ,[ProductController::class,'index'] )->name('san-pham');
 
-<<<<<<< Updated upstream
+
     //Chi tiết sản phẩm
     Route::get('/product-detail/{product_id}', [ProductController::class, 'detail_product']) ;
-=======
-// Tìm Kiếm Sản Phẩm
 
-Route::post('/tim-kiem', [App\Http\Controllers\Shop\SearchController::class, 'tim_kiem']);
+// // Tìm Kiếm Sản Phẩm
 
-//Login-Checkout -- Đăng Nhập Để Thanh Toán
+// Route::post('/tim-kiem', [App\Http\Controllers\Shop\SearchController::class, 'tim_kiem']);
 
-Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'login_checkout']);
+// //Login-Checkout -- Đăng Nhập Để Thanh Toán
+
+// Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'login_checkout']);
+
+// // Dang kys tai khoan de thanh toan
+// Route::post('/add-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'add_customer']);
+
+// Route::get('/checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'checkout']);
+
+// Route::post('/save-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'save_checkout']);
+
+// Route::get('/logout-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'logout_checkout']);
+
+// Route::post('/login-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'login_customer']);
+
+// // Thanh Toan San Pham
+
+// Route::get('/payment', [App\Http\Controllers\Shop\CheckoutController::class, 'payment']);
+
+// Route::post('/order-place', [App\Http\Controllers\Shop\CheckoutController::class, 'order_place']);
+
+// // Thêm Mã Giảm Giá
+
+
+// Route::post('/check-coupon', [App\Http\Controllers\Shop\CouponController::class, 'check_coupon']);
+
+
+// >>>>>>> Stashed changes
+
+    // Cart (Thêm Sp vào giỏ hàng bằng session)
+    Route::post('/save-cart', [CartController::class, 'save_cart']);
+
+    Route::post('/add-cart-ajax', [CartController::class, 'add_cart_ajax'])->name('add-cart-ajax');
+
+    Route::get('/gio-hang', [CartController::class, 'gio_hang'])-> name('cart');
+
+    Route::get('/del-product/{session_id}', [CartController::class, 'del_product']);
+
+    });
+
+    Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
+
 
 // Dang kys tai khoan de thanh toan
 Route::post('/add-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'add_customer']);
@@ -81,26 +120,6 @@ Route::post('/order-place', [App\Http\Controllers\Shop\CheckoutController::class
 
 
 Route::post('/check-coupon', [App\Http\Controllers\Shop\CouponController::class, 'check_coupon']);
-
-
->>>>>>> Stashed changes
-
-    // Cart (Thêm Sp vào giỏ hàng bằng session)
-    Route::post('/save-cart', [CartController::class, 'save_cart']);
-
-    Route::post('/add-cart-ajax', [CartController::class, 'add_cart_ajax'])->name('add-cart-ajax');
-
-    Route::get('/gio-hang', [CartController::class, 'gio_hang'])-> name('cart');
-
-    Route::get('/del-product/{session_id}', [CartController::class, 'del_product']);
-
-    Route::post('/update-cart', [CartController::class, 'update_cart']);
-
-
-    });
-
-
-
 
 
 

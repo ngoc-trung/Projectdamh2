@@ -9,10 +9,7 @@
                     <div class="col-lg-6">
                         <div class="header-links">
                             <ul class="nav justify-content-end">
-<<<<<<< Updated upstream
-                                <li><a href="login-register.html">Đăng kí</a></li>
-                                <li><a href="login-register.html">Đăng nhập</a></li>
-=======
+
 
                             <?php
                                 $customer_id = Session::get('customer_id');
@@ -31,7 +28,7 @@
                                }
                                ?>
                                 <li><a href="{{URL::to('/login-checkout')}}">Tài Khoản</a></li>
->>>>>>> Stashed changes
+
                             </ul>
                         </div>
                     </div>
