@@ -64,7 +64,7 @@ class CheckoutController extends Controller
 
     public function logout_checkout(){
         Session::flush();
-        return Redirect::to('/login-checkout');
+        return Redirect::to('login-checkout');
     }
 
     public function login_customer(Request $request)

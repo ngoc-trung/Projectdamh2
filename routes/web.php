@@ -94,12 +94,17 @@ Route::prefix('shop')->group(function () {
 
     Route::get('/del-product/{session_id}', [CartController::class, 'del_product']);
 
+
+
     });
+    Route::get('/gio-hang', [App\Http\Controllers\Shop\CartController::class, 'gio_hang']);
 
     Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
 
 
 // Dang kys tai khoan de thanh toan
+Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'login_checkout']);
+
 Route::post('/add-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'add_customer']);
 
 Route::get('/checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'checkout']);
@@ -120,6 +125,8 @@ Route::post('/order-place', [App\Http\Controllers\Shop\CheckoutController::class
 
 
 Route::post('/check-coupon', [App\Http\Controllers\Shop\CouponController::class, 'check_coupon']);
+
+
 
 
 
