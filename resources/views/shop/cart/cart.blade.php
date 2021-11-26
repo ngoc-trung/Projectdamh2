@@ -58,6 +58,7 @@
                                     <tbody>
                                     <?php
                                         $total = 0;
+                                        
                                    
                                      ?>
 
@@ -83,7 +84,7 @@
                                                 </td> 
                                                 <td class="pro-subtotal"><span>{{number_format($subtotal,0,',','.')}} đ</span></td>
 
-                                                <td class="pro-remove"><a href="{{url('/del-product/'.$val['session_id'])}}"><i class="fa fa-trash-o"></i></a></td>
+                                                <td class="pro-remove"><a href="{{URL::to('/del-product/'.$val['session_id'])}}"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
                                    @endforeach
                                     </tbody>
@@ -123,32 +124,44 @@
                                                 <td>Shipping</td>
                                                 <td>$70</td>
                                             </tr>
-                                            <!-- <tr>
-                                                <td>Mã giảm</td>
+                                                
+                                            @if(Session::get('coupon'))
+                                            
+                                            <td>Mã giảm</td>
                                                 <td>
-                                                    @if(Session::get('coupon'))
+                                                    
                                                         @foreach(Session::get('coupon') as $key => $cou)
                                                             @if($cou['coupon_condition']==0)
                                                                 {{$cou['coupon_number']}} %
                                                                 
-                                                               
-                                                            @endif
-                                                        @endforeach
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiền được giảm</td>
-                                                <td>
-                                                    
-                                                
 
+                                                                <?php
+                                                                    $total_coupon = ($total*$cou['coupon_number'])/100;
+                                                                ?>
+
+                                                                 <td>Total</td>  
+                                                                <td class="total-amount"><span>{{number_format($total-$total_coupon,0,',','.')}} đ</span></td>
+                                                              
+
+                                                            @elseif($cou['coupon_condition']==1)
+                                                            
+                                                                {{number_format($cou['coupon_number'],0,',','.')}} đ;
+                                                                
+
+                                                                 <td>Total</td>  
+                                                                <td class="total-amount"><span>{{number_format($total-$cou['coupon_number'],0,',','.')}} đ</span></td>
+                                                              @endif  
+                                                        @endforeach
+
+
+                                                 </td> 
                                                 
-                                                </td> -->
+                                                            
+                                                
+                                                @endif
                                             </tr>
+                                            
                                             <tr class="total">
-                                                <td>Total</td>
-                                                <td class="total-amount"><span>{{number_format($total,0,',','.')}} đ</span></td>
                                             </tr>
                                         </table>
                                     </div>

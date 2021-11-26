@@ -151,12 +151,46 @@
                                             
                                              @endforeach        
                                              
-                                                
-                                                
+                                             @if(Session::get('coupon'))
+                                            
                                              <tr>
-                                                    <td>Tổng Số Tiền</td>
-                                                    <td><strong>{{number_format($total,0,',','.')}} đ</strong></td>
-                                                </tr> 
+                                                 <td>Mã giảm</td>
+                                                <td>
+                                                    
+                                                        @foreach(Session::get('coupon') as $key => $cou)
+                                                            @if($cou['coupon_condition']==0)
+                                                                {{$cou['coupon_number']}} %
+                                                                
+
+                                                                <?php
+                                                                    $total_coupon = ($total*$cou['coupon_number'])/100;
+                                                                ?>
+                                                </td>
+                                             </tr>
+                                            
+                                                <tr>
+                                                     <td>Total</td>  
+                                                   <td class="total-amount"><span>{{number_format($total-$total_coupon,0,',','.')}} đ</span></td>
+                                                </tr>
+                                                 
+                                                              
+                                                        <td>
+                                                            @elseif($cou['coupon_condition']==1)
+                                                            
+                                                                {{number_format($cou['coupon_number'],0,',','.')}} đ;
+                                                        </td>
+                                                            
+                                                                
+                                                        <tr>
+                                                            <td>Total</td>  
+                                                                <td class="total-amount"><span>{{number_format($total-$cou['coupon_number'],0,',','.')}} đ</span></
+                                                        </tr>
+                                                                 td>
+                                                              @endif  
+                                                        @endforeach
+
+                                                @endif
+                                                
                                         </table>
                                         
                                     </div>
