@@ -177,7 +177,7 @@
                                                         <td>
                                                             @elseif($cou['coupon_condition']==1)
                                                             
-                                                                {{number_format($cou['coupon_number'],0,',','.')}} đ;
+                                                                {{number_format($cou['coupon_number'],0,',','.')}} đ
                                                         </td>
                                                             
                                                                 
@@ -185,7 +185,7 @@
                                                             <td>Total</td>  
                                                                 <td class="total-amount"><span>{{number_format($total-$cou['coupon_number'],0,',','.')}} đ</span></
                                                         </tr>
-                                                                 td>
+                                                                 
                                                               @endif  
                                                         @endforeach
 
