@@ -1,6 +1,6 @@
 @extends('shop.layouts.app')
 @section('title','Trang chủ')
-@section('content')   
+@section('content')
 <!-- main wrapper start -->
     <main class="body-bg">
         <!-- slider area start -->
@@ -16,7 +16,7 @@
                                         <h2>Đồng hồ thông minh</h2>
                                         <h1>giảm tới 75%</h1>
                                         <h3>chỉ 2 triệu trong hôm nay</h3>
-                                        <a href="shop.html" class="btn-hero">NUA NGAY</a>
+                                        <a href="shop.html" class="btn-hero">MUA NGAY</a>
                                     </div>
                                 </div>
                             </div>
@@ -251,7 +251,7 @@
         </section>
         <!-- deals area end -->
 
-        
+
         <!-- features categories area end -->
 
         <!-- features categories area start -->
@@ -285,13 +285,13 @@
                         <div class="col-md-9">
                             <div class="products-area-wrapper mt-30">
                                 <div class="tab-content">
-                                    
+
                                     <div class="tab-pane fade active show" id="four">
-                                    
+
                                         <div class="features-categories-wrapper">
                                             <div class="features-categories-active slick-arrow-style">
                                                 <!-- product item start -->
-                                                
+
                                                 <div class="product-slide-item">
                                                     <div class="product-item">
                                                         <div class="product-thumb">
@@ -319,7 +319,7 @@
                                                             </a></h5>
                                                             <div class="price-box">
                                                                 <span class="price-regular"></span>
-                                                               
+
                                                             </div>
                                                             <div class="product-item-action">
                                                                 <a class="btn btn-cart" href="cart.html"><i
@@ -328,12 +328,12 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
+
                                                 <!-- product item start -->
                                         </div>
-                                   
+
                                     </div>
-                                   
+
                                 </div>
                                 <div class="img-container">
                                     <a href="#">
@@ -346,7 +346,7 @@
                             <div class="section-banner">
                                 <img src="assets/img/banner/ca2.jpg" alt="">
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,7 +358,7 @@
             <div class="container">
                 <div class="row">
                     <!-- best sellers group start -->
-                    
+
                     <!-- best sellers group end -->
 
                     <!-- new product group start -->
@@ -759,9 +759,9 @@
                 <div class="feature-product-wrapper bg-white">
                     <div class="row align-items-center">
                         <div class="col-lg-4 col-md-5 col-sm-7">
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -822,7 +822,7 @@
     <!-- main wrapper end -->
 
     <!-- Quick view modal start -->
-    
+
     <!-- Quick view modal end -->
 
 @endsection

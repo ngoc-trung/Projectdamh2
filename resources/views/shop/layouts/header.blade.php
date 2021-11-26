@@ -9,11 +9,9 @@
                     <div class="col-lg-6">
                         <div class="header-links">
                             <ul class="nav justify-content-end">
-
-
                             <?php
                                 $customer_id = Session::get('customer_id');
-                                if($customer_id!=NULL){ 
+                                if($customer_id!=NULL){
                                     ?>
 
                                     <li>
@@ -24,7 +22,7 @@
                                 }else{
                                    ?>
                                    <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
-                                   <?php 
+                                   <?php
                                }
                                ?>
                                 <li><a href="{{URL::to('/login-checkout')}}">Tài Khoản</a></li>
@@ -34,7 +32,7 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
         <!-- header top end -->
 
         <!-- header middle area start -->
@@ -52,9 +50,9 @@
                     <!-- start logo area -->
 
                     <!-- start search box area -->
-                    <div class="col-lg-5"> 
-                         <form class="search-box-inner" action="{{URL::to('/tim-kiem')}}" method="POST">         
-                             {{ csrf_field() }}            
+                    <div class="col-lg-5">
+                         <form class="search-box-inner" action="{{URL::to('/tim-kiem')}}" method="POST">
+                             {{ csrf_field() }}
                              <div class="search-box-wrapper">
                                 <input type="text" class="search-field" placeholder="Tìm kiếm sản phẩm" name="keywords_submit">
                                 <button class="search-btn" name="search_items" value="Tìm Kiếm"><i class="ion-ios-search"></i></button>
@@ -171,7 +169,7 @@
                                                     <li><a href="shop.html">LED Headphone</a></li>
                                                     <li><a href="shop.html">Over-ear</a></li>
                                                 </ul>
-                                            </li> 
+                                            </li>
                                             <li class="menu-item-has-children">
                                                 <a href="shop.html">accessories</a>
                                                 <ul class="dropdown">
