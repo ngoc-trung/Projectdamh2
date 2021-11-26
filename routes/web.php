@@ -102,8 +102,14 @@ Route::prefix('shop')->group(function () {
     Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
 
 
-// Dang kys tai khoan de thanh toan
+// Tìm Kiếm Sản Phẩm
+
+Route::post('/tim-kiem', [App\Http\Controllers\Shop\SearchController::class, 'tim_kiem']);
+
+// //Login-Checkout -- Đăng Nhập Để Thanh Toán
 Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'login_checkout']);
+// Dang kys tai khoan de thanh toan
+
 
 Route::post('/add-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'add_customer']);
 
