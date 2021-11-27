@@ -21,90 +21,68 @@
                             <div class="checkout-billing-details-wrap">
                                 <h2>Điền Thông Tin Gửi Hàng</h2>
                                 <div class="billing-form-wrap">
-                                    <form action="{{URL::to('/save-checkout')}}" method="POST">
+                                    <form  method="POST">
                                         {{ csrf_field() }}
+
+                                     
+                                    
+                                    
+
                                         <div class="row">
                                             <div class="single-input-item">
                                                 <div class="single-input-item">
                                                     <label for="f_name" class="required">Họ Tên</label>
-                                                    <input type="text" name="shipping_name" placeholder="Điền Họ Tên" required />
+                                                    <input type="text" name="shipping_name" class="shipping_name" placeholder="Điền Họ Tên" required />
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="single-input-item">
                                             <label for="email" class="required">Email</label>
-                                            <input type="email" name="shipping_email" placeholder="Email Address" required />
+                                            <input type="email" name="shipping_email" class="shipping_email" placeholder="Email Address" required />
                                         </div>
 
                                         <div class="single-input-item">
                                             <label for="com-name">Địa Chỉ</label>
-                                            <input type="text" name="shipping_address" placeholder="Địa Chỉ" />
-                                        </div>
-
-                                        <!-- <div class="single-input-item">
-                                            <label for="country" class="required">Country</label>
-                                            <input type="text" id="com-name" placeholder="Quốc Gia" />
-                                        </div> -->
-
-                                        <!-- <div class="single-input-item">
-                                            <label for="street-address" class="required mt-20">Street address</label>
-                                            <input type="text" id="street-address" placeholder="Street address Line 1" required />
-                                        </div> -->
-
-                                        <!-- <div class="single-input-item">
-                                            <input type="text" placeholder="Street address Line 2 (Optional)" />
-                                        </div>
-
-                                        <div class="single-input-item">
-                                            <label for="town" class="required">Town / City</label>
-                                            <input type="text" id="town" placeholder="Town / City" required />
-                                        </div> -->
-
-                                        <!-- <div class="single-input-item">
-                                            <label for="state">State / Divition</label>
-                                            <input type="text" id="state" placeholder="State / Divition" />
-                                        </div>
-
-                                        <div class="single-input-item">
-                                            <label for="postcode" class="required">Postcode / ZIP</label>
-                                            <input type="text" id="postcode" placeholder="Postcode / ZIP" required />
-                                        </div> -->
-
-                                        <div class="single-input-item">
-                                            <label for="phone">Số Điện Thoại</label>
-                                            <input type="text" name="shipping_phone" placeholder="Phone" />
-                                        </div>
-
-                                        <!-- <div class="checkout-box-wrap">
-                                            <div class="single-input-item">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="create_pwd">
-                                                    <label class="custom-control-label" for="create_pwd">Create an
-                                                        account?</label>
-                                                </div>
-                                            </div>
-                                            <div class="account-create single-form-row">
-                                                <p>Create an account by entering the information below. If you are a
-                                                    returning customer please login at the top of the page.</p>
-                                                <div class="single-input-item">
-                                                    <label for="pwd" class="required">Account Password</label>
-                                                    <input type="password" id="pwd" placeholder="Account Password" required />
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <div class="single-input-item">
-                                            <label for="ordernote">Yêu Cầu Của Khách Hàng</label>
-                                            <textarea name="shipping_note"  cols="30" rows="3" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                            <input type="text" name="shipping_address" class="shipping_address" placeholder="Địa Chỉ" />
                                         </div>
 
                                         
 
                                         <div class="single-input-item">
-
-                                            <button type="submit" name="send_order" value="Gui" class="btn btn__bg">Gửi Để Thanh Toán</button>
-                                            
+                                            <label for="phone">Số Điện Thoại</label>
+                                            <input type="text" name="shipping_phone" class="shipping_phone" placeholder="Phone" />
                                         </div>
+
+                                        
+                                        <div class="single-input-item">
+                                            <label for="ordernote">Yêu Cầu Của Khách Hàng</label>
+                                            <textarea name="shipping_note" class="shipping_note" cols="30" rows="3" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                        </div>
+                                        @if(Session::get('coupon'))
+                                            @foreach(Session::get('coupon') as $key => $cou)
+                                        <input type="hidden" value="{{$cou['coupon_code']}}" name="order_coupon" class="order_coupon">
+                                            @endforeach
+                                         @else   
+                                         <input type="hidden" value="no" name="order_coupon" class="order_coupon">
+                                         @endif
+                                        
+                                            
+                                        <div class="single-input-item">
+                                            <label  class="required">Hình Thức Thanh Toán</label>
+                                            <select name="payment_select" class="payment_select">
+                                                <option value="0">Tiền Mặt</option>
+                                                <option value="1">Chuyển Khoản</option>
+                                                
+                                            </select>
+                                        </div>
+                                        
+
+                                       
+
+                                          <input type="button" name="send_order" value="Xác nhận thanh toán" class="btn btn-primary btn-sm send_order" style="margin-top: 30px;">
+                                            
+                                       
 
                                         
                                     </form>
@@ -190,14 +168,17 @@
                                                         @endforeach
 
                                                 @endif
+                                               
+                            
                                                 
                                         </table>
+                                        
                                         
                                     </div>
                                     
                                 </div>
 
-                                </form>
+                               
                             </div> 
                             
                         </div>

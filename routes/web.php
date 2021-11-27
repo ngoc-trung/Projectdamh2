@@ -97,6 +97,7 @@ Route::prefix('shop')->group(function () {
 
 
     });
+    Route::get('/del-product/{session_id}', [App\Http\Controllers\Shop\CartController::class, 'del_product']);
     Route::get('/gio-hang', [App\Http\Controllers\Shop\CartController::class, 'gio_hang']);
 
     Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
@@ -123,9 +124,8 @@ Route::post('/login-customer', [App\Http\Controllers\Shop\CheckoutController::cl
 
 // Thanh Toan San Pham
 
-Route::get('/payment', [App\Http\Controllers\Shop\CheckoutController::class, 'payment']);
 
-Route::post('/order-place', [App\Http\Controllers\Shop\CheckoutController::class, 'order_place']);
+Route::post('/comfirm-order', [App\Http\Controllers\Shop\CheckoutController::class, 'comfirm_order']);
 
 // Thêm Mã Giảm Giá
 

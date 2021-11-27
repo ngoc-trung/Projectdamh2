@@ -49,6 +49,61 @@
 
     <script src="{{ asset('public/frontend/assets/js/sweetalert.js') }}"></script>
 
+
+
+    <!-- Ajax xác nhận đơn hàng -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.send_order').click(function(){
+
+                swal({
+                    title: "Bạn Có Muốn Thanh Toán?",
+                    text: "Đơn Hàng Của Bạn Sẽ Được Xác Nhận",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Có,Tôi Muốn !",
+                    cancelButtonText: "No,!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                    },
+                    function(isConfirm) {
+                    if (isConfirm) {
+                        var shipping_name = $('.shipping_name').val();
+                        var shipping_email = $('.shipping_email').val();
+                        var shipping_address = $('.shipping_address').val();
+                        var shipping_phone = $('.shipping_phone').val();
+                        var shipping_note = $('.shipping_note').val();
+                        var shipping_method = $('.payment_select').val();
+                        var order_coupon = $('.order_coupon').val();
+                        var _token = $('input[name="_token"]').val();
+
+                        $.ajax({
+                            url: "{{ url('/comfirm-order') }}",
+                            method: 'POST',
+                            data:{shipping_name:shipping_name,shipping_email:shipping_email,shipping_address:shipping_address,
+                                shipping_phone:shipping_phone,shipping_note:shipping_note,order_coupon:order_coupon,_token :_token,shipping_method:shipping_method },
+                                success:function(){
+                                    swal("Đơn Hàng!", "Đơn Hàng Của Bạn Đã Được Gửi Thành Công.", "success");
+                                }
+                        });
+                        // window.setTimeout(function(){
+                        //     location.reload();
+                        // },3000);
+                        
+                    } else {
+                        swal("Đóng", "Đơn Hàng Của Bạn Đã Chưa Được Thanh Toán", "error");
+                    }
+                    });
+                
+               
+            });
+        });
+
+    </script>
+
+
+    <!-- Thêm sp vào giỏ hàng -->
     <script type="text/javascript">
         $(document).ready(function(){
             $('.add-to-cart').click(function(){
@@ -84,6 +139,7 @@
         });
     </script>
 
+<!-- thêm sp vào giỏ hàng ở trang detail -->
 <script type="text/javascript">
         $(document).ready(function(){
             $('.add-to-cart2').click(function(){
