@@ -213,3 +213,12 @@ Route::post('/save-coupon', [App\Http\Controllers\CouponCon::class, 'save_coupon
 
 Route::get('/delete-coupon/{coupon_id}', [App\Http\Controllers\CouponCon::class, 'delete_coupon']);
 
+//Quản Lý đơn hàng..
+
+Route::get('/manage-order', [App\Http\Controllers\OrderCon::class, 'manage_order']);
+
+Route::get('/view-order/{order_code}', [App\Http\Controllers\OrderCon::class, 'view_order']);
+
+//In Hoa Don 
+
+Route::get('/print-order/{checkout_code}', [App\Http\Controllers\OrderCon::class, 'print_order']);

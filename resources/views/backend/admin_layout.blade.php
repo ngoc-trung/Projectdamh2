@@ -104,8 +104,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li>
 					<a href="">
                         <i class="fa fa-book"></i>
-                        <span>Quản đơn hàng</span>
+                        <span> Đơn hàng</span>
                     </a>
+					<ul class="sub">
+						<li><a href="{{URL::to('/manage-order')}}">Quản lý đơn hàng</a></li>
+                        
+                    </ul>
 				</li>
 				<li>
 					<a href="">
@@ -156,8 +160,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section id="main-content">
 	<section class="wrapper">
 		@yield('admin_content')
-
-
 
 	</section>
  <!-- footer -->
