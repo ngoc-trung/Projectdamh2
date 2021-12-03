@@ -10,7 +10,7 @@
                             $message = Session::get('message');
                             if ($message) {
                                 echo '<span class="text-alert">'.$message.'</span>';
-                                Session::put('message',null) ;
+                                Session::put('message',null);
                             }
                         ?>
                         <div class="panel-body">
@@ -23,6 +23,10 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên San Pham</label>
                                     <input type="text" name="product_name" class="form-control"  value="{{$pro->product_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Số Lượng</label>
+                                    <input type="text" name="product_quantity" class="form-control"  value="{{$pro->product_quantity}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Thêm Giá</label>

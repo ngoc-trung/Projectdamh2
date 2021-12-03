@@ -88,6 +88,16 @@ class CartController extends Controller
             return redirect()->back()->with('message','Xoa san pham that bai');
         }
     }
+    // Xóa giỏ hàng
+
+    public function del_all_product()
+    {
+        $cart = Session::get('cart');
+        if ($cart==true) {
+            Session::forget('cart');
+            return redirect()->back()->with('message' ,'Xóa Giỏ Hàng Thành Công');
+        }
+    }
 
 
     public function update_cart(Request $request){

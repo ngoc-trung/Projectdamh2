@@ -28,8 +28,8 @@
                                 <div class="form-group">
                                     <label for="">Hiển Thị</label>
                                     <select name="brand_product_status" id="">
-                                        <option value="0">Ẩn</option>
-                                        <option value="1">Hiển Thị</option>
+                                        <option value="1">Ẩn</option>
+                                        <option value="0">Hiển Thị</option>
                                     </select>
                                 </div>
                                 <button type="submit" name="add_brand_product" class="btn btn-info">Thêm</button>

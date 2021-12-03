@@ -22,6 +22,10 @@
                                     <input type="text" name="product_name" class="form-control"  placeholder="Tên Danh Mục">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Thêm Số Lượng</label>
+                                    <input type="text" name="product_quantity" class="form-control"  placeholder="Điền số lượng">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Thêm Giá</label>
                                     <input type="text" name="product_price" class="form-control"  >
                                 </div>
@@ -58,8 +62,8 @@
                                 <div class="form-group">
                                     <label for="">Hiển Thị</label>
                                     <select name="product_status" id="">
-                                        <option value="0">Ẩn</option>
-                                        <option value="1">Hiển Thị</option>
+                                        <option value="1">Ẩn</option>
+                                        <option value="0">Hiển Thị</option>
                                     </select>
                                 </div>
                                 <button type="submit" name="add_product" class="btn btn-info">Thêm</button>

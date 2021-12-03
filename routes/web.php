@@ -98,6 +98,9 @@ Route::prefix('shop')->group(function () {
 
     });
     Route::get('/del-product/{session_id}', [App\Http\Controllers\Shop\CartController::class, 'del_product']);
+
+    Route::get('/del-all-product', [App\Http\Controllers\Shop\CartController::class, 'del_all_product']);
+
     Route::get('/gio-hang', [App\Http\Controllers\Shop\CartController::class, 'gio_hang']);
 
     Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
