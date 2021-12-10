@@ -93,12 +93,12 @@
                                        <div class="table-responsive">
                                         <table class="table">
                                             <tr>
-                                                <td>Sub Total</td>
+                                                <td>Tổng Tiền:</td>
                                                 <td><span>{{number_format($total,0,',','.')}} đ</span></td>
                                             </tr>
                                             @if(Session::get('coupon'))
                                             
-                                            <td>Mã giảm</td>
+                                            <td>Mã giảm:</td>
                                                 <td>
                                                     
                                                         @foreach(Session::get('coupon') as $key => $cou)
@@ -110,7 +110,7 @@
                                                                     $total_coupon = ($total*$cou['coupon_number'])/100;
                                                                 ?>
 
-                                                                 <td>Total</td>  
+                                                                 <td>Tổng Thanh Toán:</td>  
                                                                 <td class="total-amount"><span>{{number_format($total-$total_coupon,0,',','.')}} đ</span></td>
                                                               
 
@@ -119,7 +119,7 @@
                                                                 {{number_format($cou['coupon_number'],0,',','.')}} đ;
                                                                 
 
-                                                                 <td>Total</td>  
+                                                                 <td>Tổng Thanh Toán:</td>  
                                                                 <td class="total-amount"><span>{{number_format($total-$cou['coupon_number'],0,',','.')}} đ</span></td>
                                                               @endif  
                                                         @endforeach

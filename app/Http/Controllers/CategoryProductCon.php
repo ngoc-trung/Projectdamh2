@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
+use Auth;
 use Session;
 use App\Http\Requests;
 use GuzzleHttp\Psr7\Message;
@@ -15,22 +16,22 @@ use Illuminate\Support\Facades\Session as FacadesSession;
 class CategoryProductCon extends Controller
 {
     public function AuthLoign(){
-        $admin_id = Session::get('admin_id');
+        $admin_id = Auth::id();
         if ($admin_id) {
             return Redirect::to('dashboard');
         }else{
-            return Redirect::to('admin_login')->send();
+            return Redirect::to('login-auth')->send();
         }
     }
 
     public function add_category_product(){
-        $this->AuthLoign();
+        
 
         return view('backend.admin.add_category_product');
     }
 
     public function all_category_product(){
-        $this->AuthLoign();
+        
 
         $all_category_product = DB::table('tbl_category_product')->get();
         $manager_category_product = view('backend.admin.all_category_product')->with('all_category_product', $all_category_product);
@@ -39,7 +40,7 @@ class CategoryProductCon extends Controller
 
 
     public function save_category_product(Request $request){
-        $this->AuthLoign();
+       
 
         $data = array();
         $data['category_name'] = $request->category_product_name;
@@ -66,7 +67,7 @@ class CategoryProductCon extends Controller
     }
 
     public function edit_category_product($category_product_id){
-        $this->AuthLoign();
+        
 
         $edit_category_product = DB::table('tbl_category_product')->where('category_id',$category_product_id)->get();
         $manager_category_product = view('backend.admin.edit_category_product')->with('edit_category_product', $edit_category_product);
@@ -74,7 +75,7 @@ class CategoryProductCon extends Controller
     }
 
     public function update_category_product(Request $request, $category_product_id){
-        $this->AuthLoign();
+       
 
         $data = array();
         $data['category_name'] = $request->category_product_name;

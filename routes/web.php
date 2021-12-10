@@ -8,7 +8,6 @@ use App\Http\Controllers\Shop\PageController;
 use App\Http\Controllers\Shop\PostController;
 use App\Http\Controllers\Shop\ProductController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -225,3 +224,17 @@ Route::get('/view-order/{order_code}', [App\Http\Controllers\OrderCon::class, 'v
 //In Hoa Don 
 
 Route::get('/print-order/{checkout_code}', [App\Http\Controllers\OrderCon::class, 'print_order']);
+
+
+// Phân Quyền cho User
+Route::get('/register-auth', [App\Http\Controllers\AuthController::class, 'register_auth']);
+
+Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
+
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+
+Route::get('/login-auth', [App\Http\Controllers\AuthController::class, 'login_auth']);
+
+Route::get('/logout-auth', [App\Http\Controllers\AuthController::class, 'logout _auth']);
+
+

@@ -33,7 +33,7 @@ class ProductCon extends Controller
     }
 
     public function all_product(){
-        $this->AuthLoign();
+        
 
         $all_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
@@ -45,7 +45,7 @@ class ProductCon extends Controller
 
 
     public function save_product(Request $request){
-        $this->AuthLoign();
+       
 
         $data = array();
         $data['product_name'] = $request->product_name;
@@ -91,7 +91,7 @@ class ProductCon extends Controller
     }
 
     public function edit_product($product_id){
-        $this->AuthLoign();
+        
 
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get(); // Lay id tu bang catagory_product
         $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
@@ -105,7 +105,7 @@ class ProductCon extends Controller
     }
 
     public function update_product(Request $request, $product_id){
-        $this->AuthLoign();
+      
 
         $data = array();
         $data['product_name'] = $request->product_name;
@@ -136,7 +136,7 @@ class ProductCon extends Controller
         return Redirect::to('/all-product');
     }
     public function delete_product( $product_id){
-        $this->AuthLoign();
+       
 
         DB::table('tbl_product')->where('product_id', $product_id)->delete();
         Session::put('message',' Xoa san pham thanh cong');
