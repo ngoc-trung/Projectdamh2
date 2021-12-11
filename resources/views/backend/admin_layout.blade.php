@@ -23,7 +23,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="{{asset('public/backend/css/morris.css')}}" type="text/css"/>
 <!-- calendar -->
 <link rel="stylesheet" href="{{asset('public/backend/css/monthly.css')}}">
-
 <!-- phan trang -->
 <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" type="text/css"/>
 
@@ -60,19 +59,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="{{asset('public/backend/images/2.png')}}">
                 <span class="username">
-				<?php
+				@php
 					$name = Auth::user();
 					if ($name) {
 						echo $name ;
 					}
-				?>
+				@endphp
 				</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="{{URL::to('/logout-auth')}}"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->

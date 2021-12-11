@@ -207,7 +207,7 @@ Route::post('/update-product/{product_id}', [App\Http\Controllers\ProductCon::cl
 
 // Thêm mã giảm giá
 
-Route::get('/add-coupon', [App\Http\Controllers\CouponCon::class, 'add_coupon']);
+Route::get('/add-coupon', [App\Http\Controllers\CouponCon::class, 'add_coupon']); 
 
 Route::get('/all-coupon', [App\Http\Controllers\CouponCon::class, 'all_coupon']);
 
@@ -235,6 +235,6 @@ Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
 
 Route::get('/login-auth', [App\Http\Controllers\AuthController::class, 'login_auth']);
 
-Route::get('/logout-auth', [App\Http\Controllers\AuthController::class, 'logout _auth']);
+Route::get('/logout-auth', [App\Http\Controllers\AuthController::class, 'logout_auth']);
 
 

@@ -26,6 +26,10 @@
                                     <input type="text" name="product_quantity" class="form-control"  placeholder="Điền số lượng">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Slug</label>
+                                    <input type="text" name="product_slug" class="form-control " id="convert_slug" placeholder="Tên danh mục">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Thêm Giá</label>
                                     <input type="text" name="product_price" class="form-control"  >
                                 </div>

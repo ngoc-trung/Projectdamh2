@@ -29,6 +29,10 @@
                                     <input type="text" name="product_quantity" class="form-control"  value="{{$pro->product_quantity}}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Slug</label>
+                                    <input type="text" name="product_slug" class="form-control" id="exampleInputEmail1" value="{{$pro->product_slug}}">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Thêm Giá</label>
                                     <input type="text" name="product_price" class="form-control" value="{{$pro->product_price}}">
                                 </div>

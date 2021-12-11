@@ -33,6 +33,7 @@
             </th>
             <th>Tên Sản Phẩm </th>
             <th>Số Lượng </th>
+            <th>Slug</th>
             <th>Giá Sản Phẩm</th>
             <th>Hình Ảnh Sản Phẩm</th>
             <th>Danh Mục</th>
@@ -47,6 +48,7 @@
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{ $pro_pro->product_name}}</td>
             <td>{{ $pro_pro->product_quantity}}</td>
+            <td>{{ $pro_pro->product_slug }}</td>
             <td>{{ $pro_pro->product_price}}</td>
 
             <td><img src="public/upload/product/{{ $pro_pro->product_image}}" height="100" width="100"></td>

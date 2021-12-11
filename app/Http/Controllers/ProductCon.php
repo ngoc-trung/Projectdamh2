@@ -14,17 +14,10 @@ use Illuminate\Support\Facades\Session as FacadesSession;
 
 class ProductCon extends Controller
 {
-    public function AuthLoign(){
-        $admin_id = Session::get('admin_id');
-        if ($admin_id) {
-            return Redirect::to('dashboard');
-        }else{
-            return Redirect::to('admin_login')->send();
-        }
-    }
+    
 
     public function add_product(){
-        $this->AuthLoign();
+        
 
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get(); // Lay id tu bang catagory_product
         $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
@@ -52,6 +45,7 @@ class ProductCon extends Controller
         $data['product_quantity'] = $request->product_quantity;
         $data['product_price'] = $request->product_price;
         $data['product_desc'] = $request->product_desc;
+        $data['product_slug'] = $request->product_slug;
         $data['product_content'] = $request->product_content;
         $data['category_id'] = $request->product_cate;
         $data['product_status'] = $request->product_status;
@@ -112,6 +106,7 @@ class ProductCon extends Controller
         $data['product_quantity'] = $request->product_quantity;
         $data['product_price'] = $request->product_price;
         $data['product_desc'] = $request->product_desc;
+        $data['product_slug'] = $request->product_slug;
         $data['product_content'] = $request->product_content;
         $data['category_id'] = $request->product_cate;
         $data['product_status'] = $request->product_status;

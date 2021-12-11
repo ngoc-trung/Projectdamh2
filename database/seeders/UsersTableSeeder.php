@@ -24,22 +24,22 @@ class UsersTableSeeder extends Seeder
         $thukhoRoles = Roles::where('name','thukho')->first();
 
         $admin = Admin::create([
-        	'admin_name' => 'hieuadmin',
-        	'admin_email' => 'hieuadmin@yahoo.com',
+        	'admin_name' => 'admin',
+        	'admin_email' => 'admin@yahoo.com',
         	'admin_phone' => '123456789',
         	'admin_password' => md5('123456')
         ]);
 
         $shipper = Admin::create([
-        	'admin_name' => 'hieuauthor',
-        	'admin_email' => 'hieuauthor@yahoo.com',
+        	'admin_name' => 'shipper',
+        	'admin_email' => 'shipper@yahoo.com',
         	'admin_phone' => '123456789',
         	'admin_password' => md5('123456')
         ]);
 
         $thukho = Admin::create([
-        	'admin_name' => 'hieuuser',
-        	'admin_email' => 'hieuuser@yahoo.com',
+        	'admin_name' => 'user',
+        	'admin_email' => 'user@yahoo.com',
         	'admin_phone' => '123456789',
         	'admin_password' => md5('123456')
         ]);

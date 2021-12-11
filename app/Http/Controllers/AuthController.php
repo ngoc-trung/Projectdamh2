@@ -64,6 +64,15 @@ class AuthController extends Controller
             return redirect('/login-auth')->with('message' ,'Lỗi đăng nhập');
         }
     }
+    public function logout_auth(Request $request)
+{
+    Auth::logout();
 
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect('/login-auth');
+}
     
 }

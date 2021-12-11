@@ -19,16 +19,44 @@
                                 <form role="form" action="{{URL::to('/update-category-product/'.$edit_value->category_id)}}" method="post">
                                     {{ csrf_field() }}
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Tên Danh Mục</label>
-                                    <input type="text" name="category_product_name" value="{{$edit_value->category_name}}" class="form-control"  placeholder="Tên Danh Mục">
+                                    <label for="exampleInputEmail1">Tên danh mục</label>
+                                    <input type="text" value="{{$edit_value->category_name}}" onkeyup="ChangeToSlug();" name="category_product_name" class="form-control" id="slug" >
+                                </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Slug</label>
+                                    <input type="text" value="{{$edit_value->slug_category_product}}" name="slug_category_product" class="form-control" id="convert_slug" >
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Mô Tả Danh Mục</label>
-                                    <textarea class="form-control" name="category_product_desc" value="{{$edit_value->category_desc}}" id="" cols="30" rows="10" placeholder="Mô Tả Danh Mục">{{$edit_value->category_desc}}</textarea>
+                                    <label for="exampleInputPassword1">Mô tả danh mục</label>
+                                    <textarea style="resize: none" rows="8" class="form-control" name="category_product_desc" id="exampleInputPassword1" >{{$edit_value->category_desc}}</textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Thuộc danh mục</label>
+                                      <select name="category_parent" class="form-control input-sm m-bot15">
+                                        <option value="0">-----------Danh mục cha-----------</option>
+                                        @foreach($category as $key => $val)
 
-                                <button type="submit" name="update_category_product" class="btn btn-info">Cập Nhập</button>
-                            </form>
+                                            @if($val->category_parent==0)     
+                                                <option {{$val->category_id==$edit_value->category_id ? 'selected' : '' }} value="{{$val->category_id}}">{{$val->category_name}}</option>
+                                            @endif
+
+                                            @foreach($category as $key => $val2)
+
+                                                @if($val2->category_parent==$val->category_id) 
+
+                                                    <option {{$val2->category_id==$edit_value->category_id ? 'selected' : '' }} value="{{$val2->category_id}}">---{{$val2->category_name}}</option>  
+
+                                                @endif
+
+                                            @endforeach
+
+                                        @endforeach
+                                            
+                                            
+                                    </select>
+                                </div>
+                                <button type="submit" name="update_category_product" class="btn btn-info">Cập nhật danh mục</button>
+                                </form>
                             </div>
                             @endforeach
                         </div>
