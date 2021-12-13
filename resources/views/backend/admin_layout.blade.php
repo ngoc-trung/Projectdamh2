@@ -26,6 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- phan trang -->
 <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" type="text/css"/>
 
+<meta name="csrf-token" content="{{csrf_token() }}" />
 
 <!-- //calendar -->
 <!-- //font-awesome icons -->
@@ -246,6 +247,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 	</script>
 <!-- calendar -->
+
 	<script type="text/javascript" src="{{asset('public/backend/js/monthly.js')}}"></script>
 	<script type="text/javascript">
 		$(window).load( function() {
@@ -277,5 +279,150 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!-- //calendar -->
+
+<script type="text/javascript">
+ 
+    function ChangeToSlug()
+        {
+            var slug;
+         
+            //Lấy text từ thẻ input title 
+            slug = document.getElementById("slug").value;
+            slug = slug.toLowerCase();
+            //Đổi ký tự có dấu thành không dấu
+                slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+                slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+                slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+                slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+                slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+                slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+                slug = slug.replace(/đ/gi, 'd');
+                //Xóa các ký tự đặt biệt
+                slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
+                //Đổi khoảng trắng thành ký tự gạch ngang
+                slug = slug.replace(/ /gi, "-");
+                //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+                //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+                slug = slug.replace(/\-\-\-\-\-/gi, '-');
+                slug = slug.replace(/\-\-\-\-/gi, '-');
+                slug = slug.replace(/\-\-\-/gi, '-');
+                slug = slug.replace(/\-\-/gi, '-');
+                //Xóa các ký tự gạch ngang ở đầu và cuối
+                slug = '@' + slug + '@';
+                slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+                //In slug ra textbox có id “slug”
+            document.getElementById('convert_slug').value = slug;
+        }
+         
+
+   
+   
+</script>
+
+<!-- ====== ajax them gallery =======  -->
+		<script type="text/javascript" >
+			load_gallery();
+
+			function load_gallery(){
+					var pro_id = $('.pro_id').val();
+					var _token = $('input[name="_token"]').val();
+
+					 $.ajax({
+						url: "{{ url('select-gallery') }}",
+						method: "POST",
+						data:{pro_id:pro_id, _token:_token},
+						success:function(data){
+							$('#gallery_load').html(data);
+						}
+					 });
+				}
+
+			$('#file').change(function(){
+					var error = '';
+					var files = $('#file')[0].files;
+
+					if(files.length>5){
+						error+='<p>Bạn chọn tối đa chỉ được 4 ảnh</p>';
+					}else if(files.length==''){
+						error+='<p>Bạn không được bỏ trống ảnh</p>';
+					}else if(files.size > 2000000){
+						error+='<p>File ảnh không được lớn hơn 2MB</p>';
+					}
+
+					if(error==''){
+
+					}else{
+						$('#file').val('');
+						$('#error_gallery').html('<span class="text-danger">'+error+'</span>');
+						return false;
+					}
+
+     		});
+
+			 $(document).on('blur','.edit_gal_name',function(){
+					var gal_id = $(this).data('gal_id');
+					var gal_text = $(this).text();
+					var _token = $('input[name="_token"]').val();
+						$.ajax({
+							url:"{{url('/update-gallery-name')}}",
+							method:"POST",
+							data:{gal_id:gal_id,gal_text:gal_text,_token:_token},
+							success:function(data){
+								load_gallery();
+								$('#error_gallery').html('<span class="text-danger">Cập nhật tên hình ảnh thành công</span>');
+							}
+						});
+       		 });
+
+				$(document).on('click','.delete-gallery',function(){
+					var gal_id = $(this).data('gal_id');
+				
+					var _token = $('input[name="_token"]').val();
+					if(confirm('Bạn muốn xóa hình ảnh này không?')){
+						$.ajax({
+							url:"{{url('/delete-gallery')}}",
+							method:"POST",
+							data:{gal_id:gal_id,_token:_token},
+							success:function(data){
+								load_gallery();
+								$('#error_gallery').html('<span class="text-danger">Xóa hình ảnh thành công</span>');
+							}
+						});
+					}
+       			 });	
+
+					
+					$(document).on('change','.file_image',function(){
+
+							var gal_id = $(this).data('gal_id');
+							var image = document.getElementById("file-"+gal_id).files[0];
+
+							var form_data = new FormData();
+
+							form_data.append("file", document.getElementById("file-"+gal_id).files[0]);
+							form_data.append("gal_id",gal_id);
+
+
+
+								$.ajax({
+									url:"{{url('/update-gallery')}}",
+									method:"POST",
+									headers:{
+										'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+									},
+									data:form_data,
+
+									contentType:false,
+									cache:false,
+									processData:false,
+									success:function(data){
+										load_gallery();
+										$('#error_gallery').html('<span class="text-danger">Cập nhật hình ảnh thành công</span>');
+									}
+								});
+
+					});
+
+		</script>
 </body>
 </html>

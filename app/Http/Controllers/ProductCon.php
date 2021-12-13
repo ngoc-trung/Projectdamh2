@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
+use File;
 use Session;
 use App\Http\Requests;
+use App\Models\Gallery;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Redirect;
@@ -53,21 +55,31 @@ class ProductCon extends Controller
         $data['product_image'] = $request->product_status;
 
         $get_image = $request->file('product_image');
+
+        $path = 'public/upload/product/';
+        $part_gallery = 'public/upload/gallery/';
+
         if ($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/upload/product', $new_image);
-            $data['product_image'] = $new_image;
-            DB::table('tbl_product')->insert($data);
-            Session::put('message','Thêm Sản Phẩm Thành Công');
-            return Redirect::to('/all-product');
-        }
-        $data['product_image'] = '';
+            $get_image->move($path, $new_image);
 
-        DB::table('tbl_product')->insert($data);
-        Session::put('message','Thêm Thuong Hieu Sản Phẩm Thành Công');
-        return Redirect::to('/all-product');
+            File::copy($path.$new_image,$part_gallery.$new_image);
+            
+            $data['product_image'] = $new_image;
+           
+        }
+        
+        $pro_id = DB::table('tbl_product')->insertGetId($data);
+        $gallery = new Gallery();
+        $gallery->gallery_image = $new_image;
+        $gallery->gallery_name = $name_image;
+        $gallery->product_id = $pro_id;
+        $gallery->save();
+
+        Session::put('message','Thêm Sản Phẩm Thành Công');
+        return Redirect::to('add-product');
 
     }
 

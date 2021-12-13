@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use DB;
 
+use App\Models\Gallery;
+
 use Session;
 use App\Http\Requests;
 use GuzzleHttp\Psr7\Message;
@@ -44,16 +46,25 @@ class ProductController extends Controller
         ->where('tbl_product.product_id',$product_id)->get();
 
 
-        // Lấy nhừng sản phẩm liên quan
+       
         foreach($detail_product as $key => $value){
             $category_id = $value->category_id;
+            $product_id = $value->product_id;
         }
+
+        // Thêm Thư Viện Ảnh
+
+        $gallery = Gallery::where('product_id',$product_id)->get();
+
+         // Lấy nhừng sản phẩm liên quan
         $related_product = DB::table('tbl_product') 
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->join('tbl_brand','tbl_brand.brand_id','=','tbl_product.brand_id')
-        ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->get();
+        ->where('tbl_category_product.category_id',$category_id)->whereNotIn('tbl_product.product_id',[$product_id])->orderby(DB::raw('RAND()'))->paginate(3);
+        ;
 
-        return view('shop.product.product_detail')->with('category',$cate_product)->with('brand',$brand_product)->with('product_detail',$detail_product)->with('relate',$related_product);
+        return view('shop.product.product_detail')->with('category',$cate_product)->with('brand',$brand_product)->
+        with('product_detail',$detail_product)->with('relate',$related_product)->with('gallery',$gallery);
 
     }
 }

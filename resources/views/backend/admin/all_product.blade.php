@@ -32,6 +32,7 @@
               </label>
             </th>
             <th>Tên Sản Phẩm </th>
+            <th>Thêm Gallery</th>
             <th>Số Lượng </th>
             <th>Slug</th>
             <th>Giá Sản Phẩm</th>
@@ -47,6 +48,7 @@
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{ $pro_pro->product_name}}</td>
+            <td><a href="{{url('/add-gallery/'.$pro_pro->product_id)}}">Thêm Gallery</a> </td>
             <td>{{ $pro_pro->product_quantity}}</td>
             <td>{{ $pro_pro->product_slug }}</td>
             <td>{{ $pro_pro->product_price}}</td>

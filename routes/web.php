@@ -134,11 +134,28 @@ Route::post('/comfirm-order', [App\Http\Controllers\Shop\CheckoutController::cla
 
 Route::post('/check-coupon', [App\Http\Controllers\Shop\CouponController::class, 'check_coupon']);
 
+// Thêm Thư Viện Ảnh
+
+Route::get('/add-gallery/{product_id}', [App\Http\Controllers\Shop\GalleryController::class, 'add_gallery']);
+
+Route::post('/select-gallery', [App\Http\Controllers\Shop\GalleryController::class, 'select_gallery']);
+
+Route::post('/insert-gallery/{pro_id}', [App\Http\Controllers\Shop\GalleryController::class, 'insert_gallery']);
+
+Route::post('/update-gallery-name', [App\Http\Controllers\Shop\GalleryController::class, 'update_gallery_name']);
+
+Route::post('/delete-gallery', [App\Http\Controllers\Shop\GalleryController::class, 'delete_gallery']);
+
+Route::post('/update-gallery', [App\Http\Controllers\Shop\GalleryController::class, 'update_gallery']);
 
 
 
 
-// backend
+
+
+
+
+// ============================================= backend =========================================================
 
 
 Route::get('/admin_login', [App\Http\Controllers\AdminController::class, 'Admin']);

@@ -34,34 +34,14 @@
                 <div class="product-details-inner">
                     <div class="row">
                         <div class="col-lg-5">
-                            <div class="product-large-slider mb-20">
-                                <div class="pro-large-img img-zoom">
-                                    <img src="{{URL::to('public/upload/product/'.$value->product_image)}}" alt="" />
-                                </div>
-                                <div class="pro-large-img img-zoom">
-                                    <img src="{{URL::to('public/frontend/assets/img/product/product-4.jpg')}}" alt="" />
-                                </div>
-                                <div class="pro-large-img img-zoom">
-                                    <img src="{{URL::to('public/frontend/assets/img/product/product-1.jpg')}}" alt="" />
-                                </div>
-                            </div>
-                            <div class="pro-nav slick-row-10 slick-arrow-style">
-                                <div class="pro-nav-thumb">
-                                    <img src="{{URL::to('public/frontend/assets/img/product/product-details-img1.jpg')}}" alt="" />
-                                </div>
-                                <div class="pro-nav-thumb">
-                                    <img src="{{URL::to('public/frontend/assets/img/product/product-details-img1.jpg')}}" alt="" />
-                                </div>
-                                <div class="pro-nav-thumb">
-                                    <img src="{{URL::to('public/frontend/assets/img/product/product-details-img2.jpg')}}" alt="" />
-                                </div>
-                                <div class="pro-nav-thumb">
-                                    <img src="{{URL::to('public/frontend/assets/img/product/product-details-img2.jpg')}}" alt="" />
-                                </div>
-                                <div class="pro-nav-thumb">
-                                    <img src="{{URL::to('public/frontend/assets/img/product/product-details-img2.jpg')}}" alt="" />
-                                </div>
-                            </div>
+                            <ul id="imageGallery">
+                            @foreach($gallery as $key => $gal)
+                                <li data-thumb="{{asset('public/upload/gallery/' .$gal->gallery_image)}}" 
+                                data-src="{{asset('public/upload/gallery/' .$gal->gallery_image)}}">
+                                    <img  width="100%" alt="{{$gal->gallery_name}}" src="{{asset('public/upload/gallery/' .$gal->gallery_image)}}" />
+                                </li>
+                            @endforeach
+                            </ul>
                         </div>
                         <div class="col-lg-7">
                             <div class="product-details-des">

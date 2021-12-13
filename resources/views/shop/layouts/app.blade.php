@@ -20,6 +20,11 @@
     <link href="{{ asset('public/frontend/assets/css/style.css') }}" rel="stylesheet">
     <!-- Sweetalert.css -->
     <link href="{{ asset('public/frontend/assets/css/sweetalert.css') }}" rel="stylesheet">
+    <!-- LightSlider -->
+    <link href="{{ asset('public/frontend/assets/css/lightgallery.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/frontend/assets/css/lightslider.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/frontend/assets/css/prettify.css') }}" rel="stylesheet">
+
 
     {{--  <link href="{{ asset('public/frontend/assets/css/style-2.css') }}" rel="stylesheet">  --}}
 
@@ -49,7 +54,33 @@
 
     <script src="{{ asset('public/frontend/assets/js/sweetalert.js') }}"></script>
 
+    <!-- LightSlider -->
+    <script src="{{ asset('public/frontend/assets/js/lightgallery-all.min.js') }}"></script>
 
+    <script src="{{ asset('public/frontend/assets/js/lightslider.js') }}"></script>
+
+    <script src="{{ asset('public/frontend/assets/js/prettify.js') }}"></script>
+
+
+    <!-- LIghtSlider -->
+    <script  type="text/javascript">
+          $(document).ready(function() {
+                $('#imageGallery').lightSlider({
+                    gallery:true,
+                    item:1,
+                    loop:true,
+                    thumbItem:4,
+                    slideMargin:0,
+                    enableDrag: false,
+                    currentPagerPosition:'left',
+                    onSliderLoad: function(el) {
+                        el.lightGallery({
+                            selector: '#imageGallery .lslide'
+                        });
+                    }   
+                });  
+            });
+    </script>
 
     <!-- Ajax xác nhận đơn hàng -->
     <script type="text/javascript">
