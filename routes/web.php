@@ -43,7 +43,6 @@ Route::prefix('shop')->group(function () {
     //Trang trắng thông tin
     Route::get('/trang' ,[PageController::class,'index'] )->name('page.index');
 
-    //e cho vào no ko nhận id đâu Ctrl Z lại đi
 
     //Trang sản phẩm
     Route::get('/san-pham' ,[ProductController::class,'index'] )->name('san-pham');
