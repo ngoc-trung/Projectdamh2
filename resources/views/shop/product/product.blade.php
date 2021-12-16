@@ -13,10 +13,10 @@
             <div class="col-12">
                 <div class="breadcrumb-wrap">
                     <nav aria-label="breadcrumb">
-                        <h1>shop</h1>
+                        <h1>Sản phẩm</h1>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">shop</li>
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
                         </ul>
                     </nav>
                 </div>
