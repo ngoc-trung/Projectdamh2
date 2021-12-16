@@ -218,7 +218,7 @@
                                     <input type="hidden" value="1" class="cart_product_qty_{{$pro->product_id}}">
 
                                 <div class="product-thumb">
-                                    <a href="">
+                                <a href="{{URL::to('/shop/product-detail/'.$pro->product_id)}}">
                                         <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" alt="">
                                     <div class="add-to-links">
                                         <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a>
