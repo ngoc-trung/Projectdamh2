@@ -29,21 +29,16 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="about-text-wrap">
                     <h2><span>Cung cấp tốt nhất</span>Những sản phẩm cho bạn </h2>
-                    <p>We provide the best Beard oile all over the world. We are the worldd best store in indi
-                        for Beard Oil. You can buy our product without any hegitation because they truste us
-                        and buy our product without any hagitation because they belive and always happy buy our
-                        product.</p>
-                    <p>Some of our customer say’s that they trust us and buy our product without any hagitation
-                        because they belive us and always happy to buy our product.</p>
-                    <p>We provide the beshat they trusted us and buy our product without any hagitation because
-                        they belive us and always happy to buy.</p>
+                    <p>Chúng tôi là nhóm sinh viên làm bài tập.</p>
+                    <p>Đây là vài lời giới thiệu về các thành viên của nhóm và nhóm chúng tôi .</p>
+
                 </div>
             </div>
             <!-- About Text End -->
             <!-- About Image Start -->
             <div class="col-xl-5 col-lg-6 ml-auto">
                 <div class="about-image-wrap">
-                    <img src="{{ asset('public/frontend/assets/img/about/about.jpg') }}" alt="About" />
+                    <img src="{{ asset('public/frontend/assets/img/about/about.png') }}" alt="About" />
                 </div>
             </div>
             <!-- About Image End -->
@@ -66,7 +61,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb">
-                        <img src="{{ asset('public/frontend/assets/img/team/team_member_2.png') }}" alt="">
+                        {{--  <img src="{{ asset('public/frontend/assets/img/team/team_member_2.png') }}" alt="">  --}}
                         <div class="team-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -102,7 +97,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb">
-                        <img src="{{ asset('public/frontend/assets/img/team/team_member_3.jpg') }}" alt="">
+                        {{--  <img src="{{ asset('public/frontend/assets/img/team/team_member_3.jpg') }}" alt="">  --}}
                         <div class="team-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -120,7 +115,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb img-full">
-                        <img src="{{ asset('public/frontend/assets/img/team/team_member_4.jpg') }}" alt="">
+                        {{--  <img src="{{ asset('public/frontend/assets/img/team/team_member_4.jpg') }}" alt="">  --}}
                         <div class="team-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>

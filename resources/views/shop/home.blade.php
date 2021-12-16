@@ -104,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {{--  <div class="row">
                         <div class="col-12">
                             <div class="deals-item-wrapper">
                                 <div class="deals-carousel-active slick-arrow-style slick-row-15">
@@ -245,7 +245,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  --}}
                 </div>
             </div>
         </section>
@@ -371,7 +371,7 @@
                             <div class="group-list-item-wrapper">
                                 <div class="group-list-carousel">
                                     <!-- group list item start -->
-                                    <div class="group-slide-item">
+                                    {{--  <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
@@ -397,11 +397,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                     <!-- group list item end -->
 
                                     <!-- group list item start -->
-                                    <div class="group-slide-item">
+                                    {{--  <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
@@ -427,11 +427,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                     <!-- group list item end -->
 
                                     <!-- group list item start -->
-                                    <div class="group-slide-item">
+                                    {{--  <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
@@ -457,11 +457,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                     <!-- group list item end -->
 
                                     <!-- group list item start -->
-                                    <div class="group-slide-item">
+                                    {{--  <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
@@ -487,11 +487,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                     <!-- group list item end -->
 
                                     <!-- group list item start -->
-                                    <div class="group-slide-item">
+                                    {{--  <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
@@ -517,11 +517,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                     <!-- group list item end -->
 
                                     <!-- group list item start -->
-                                    <div class="group-slide-item">
+                                    {{--  <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
@@ -547,7 +547,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                     <!-- group list item end -->
                                 </div>
                             </div>
@@ -562,7 +562,7 @@
                                 <h4 class="group-list-title">Được xem nhiều nhất</h4>
                                 <div class="slick-append"></div>
                             </div>
-                            <div class="group-list-item-wrapper">
+                            {{--  <div class="group-list-item-wrapper">
                                 <div class="group-list-carousel">
                                     <!-- group list item start -->
                                     <div class="group-slide-item">
@@ -744,7 +744,7 @@
                                     </div>
                                     <!-- group list item end -->
                                 </div>
-                            </div>
+                            </div>  --}}
                         </div>
                     </div>
                     <!-- most view group end -->

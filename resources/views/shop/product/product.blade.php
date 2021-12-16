@@ -67,38 +67,38 @@
                     <!-- single sidebar start -->
                     <div class="sidebar-single">
                         <div class="sidebar-title">
-                            <h3>Price filter</h3>
+                            <h3>Khoảng giá</h3>
                         </div>
                         <div class="sidebar-body">
                             <ul class="radio-container">
                                 <li>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input" name="price" id="customCheck11">
-                                        <label class="custom-control-label" for="customCheck11">$7.00 - $9.00 (2)</label>
+                                        <label class="custom-control-label" for="customCheck11">2.000.000 - 4.000.000 VNĐ</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input" name="price" id="customCheck21">
-                                        <label class="custom-control-label" for="customCheck21">$10.00 - $12.00 (3)</label>
+                                        <label class="custom-control-label" for="customCheck21">4.000.000 - 6.000.000 VNĐ</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input" name="price" id="customCheck31">
-                                        <label class="custom-control-label" for="customCheck31">$17.00 - $20.00 (3)</label>
+                                        <label class="custom-control-label" for="customCheck31">6.000.000 - 8.000.000 VNĐ</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input" name="price" id="customCheck41">
-                                        <label class="custom-control-label" for="customCheck41"> $21.00 - $22.00 (1)</label>
+                                        <label class="custom-control-label" for="customCheck41"> 8.000.000 - 10.000.000 VNĐ</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input" name="price" id="customCheck51">
-                                        <label class="custom-control-label" for="customCheck51">$25.00 - $30.00 (3)</label>
+                                        <label class="custom-control-label" for="customCheck51">10.000.000 - 30.000.000 VNĐ</label>
                                     </div>
                                 </li>
                             </ul>
@@ -129,32 +129,32 @@
                     <!-- single sidebar start -->
                     <div class="sidebar-single">
                         <div class="sidebar-title">
-                            <h3>size</h3>
+                            <h3>Dung lượng RAM</h3>
                         </div>
                         <div class="sidebar-body">
                             <ul class="checkbox-container">
                                 <li>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck111">
-                                        <label class="custom-control-label" for="customCheck111">S (4)</label>
+                                        <label class="custom-control-label" for="customCheck111">Dưới 4GB</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck222">
-                                        <label class="custom-control-label" for="customCheck222">M (5)</label>
+                                        <label class="custom-control-label" for="customCheck222">4GB - 6GB</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck333">
-                                        <label class="custom-control-label" for="customCheck333">L (7)</label>
+                                        <label class="custom-control-label" for="customCheck333">8GB - 12GB</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck444">
-                                        <label class="custom-control-label" for="customCheck444">XL (3)</label>
+                                        <label class="custom-control-label" for="customCheck444">12GB trở lên</label>
                                     </div>
                                 </li>
                             </ul>
@@ -163,13 +163,49 @@
                     <!-- single sidebar end -->
 
                     <!-- single sidebar start -->
-                    <div class="sidebar-banner">
+                    <div class="sidebar-single">
+                        <div class="sidebar-title">
+                            <h3>Bộ nhớ trong</h3>
+                        </div>
+                        <div class="sidebar-body">
+                            <ul class="checkbox-container">
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck111">
+                                        <label class="custom-control-label" for="customCheck111">Dưới 32GB</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck222">
+                                        <label class="custom-control-label" for="customCheck222">32GB - 64GB</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck333">
+                                        <label class="custom-control-label" for="customCheck333">128GB - 256GB</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck444">
+                                        <label class="custom-control-label" for="customCheck444">512GB trở lên</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- single sidebar end -->
+
+                    <!-- single sidebar start -->
+                    {{--  <div class="sidebar-banner">
                         <div class="img-container">
                             <a href="#">
                                 <img src="{{ asset('public/frontend/assets/img/banner/sidebar-banner.jpg') }}" alt="">
                             </a>
                         </div>
-                    </div>
+                    </div>  --}}
                     <!-- single sidebar end -->
                 </aside>
             </div>
@@ -188,11 +224,11 @@
                                         <a href="#" data-target="list-view"><i class="fa fa-list"></i></a>
                                     </div>
                                     <div class="product-amount">
-                                        <p>Showing 1–16 of 21 results</p>
+                                        <p>Có 1–16 sản phẩm</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-6 order-1 order-md-2">
+                            {{--  <div class="col-lg-5 col-md-6 order-1 order-md-2">
                                 <div class="top-bar-right">
                                     <div class="product-short">
                                         <p>Sort By : </p>
@@ -207,7 +243,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  --}}
                         </div>
                     </div>
                     <!-- shop product top wrap start -->
@@ -232,11 +268,11 @@
                                 <div class="product-thumb">
                                     <a href="{{URL::to('/shop/product-detail/'.$pro->product_id)}}">
                                         <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" alt="">
-                                    <div class="add-to-links">
+                                    {{--  <div class="add-to-links">
                                         <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a>
                                         <a href="compare.html" data-bs-toggle="tooltip" title="Add to Compare"><i class="ion-stats-bars"></i></a>
                                         <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="ion-eye"></i></span></a>
-                                    </div>
+                                    </div>  --}}
                                 </div>
                                 <div class="product-content">
                                     <h5 class="product-name"><a>{{$pro->product_name}}</a></h5>
@@ -246,7 +282,7 @@
                                     </a>
                                     <button class="add-to-cart" name="add-to-cart" type="button" data-id_product="{{$pro->product_id}}">
                                     <div class="product-item-action">
-                                        <a class="btn btn-cart" ><i class="ion-bag"></i> Add To Cart</a>
+                                        <a class="btn btn-cart" ><i class="ion-bag"></i> Thêm giỏ hàng</a>
                                     </div>
                                     </button>
                                 </div>
@@ -264,11 +300,11 @@
                     <!-- start pagination area -->
                     <div class="paginatoin-area text-center">
                         <ul class="pagination-box">
-                            <li><a class="previous" href="#">Prev</a></li>
+                            <li><a class="previous" href="#">Trước</a></li>
                             <li class="active"><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
-                            <li><a class="next" href="#">Next</a></li>
+                            <li><a class="next" href="#">Sau</a></li>
                         </ul>
                     </div>
                     <!-- end pagination area -->
