@@ -106,7 +106,8 @@
                                 <i class="ion-android-menu"></i>Danh mục sản phẩm </div>
                             <nav class="category-menu">
                                 <ul class="categories-list">
-                                    <li class="menu-item-has-children"><a href="shop.html">Fruits & Vegetables</a>
+
+                                    {{-- <li class="menu-item-has-children"><a href="shop.html">Fruits & Vegetables</a>
                                         <!-- Mega Category Menu Start -->
                                         <ul class="category-mega-menu dropdown">
                                             <li class="menu-item-has-children">
@@ -210,7 +211,8 @@
                                     <li><a href="shop.html">Kitchenware</a></li>
                                     <li><a href="shop.html">Tools</a></li>
                                     <li><a href="shop.html">Electronics</a></li>
-                                    <li><a href="shop.html">Kitchenware</a></li>
+                                    <li><a href="shop.html">Kitchenware</a></li> --}}
+                                    
                                 </ul>
                             </nav>
                         </div>

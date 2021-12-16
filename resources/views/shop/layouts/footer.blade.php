@@ -56,10 +56,10 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-widget-item">
                                 <div class="footer-widget-title">
-                                    <h5>Group 3</h5>
+                                    <h5>Nhóm 3</h5>
                                 </div>
                                 <div class="footer-widget-body">
-                                    <p>Chúng tôi nhóm 3 môn Đồ Án Môn học</p>
+                                    <p>Chúng tôi nhóm 11 môn Tương tác người -máy</p>
                                     <h6 class="contact-info-title">Thông tin liên hệ</h6>
                                     <p>Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội</p>
                                     <div class="footer-social-link">
@@ -83,8 +83,7 @@
                                 <ul class="footer-widget-body">
                                     <li><a href="">Sản phẩm mới</a></li>
                                     <li><a href="">Top bán chạy</a></li>
-                                    <li><a href="">Chuỗi cửa hàng của chúng tôi</a></li>
-                                    <li><a href="">About us</a></li>
+                                    <li><a href="">Về chúng ôi</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -113,9 +112,7 @@
                                     <h5> Dịch vụ chăm sóc khách hàng</h5>
                                 </div>
                                 <ul class="footer-widget-body">
-                                    <li><a href="">Bản đồ</a></li>
-                                     <li><a href="">Lịch sử đặt hàng</a></li>
-                                    <li><a href="">Tài khoản của tôi</a></li>
+                                    <li><a href="">Liên hệ</a></li>
                                 </ul>
                             </div>
                         </div>

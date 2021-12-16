@@ -30,7 +30,7 @@ body {
     font-size: 14px;
     line-height: 1.8;
     font-weight: 400;
-    font-family: "Rubik", sans-serif;
+    font-family: "Helvetica", sans-serif;
     color: #555;
 }
 
@@ -4190,7 +4190,7 @@ only screen and (max-width: 767.98px) {
     line-height: 1;
     margin-top: -3px;
     text-transform: capitalize;
-    font-family: "Rubik", sans-serif;
+    font-family: "Helvetica", sans-serif;
 }
 
 /*------ shop categories area start ------*/
@@ -5864,7 +5864,7 @@ only screen and (min-width: 768px) and (max-width: 991.98px) {
     text-align: center;
     display: inline-block;
     text-transform: uppercase;
-    font-family: "Rubik", sans-serif;
+    font-family: "Helvetica", sans-serif;
     position: relative;
 }
 
@@ -5906,7 +5906,7 @@ only screen and (max-width: 767.98px) {
     font-weight: 500;
     margin-bottom: 15px;
     text-transform: uppercase;
-    font-family: "Rubik", sans-serif;
+    font-family: "Helvetica", sans-serif;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -6431,7 +6431,7 @@ only screen and (max-width: 767.98px) {
     margin-bottom: 40px;
     position: relative;
     text-transform: capitalize;
-    font-family: "Rubik", sans-serif;
+    font-family: "Helvetica", sans-serif;
 }
 
 @media only screen and (max-width: 479.98px) {
@@ -6740,7 +6740,7 @@ only screen and (max-width: 767.98px) {
     font-weight: 500;
     line-height: 1.2;
     text-transform: uppercase;
-    font-family: "Rubik", sans-serif;
+    font-family: "Helvetica", sans-serif;
 }
 
 @media only screen and (max-width: 767.98px) {
