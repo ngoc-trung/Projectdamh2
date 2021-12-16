@@ -32,4 +32,7 @@ class CategoryProductModel extends Model
     //          }
     //      }
     //  }
+    public function product(){
+        return $this->hasMany('App\Models\Product');
+    }
 }

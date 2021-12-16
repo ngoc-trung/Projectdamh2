@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use DB;
 
 use App\Models\CategoryProductModel;
+
+use App\Models\Product;
+
 use Auth;
 use Session;
 use App\Http\Requests;
@@ -102,6 +105,47 @@ class CategoryProductCon extends Controller
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->delete();
         Session::put('message',' Xoa danh muc san pham thanh cong');
         return Redirect::to('all-category-product');
+    }
+
+    public function show_category_home(Request $request, $category_id)
+    {
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); 
+
+        $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get(); 
+
+        $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_id','DESC')->paginate(6);
+
+
+
+        if(isset($_GET['sort_by'])){
+
+            $sort_by = $_GET['sort_by'];
+
+            if($sort_by=='giam_dan'){
+
+                $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_price','DESC')->paginate(6)->appends(request()->query());
+
+            }elseif($sort_by=='tang_dan'){
+
+              $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_price','ASC')->paginate(6)->appends(request()->query());
+
+          }elseif($sort_by=='kytu_za'){
+
+           $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_name','DESC')->paginate(6)->appends(request()->query());
+
+
+       }elseif($sort_by=='kytu_az'){
+
+        $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_name','ASC')->paginate(6)->appends(request()->query());
+    }
+}
+
+        $category_name = DB::table('tbl_category_product')->where('tbl_category_product.category_id',$category_id)->limit(1)->get();
+
+
+
+        return view('shop.category.show_category')->with('category',$cate_product)->with('brand',$brand_product)->
+        with('category_by_id',$category_by_id)->with('category_name',$category_name);
     }
 }
 

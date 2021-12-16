@@ -49,7 +49,7 @@
                                             <ul class="dropdown" id="{{$cate->slug_category_product}}">
                                                 @foreach($category as $key => $cate_sub)
                                                 @if($cate_sub->category_parent==$cate->category_id)
-                                                <li><a href="">{{$cate_sub->category_name}}</a></li>
+                                                     <li><a href="{{URL::to('/danh-muc/'.$cate_sub->category_id)}}">{{$cate_sub->category_name}}</a></li>
                                                 @endif
                                                 @endforeach
                                             </ul>

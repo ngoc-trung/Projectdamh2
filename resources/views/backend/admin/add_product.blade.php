@@ -46,11 +46,20 @@
                                     <textarea class="form-control" name="product_content" id="" cols="30" rows="10" ></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Danh Muc San Pham</label>
-                                    <select name="product_cate" id="">
+                                    <label for="exampleInputPassword1">Danh mục sản phẩm</label>
+                                      <select name="product_cate" class="form-control input-sm m-bot15">
                                         @foreach($cate_product as $key => $cate)
-                                        <option value="{{$cate->category_id}}">{{$cate->category_name}}</option>
+                                            @if($cate->category_parent==0)
+                                                <option style="font-size: 15px" value="{{$cate->category_id}}">{{$cate->category_name}}</option>
+                                                @foreach($cate_product as $key => $cate_sub)
+                                                    @if($cate_sub->category_parent!=0 && $cate_sub->category_parent==$cate->category_id)
+                                                    <option style="color: red;font-size: 15px" value="{{$cate_sub->category_id}}">---{{$cate_sub->category_name}}</option>   
+                                                    @endif
+                                                @endforeach
+
+                                            @endif
                                         @endforeach
+                                            
                                     </select>
                                 </div>
 

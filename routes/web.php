@@ -113,6 +113,10 @@ Route::post('/tim-kiem', [App\Http\Controllers\Shop\SearchController::class, 'ti
 Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'login_checkout']);
 // Dang kys tai khoan de thanh toan
 
+//  show category 
+Route::get('/danh-muc/{category_id}', [App\Http\Controllers\CategoryProductCon::class, 'show_category_home']);
+
+
 
 Route::post('/add-customer', [App\Http\Controllers\Shop\CheckoutController::class, 'add_customer']);
 
