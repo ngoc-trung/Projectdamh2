@@ -27,7 +27,10 @@ class CheckoutController extends Controller
 
     public function login_checkout(){
 
-        return view('shop.checkout.login_checkout');
+        //hien thi danh muc ra trang san pham
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+
+        return view('shop.checkout.login_checkout')->with('category',$cate_product);
     }
 
     public function add_customer(Request $request){
@@ -48,7 +51,11 @@ class CheckoutController extends Controller
     }
 
     public function checkout(){
-        return view('shop.checkout.show_checkout');
+
+        //hien thi danh muc ra trang san pham
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+
+        return view('shop.checkout.show_checkout')->with('category',$cate_product);
     }
 
     public function save_checkout(Request $request){
