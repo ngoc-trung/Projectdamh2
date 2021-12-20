@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Session as FacadesSession;
 class ProductController extends Controller
 {
     public function index(){
+        
         //hien thi danh muc ra trang san pham
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); // Lay id tu bang catagory_product
 

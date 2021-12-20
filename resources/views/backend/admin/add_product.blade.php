@@ -19,7 +19,7 @@
                                     {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên San Pham</label>
-                                    <input type="text" name="product_name" class="form-control"  placeholder="Tên Danh Mục">
+                                    <input type="text" name="product_name" class="form-control" onkeyup="ChangeToSlug();" id="slug"  placeholder="Tên Danh Mục">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Thêm Số Lượng</label>

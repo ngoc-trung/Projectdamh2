@@ -69,7 +69,9 @@ class CartController extends Controller
         $meta_title = "Giỏ Hàng Ajax";
         $url_canonical = $request->url();
 
-        return view('shop.cart.cart')->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('meta_canonical',$url_canonical);
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+
+        return view('shop.cart.cart')->with('category', $cate_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('meta_canonical',$url_canonical);
 
     }
 

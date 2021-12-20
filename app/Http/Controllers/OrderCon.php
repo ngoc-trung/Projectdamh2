@@ -24,7 +24,7 @@ class OrderCon extends Controller
 
     public function view_order($order_code)
     {
-        $order_details = OrderDetails::where('order_code',$order_code)->get();
+        $order_details = OrderDetails::with('product')->where('order_code',$order_code)->get();
         $order = Order::where('order_code',$order_code)->get();
 
         foreach($order as $key => $ord){
@@ -36,9 +36,9 @@ class OrderCon extends Controller
         $shipping = Shipping::where('shipping_id',$shipping_id)->first();
 
 
-        $order_details = OrderDetails::with('product')->where('order_code', $order_code)->get();
+        $order_details_product = OrderDetails::with('product')->where('order_code', $order_code)->get();
 
-		foreach($order_details as $key => $order_d){
+		foreach($order_details_product as $key => $order_d){
 
 			$product_coupon = $order_d->product_coupon;
 		}
@@ -51,7 +51,7 @@ class OrderCon extends Controller
 			$coupon_number = 0;
 		}
 		
-		return view('backend.admin.order.view_order')->with(compact('order_details','customer','shipping','coupon_condition','order_details','coupon_number'));
+		return view('backend.admin.order.view_order')->with(compact('order_details','customer','shipping','coupon_condition','coupon_number'));
        
 
         

@@ -119,6 +119,7 @@
               Thứ Tự
             </th>
             <th>Tên sản phẩm</th>
+            <th>Số lượng trong kho</th>
             <th>Mã giảm giá</th>
             <th>Số lượng</th>
             <th>Giá bán</th>
@@ -143,6 +144,7 @@
            
             <td><i>{{$i}}</i></td>
             <td>{{$details->product_name}}</td>
+            <td>{{$details->product_quantity}}</td>
             <td>@if($details->product_coupon!='no')
               {{$details->product_coupon}}
               @else 

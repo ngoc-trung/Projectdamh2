@@ -282,63 +282,58 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-9">
+                    <div class="col-md">
                             <div class="products-area-wrapper mt-30">
                                 <div class="tab-content">
-
-                                    <div class="tab-pane fade active show" id="four">
-
+                                
+                                    <div class="tab-pane fade active show" id="one">
                                         <div class="features-categories-wrapper">
                                             <div class="features-categories-active slick-arrow-style">
-                                                <!-- product item start -->
-
+                                                
+                                                <!-- product item start -->@foreach($all_product as $key => $pro)
+                                                
                                                 <div class="product-slide-item">
                                                     <div class="product-item">
-                                                        <div class="product-thumb">
-                                                            <a href="product-details.html">
-                                                                <img class="pri-img"
-                                                                    src="" alt="">
-                                                                <img class="sec-img"
-                                                                    src="" alt="">
-                                                            </a>
-                                                            <div class="add-to-links">
-                                                                <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="ion-android-favorite-outline"></i></a>
-                                                                <a href="compare.html" data-bs-toggle="tooltip"
-                                                                    title="Add to Compare"><i
-                                                                        class="ion-stats-bars"></i></a>
-                                                                <a href="#" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick_view"><span
-                                                                        data-bs-toggle="tooltip" title="Quick View"><i
-                                                                            class="ion-eye"></i></span></a>
+                                                        <form action="">
+                                                             @csrf
+                                                            <input type="hidden" value="{{$pro->product_id}}" class="cart_product_id_{{$pro->product_id}}">
+                                                            <input type="hidden" value="{{$pro->product_name}}" class="cart_product_name_{{$pro->product_id}}">
+                                                            <input type="hidden" value="{{$pro->product_image}}" class="cart_product_image_{{$pro->product_id}}">
+                                                            <input type="hidden" value="{{$pro->product_price}}" class="cart_product_price_{{$pro->product_id}}">
+                                                            <input type="hidden" value="1" class="cart_product_qty_{{$pro->product_id}}">
+                                                        
+                                                                <div class="product-thumb">
+                                                                    <a href="{{URL::to('/shop/product-detail/'.$pro->product_id)}}">
+                                                                    <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" alt="">
+                                                                    </a>
+                                                                    <div class="add-to-links">
+                                                                        <a href="wishlist.html" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                                        <a href="compare.html" data-bs-toggle="tooltip" title="Add to Compare"><i class="ion-stats-bars"></i></a>
+                                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span data-bs-toggle="tooltip" title="Quick View"><i class="ion-eye"></i></span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-content">
+                                                                    <h5 class="product-name">{{$pro->product_name}}</h5>
+                                                                    <div class="price-box">
+                                                                    <span class="price-regular">{{number_format($pro->product_price).' '.'VND'}}</span>
+                                                                        <span class="price-old"><del>{{number_format($pro->product_price).' '.'VND'}}</del></span>
+                                                                    </div>
+                                                                    <button class="add-to-cart4" name="add-to-cart4" type="button" data-id_product="{{$pro->product_id}}">
+                                                                        <div class="product-item-action">
+                                                                            <a class="btn btn-cart" ><i class="ion-bag"></i> Thêm giỏ hàng</a>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h5 class="product-name"><a href="product-details.html">
-                                                            </a></h5>
-                                                            <div class="price-box">
-                                                                <span class="price-regular"></span>
-
-                                                            </div>
-                                                            <div class="product-item-action">
-                                                                <a class="btn btn-cart" href="cart.html"><i
-                                                                        class="ion-bag"></i> Add To Cart</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
+                                                <!-- product item start --> @endforeach
 
-                                                <!-- product item start -->
+
+                                            </div>
                                         </div>
-
                                     </div>
-
-                                </div>
-                                <div class="img-container">
-                                    <a href="#">
-                                        <img src="assets/img/banner/ca2_bottom.jpg" alt="">
-                                    </a>
+                               
                                 </div>
                             </div>
                         </div>

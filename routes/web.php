@@ -96,6 +96,9 @@ Route::prefix('shop')->group(function () {
 
 
     });
+
+    Route::get('category',[App\Http\Controllers\Shop\HomeController::class ,'category']);
+
     Route::get('/del-product/{session_id}', [App\Http\Controllers\Shop\CartController::class, 'del_product']);
 
     Route::get('/del-all-product', [App\Http\Controllers\Shop\CartController::class, 'del_all_product']);
@@ -115,6 +118,11 @@ Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::cla
 
 //  show category 
 Route::get('/danh-muc/{category_id}', [App\Http\Controllers\CategoryProductCon::class, 'show_category_home']);
+
+
+
+
+
 
 
 
