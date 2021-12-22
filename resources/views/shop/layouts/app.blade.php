@@ -62,26 +62,6 @@
     <script src="{{ asset('public/frontend/assets/js/prettify.js') }}"></script>
 
 
-    <!-- LIghtSlider -->
-    <script  type="text/javascript">
-          $(document).ready(function() {
-                $('#imageGallery').lightSlider({
-                    gallery:true,
-                    item:1,
-                    loop:true,
-                    thumbItem:4,
-                    slideMargin:0,
-                    enableDrag: false,
-                    currentPagerPosition:'left',
-                    onSliderLoad: function(el) {
-                        el.lightGallery({
-                            selector: '#imageGallery .lslide'
-                        });
-                    }   
-                });  
-            });
-    </script>
-
     <!-- Ajax xác nhận đơn hàng -->
     <script type="text/javascript">
         $(document).ready(function(){
@@ -132,6 +112,28 @@
         });
 
     </script>
+
+    <!-- LIghtSlider -->
+    <script  type="text/javascript">
+          $(document).ready(function() {
+                $('#imageGallery').lightSlider({
+                    gallery:true,
+                    item:1,
+                    loop:true,
+                    thumbItem:4,
+                    slideMargin:0,
+                    enableDrag: false,
+                    currentPagerPosition:'left',
+                    onSliderLoad: function(el) {
+                        el.lightGallery({
+                            selector: '#imageGallery .lslide'
+                        });
+                    }   
+                });  
+            });
+    </script>
+
+    
 
 
     <!-- Thêm sp vào giỏ hàng -->

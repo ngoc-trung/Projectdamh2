@@ -43,6 +43,17 @@
                                     <label for="exampleInputPassword1">Nhập số tiền hoặc số %</label>
                                     <input class="form-control" name="coupon_number" id="" cols="30" rows="10" >
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ngày bắt đầu </label>
+                                    <input type="text" name="coupon_date_start" class="form-control" id="start_coupon">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ngày Kết Thúc</label>
+                                    <input type="text" name="coupon_date_end" class="form-control"  id="end_coupon">
+                                </div>
+
                                 <button type="submit" name="add_coupon" class="btn btn-info">Thêm Mã</button>
                             </form>
                             </div>

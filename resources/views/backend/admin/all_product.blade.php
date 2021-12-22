@@ -35,6 +35,7 @@
             <th>Thêm Gallery</th>
             <th>Số Lượng </th>
             <th>Slug</th>
+            <th>Màu Sắc</th>
             <th>Giá Sản Phẩm</th>
             <th>Hình Ảnh Sản Phẩm</th>
             <th>Danh Mục</th>
@@ -51,6 +52,7 @@
             <td><a href="{{url('/add-gallery/'.$pro_pro->product_id)}}">Thêm Gallery</a> </td>
             <td>{{ $pro_pro->product_quantity}}</td>
             <td>{{ $pro_pro->product_slug }}</td>
+            <td>{{ $pro_pro->product_color }}</td>
             <td>{{ $pro_pro->product_price}}</td>
 
             <td><img src="public/upload/product/{{ $pro_pro->product_image}}" height="100" width="100"></td>

@@ -34,6 +34,10 @@
                                     <input type="text" name="product_price" class="form-control"  >
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Thêm Color</label>
+                                    <input type="text" name="product_color" class="form-control"  >
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Hình Ảnh Sản Phẩm</label>
                                     <input type="file" name="product_image" class="form-control" rows="8" >
                                 </div>

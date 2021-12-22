@@ -95,13 +95,8 @@
                                     <h5>Thương Hiệu: {{$value->brand_name}} </h5>
                                 </div>
                                 <div class="color-option mb-26">
-                                    <h5>color :</h5>
-                                    <select class="nice-select">
-                                        <option>Golden</option>
-                                        <option>White</option>
-                                        <option>Blue</option>
-                                        <option>Pink</option>
-                                    </select>
+                                    <h5>color : {{$value->product_color}}</h5>
+                                   
                                 </div>
                                 <div class="useful-links mt-28">
                                     <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Compare"><i

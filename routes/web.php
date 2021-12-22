@@ -142,9 +142,12 @@ Route::post('/login-customer', [App\Http\Controllers\Shop\CheckoutController::cl
 Route::post('/comfirm-order', [App\Http\Controllers\Shop\CheckoutController::class, 'comfirm_order']);
 
 // Thêm Mã Giảm Giá
-
-
 Route::post('/check-coupon', [App\Http\Controllers\Shop\CouponController::class, 'check_coupon']);
+
+// Xoa Ma Giam Gia
+Route::get('/unset-coupon', [App\Http\Controllers\Shop\CouponController::class, 'unset_coupon']);
+
+
 
 // Thêm Thư Viện Ảnh
 
@@ -267,3 +270,15 @@ Route::get('/login-auth', [App\Http\Controllers\AuthController::class, 'login_au
 Route::get('/logout-auth', [App\Http\Controllers\AuthController::class, 'logout_auth']);
 
 
+//  Quản lý khách hàng
+
+Route::get('/customer', [App\Http\Controllers\CustomerCon::class, 'view_customer']);
+
+
+//  Gui Email cho khach hang
+
+Route::get('/send-email', [App\Http\Controllers\MailCon::class, 'send_email']);
+
+Route::get('/send-coupon/{coupon_times}/{coupon_condition}/{coupon_number}/{coupon_code}', [App\Http\Controllers\MailCon::class, 'send_coupon']);
+
+Route::get('/mail-example', [App\Http\Controllers\MailCon::class, 'mail_exampele']);

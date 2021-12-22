@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 
 use DB;
+use Carbon\Carbon;
 
 use Session;
 use App\Http\Requests;
@@ -34,6 +35,8 @@ class CouponCon extends Controller
         $coupon->coupon_code= $data['coupon_code'];
         $coupon->coupon_times = $data['coupon_times'];
         $coupon->coupon_condition = $data['coupon_condition'];
+        $coupon->coupon_date_start = $data['coupon_date_start'];
+        $coupon->coupon_date_end = $data['coupon_date_end'];
 
         $coupon->save();
 
@@ -44,8 +47,10 @@ class CouponCon extends Controller
 
     public function all_coupon()
     {
+        $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d/m/Y');
+
         $coupon = Coupon::orderby('coupon_id','DESC')->get();
-        return view('backend.admin.coupon.all_coupon')->with(compact('coupon'));
+        return view('backend.admin.coupon.all_coupon')->with(compact('coupon','now'));
     }
 
     public function delete_coupon($coupon_id)

@@ -162,7 +162,7 @@ class OrderCon extends Controller
 		<td>'.$shipping->shipping_address.'</td>
 		<td>'.$shipping->shipping_phone.'</td>
 		<td>'.$shipping->shipping_email.'</td>
-		<td>'.$shipping->shipping_notes.'</td>
+		<td>'.$shipping->shipping_note.'</td>
 
 		</tr>';
 

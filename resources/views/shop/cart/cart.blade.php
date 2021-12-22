@@ -162,6 +162,12 @@
                                             
                                         </tr>
                                         @endif
+                                        <tr>
+                                            @if(Session::get('coupon'))
+                                                 <a class="btn btn btn__bg check_out" href="{{url('/unset-coupon')}}">Xóa mã khuyến mãi</a>
+                                            @endif
+                                        </tr>
+                                            
                                     </tbody>
                                 </table>
                             </div>

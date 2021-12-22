@@ -8,6 +8,7 @@
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-4">
+       
       </div>
       <div class="col-sm-3">
         <div class="input-group">
@@ -29,16 +30,20 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
+            
             <th>Tên Mã Giảm Giá</th>
             <th>Mã Giảm Giá</th>
             <th>Số Lượng Mã</th>
             <th>Tính Năng Mã</th>
             <th>Số Giảm</th>
+            <th>Ngày Bắt Đầu </th>
+            <th>Ngày Kết Thúc</th>
+            <th>Tình Trạng</th>
+            <th>Hết Hạn</th>
+            <th>Quan Ly</th>
+            <th>Gui</th>
+
+
             
             <th style="width:30px;"></th>
           </tr>
@@ -46,7 +51,6 @@
         <tbody>
             @foreach($coupon as $key => $cou)
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{ $cou->coupon_name}}</td>
             <td>{{ $cou->coupon_code}}</td>
             <td>{{ $cou->coupon_times}}</td>
@@ -84,10 +88,57 @@
                     ?>
                 </span>
             </td>
+            <td>{{ $cou->coupon_date_start}}</td>
+            <td>{{ $cou->coupon_date_end}}</td>
+            <td>
+                <span>
+                      <?php
+                          if ($cou->coupon_status==1) {
+                      ?>
+                       <span style="color:green">Đang Kích Hoạt </span> 
+                      <?php
+                          }else{
+    
+                      ?>
+                          <span style="color:red">Đã Khóa </span>
+                      <?php
+                          }
+
+                      ?>
+                  </span>
+            </td>
+            <td>
+                <span>
+                      <?php
+                          if ($cou->coupon_date_end>$now) {
+                      ?>
+                       <span style="color:green">Còn Hạn </span> 
+                      <?php
+                          }else{
+    
+                      ?>
+                          <span style="color:red">Đã Hết Hạn</span>
+                      <?php
+                          }
+
+                      ?>
+                  </span>
+            </td>
+
             <td>
               
               <a onclick="return confirm('Bạn có muốn xóa mã giảm giá này không ?')" href="{{URL::to('/delete-coupon/'.$cou->coupon_id)}}">
                   <i class="fa fa-times text-danger text" style="font-size: 20px;"></i></a>
+            </td>
+            <td>
+                      <p><a href="{{url('/send-coupon',[
+                     
+                      'coupon_times'=>  $cou->coupon_times,
+                      'coupon_condition'=>  $cou->coupon_condition,
+                      'coupon_number'=>  $cou->coupon_number,
+                      'coupon_code'=>  $cou->coupon_code,
+
+                    ])}}" class="btn btn-success">Gửi Mã Giảm Giá</a></p>
             </td>
           </tr>
           @endforeach

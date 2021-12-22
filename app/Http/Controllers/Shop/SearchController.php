@@ -27,6 +27,8 @@ class SearchController extends Controller
 
         $search_product = DB::table('tbl_product')->where('product_name','like','%'.$keywords.'%')->get();
 
+        
+
         return view('shop.search')->with('category',$cate_product)->with('brand',$brand_product)->with('search_product',$search_product);
     }
 }

@@ -26,6 +26,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- phan trang -->
 <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" type="text/css"/>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
 <meta name="csrf-token" content="{{csrf_token() }}" />
 
 <!-- //calendar -->
@@ -117,9 +119,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </ul>
 				</li>
 				<li>
-					<a href="">
+					<a href="{{URL::to('/customer')}}">
                         <i class="fa fa-book"></i>
-                        <span>Quản lý nhân viên</span>
+                        <span>Quản lý khách hàng</span>
                     </a>
 				</li>
 				<li>
@@ -181,6 +183,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('public/backend/js/jquery.slimscroll.js')}}"></script>
 <script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -424,5 +431,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					});
 
 		</script>
+
+		
+
+			<script type="text/javascript">
+			
+			$( function() {
+				$( "#start_coupon" ).datepicker({
+					prevText:"Tháng trước",
+					nextText:"Tháng sau",
+					dateFormat:"dd/mm/yy",
+					dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+					duration: "slow"
+				});
+				$( "#end_coupon" ).datepicker({
+					prevText:"Tháng trước",
+					nextText:"Tháng sau",
+					dateFormat:"dd/mm/yy",
+					dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+					duration: "slow"
+				});
+			} );
+			
+			</script>
 </body>
 </html>

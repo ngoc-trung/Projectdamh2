@@ -61,7 +61,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb">
-                        {{--  <img src="{{ asset('public/frontend/assets/img/team/team_member_2.png') }}" alt="">  --}}
+                          <img height="380px" src="{{ asset('public/frontend/assets/img/team/trug.jpg') }}" alt=""> 
                         <div class="team-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="team-content text-center">
-                        <h3>Nguyễn Ngọc Trung/h3>
+                        <h3>Nguyễn Ngọc Trung</h3>
                         <h6>Trưởng nhóm</h6>
                         <p>Phụ trách về giao nhiệm vụ cho các thành viên, tạo giao diện và thiết kế backend.</p>
                     </div>
@@ -79,7 +79,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb">
-                        <img src="{{ asset('public/frontend/assets/img/team/team_member_1.png') }}" alt="">
+                        <img height="380px" src="{{ asset('public/frontend/assets/img/team/team_member_1.png') }}" alt="">
                         <div class="team-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -97,7 +97,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb">
-                        {{--  <img src="{{ asset('public/frontend/assets/img/team/team_member_3.jpg') }}" alt="">  --}}
+                         <img height="380px" src="{{ asset('public/frontend/assets/img/team/team_member_2.jpg') }}" alt=""> 
                         <div class="team-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -115,7 +115,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="team-member mb-30">
                     <div class="team-thumb img-full">
-                        {{--  <img src="{{ asset('public/frontend/assets/img/team/team_member_4.jpg') }}" alt="">  --}}
+                      <img height="380px"  src="{{ asset('public/frontend/assets/img/team/team_member_4.jpg') }}" alt="">
                         <div class="team-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>

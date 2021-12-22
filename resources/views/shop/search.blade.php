@@ -43,16 +43,19 @@
                             <div class="shop-categories">
                                 @foreach($category as $key => $cate)
                                 <nav>
+                                    @if($cate->category_parent == 0)
                                     <ul class="mobile-menu">
                                         <li class="menu-item-has-children"><a href="#">{{$cate->category_name}}</a>
-                                            <ul class="dropdown">
-                                                <li><a href="product-details.html">fresh food</a></li>
-                                                <li><a href="product-details.html">junk food</a></li>
-                                                <li><a href="product-details.html">wet food</a></li>
-                                                <li><a href="product-details.html">dry food</a></li>
+                                            <ul class="dropdown" id="{{$cate->slug_category_product}}">
+                                                @foreach($category as $key => $cate_sub)
+                                                @if($cate_sub->category_parent==$cate->category_id)
+                                                     <li><a href="{{URL::to('/danh-muc/'.$cate_sub->category_id)}}">{{$cate_sub->category_name}}</a></li>
+                                                @endif
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>
+                                    @endif
                                 </nav>
                                 @endforeach
                             </div>

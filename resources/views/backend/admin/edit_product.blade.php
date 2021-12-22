@@ -37,6 +37,10 @@
                                     <input type="text" name="product_price" class="form-control" value="{{$pro->product_price}}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Thêm Color</label>
+                                    <input type="text" name="product_color" class="form-control" value="{{$pro->product_color}}">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Hình Ảnh Sản Phẩm</label>
                                     <input type="file" name="product_image" class="form-control" rows="8">
                                     <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" height="100" width="100" style="margin-top: 10px;" alt="">

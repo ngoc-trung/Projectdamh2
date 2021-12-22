@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Session as FacadesSession;
 use App\Models\Shipping;
 use App\Models\Order;
 use App\Models\OrderDetails;
-
+use App\Models\Coupon;
 use App\Http\Controllers\Shop\CartController;
 
 
@@ -79,6 +79,8 @@ class CheckoutController extends Controller
 
     public function logout_checkout(){
         Session::flush();
+        Session::forget('coupon');
+        Session::forget('customer_id');
         return Redirect::to('login-checkout');
     }
 
@@ -88,10 +90,13 @@ class CheckoutController extends Controller
         $password = md5($request->password_account);
 
         $result = DB::table('tbl_customer')->where('customer_email',$email)->where('customer_password',$password)->first();
+        if (Session::get('coupon')==true) {
+            Session::forget('coupon');
+        }
 
         if ($result) {
             Session::put('customer_id',$result->customer_id);
-            return Redirect::to('/checkout');
+            return Redirect::to('/shop');
         }else{
             return Redirect::to('/login-checkout');
         }
@@ -101,6 +106,16 @@ class CheckoutController extends Controller
     public function comfirm_order(Request $request)
     {
         $data = $request ->all();
+
+        $coupon = Coupon::where('coupon_code',$data['order_coupon'])->first();
+        $coupon->coupon_used = $coupon->coupon_used.','.Session::get('customer_id');
+        $coupon->coupon_times = $coupon->coupon_times - 1;
+
+
+        $coupon->save();
+
+
+// lay ten khach hang
         $shipping = new Shipping();
 
         $shipping -> shipping_name = $data['shipping_name'];
