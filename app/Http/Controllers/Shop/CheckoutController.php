@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use DB;
 
+use Mail;
 use Session;
 use App\Http\Requests;
 use GuzzleHttp\Psr7\Message;
@@ -19,7 +20,8 @@ use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\Coupon;
 use App\Http\Controllers\Shop\CartController;
-
+use Carbon\Carbon;
+use App\Models\Customer;
 
 session_start();
 class CheckoutController extends Controller
@@ -106,14 +108,16 @@ class CheckoutController extends Controller
     public function comfirm_order(Request $request)
     {
         $data = $request ->all();
-
+        if($data['order_coupon']!='no'){
         $coupon = Coupon::where('coupon_code',$data['order_coupon'])->first();
         $coupon->coupon_used = $coupon->coupon_used.','.Session::get('customer_id');
         $coupon->coupon_times = $coupon->coupon_times - 1;
-
+        $coupon_mail = $coupon->coupon_code;
 
         $coupon->save();
-
+        }else{
+            $coupon_mail = 'không có sử dụng';
+        }
 
 // lay ten khach hang
         $shipping = new Shipping();
@@ -156,6 +160,52 @@ class CheckoutController extends Controller
           }
         //   Session::forget('coupon');
         //   Session::forget('cart');
+
+        //send mail confirm
+        $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y H:i:s');
+
+        $title_mail = "Đơn hàng xác nhận ngày".' '.$now;
+
+        $customer = Customer::find(Session::get('customer_id'));
+            
+        $data['email'][] = $customer->customer_email;
+
+        //lay gio hang
+        if(Session::get('cart')==true){
+
+            foreach(Session::get('cart') as $key => $cart_mail){
+
+            $cart_array[] = array(
+                'product_name' => $cart_mail['product_name'],
+                'product_price' => $cart_mail['product_price'],
+                'product_qty' => $cart_mail['product_qty']
+            );
+
+            }
+
+        }
+
+        $shipping_array = array(
+            
+            'customer_name' => $customer->customer_name,
+            'shipping_name' => $data['shipping_name'],
+            'shipping_email' => $data['shipping_email'],
+            'shipping_phone' => $data['shipping_phone'],
+            'shipping_address' => $data['shipping_address'],
+            'shipping_note' => $data['shipping_note'],
+            'shipping_method' => $data['shipping_method']
+        
+          );
+           //lay ma giam gia, lay coupon code
+            $ordercode_mail = array(
+                'coupon_code' => $coupon_mail,
+                'order_code' => $checkout_code,
+            );
+
+            Mail::send('shop.mail.mail_order',  ['cart_array'=>$cart_array, 'shipping_array'=>$shipping_array ,'code'=>$ordercode_mail] , function($message) use ($title_mail,$data){
+                $message->to($data['email'])->subject($title_mail);//send this mail with subject
+                $message->from($data['email'],$title_mail);//send from this mail
+            });
 
     }
 }

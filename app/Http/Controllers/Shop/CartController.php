@@ -107,6 +107,7 @@ class CartController extends Controller
         $cart = Session::get('cart');
         if ($cart==true) {
             foreach($data['cart_qty'] as $key => $qty){
+                
                 foreach($cart as $session => $val){
                     if ($val['session_id']==$key) {
 

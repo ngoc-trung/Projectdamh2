@@ -86,7 +86,7 @@
                                                 </td> 
                                                 <td class="pro-subtotal"><span>{{number_format($subtotal,0,',','.')}} đ</span></td>
 
-                                                <td class="pro-remove"><a href="{{URL::to('/del-product/'.$val['session_id'])}}"><i class="fa fa-trash-o"></i></a></td>
+                                                <td class="pro-remove"><a href="{{url('/del-product/'.$val['session_id'])}}"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
                                    @endforeach
                                    <tr>
