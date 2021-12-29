@@ -6,6 +6,30 @@
           <div class="header-top theme-color">
             <div class="container bdr-bottom">
                 <div class="row align-items-center">
+                        <div class="col-lg-6">
+                                    <div class="header-top-settings">
+                                        <ul class="nav align-items-center">
+                                            <li class="language">
+                                                <span>Language:</span>
+                                                <img src="assets/img/icon/en.png" alt=""> English
+                                                <i class="fa fa-angle-down"></i>
+                                                <ul class="dropdown-list">
+                                                    <li><a href="#"><img src="assets/img/icon/en.png" alt=""> english</a></li>
+                                                    <li><a href="#"><img src="assets/img/icon/fr.png" alt=""> french</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="curreny-wrap">
+                                                <span>Currency:</span>
+                                                $ USD
+                                                <i class="fa fa-angle-down"></i>
+                                                <ul class="dropdown-list curreny-list">
+                                                    <li><a href="#">$ usd</a></li>
+                                                    <li><a href="#"> € EURO</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                     <div class="col-lg-6">
                         <div class="header-links">
                             <ul class="nav justify-content-end">
@@ -15,8 +39,8 @@
                                     ?>
 
                                     <li>
-                                        <a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a>
-
+                                        <a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a> <br>
+                                        <p>{{Session::get('customer_name')}}</p>
                                     </li>
                                   <?php
                                 }else{
@@ -27,6 +51,22 @@
                                ?>
                                 <li><a href="{{URL::to('/login-checkout')}}">Tài Khoản</a></li>
 
+                                <?php
+                                $customer_id = Session::get('customer_id');
+                                if($customer_id!=NULL){
+                                    ?>
+
+                                    <li>
+                                        <a href="{{URL::to('/history-order')}}"><i class="fa fa-history"></i> Lịch Sử Đơn Hàng</a> <br>
+                                        
+                                    </li>
+                                  <?php
+                                }else{
+                                   ?>
+                                   
+                                   <?php
+                               }
+                               ?>
                             </ul>
                         </div>
                     </div>
@@ -76,14 +116,68 @@
                             <div class="header-configure-area">
                                 <ul class="nav justify-content-end">
                                     <li>
-                                        <a href="wishlist.html">
+                                        <a href="{{URL::to('/history')}}">
                                             <i class="ion-android-favorite-outline"></i>
                                             <span class="notify">0</span>
                                         </a>
                                     </li>
                                     <li class="mini-cart-wrap">
-                                        <a href="{{ route('cart') }}"><i class="ion-bag"></i></a>
-                                        <button></button>
+                                            <a href="{{ route('cart') }}">
+                                                <i class="ion-bag"></i>
+                                                <span class="notify">2</span>
+                                            </a>
+                                                    <div class="cart-list-wrapper">
+                                                        <ul class="cart-list">
+                                                            <li>
+                                                                <div class="cart-img">
+                                                                    <a href="product-details.html"><img src="assets/img/cart/cart-1.jpg" alt=""></a>
+                                                                </div>
+                                                                <div class="cart-info">
+                                                                    <h4><a href="product-details.html">7th Generation classic smart headset</a></h4>
+                                                                    <span class="cart-qty">Qty: 1</span>
+                                                                    <span>$60.00</span>
+                                                                </div>
+                                                                <div class="del-icon">
+                                                                    <i class="fa fa-times"></i>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="cart-img">
+                                                                    <a href="product-details.html"><img src="assets/img/cart/cart-2.jpg" alt=""></a>
+                                                                </div>
+                                                                <div class="cart-info">
+                                                                    <h4><a href="product-details.html">Digital 8th generation gadget product</a></h4>
+                                                                    <span class="cart-qty">Qty: 2</span>
+                                                                    <span>$70.00</span>
+                                                                </div>
+                                                                <div class="del-icon">
+                                                                    <i class="fa fa-times"></i>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="minicart-pricing-box">
+                                                            <li>
+                                                                <span>sub-total</span>
+                                                                <span><strong>$300.00</strong></span>
+                                                            </li>
+                                                            <li>
+                                                                <span>Eco Tax (-2.00)</span>
+                                                                <span><strong>$10.00</strong></span>
+                                                            </li>
+                                                            <li>
+                                                                <span>VAT (20%)</span>
+                                                                <span><strong>$60.00</strong></span>
+                                                            </li>
+                                                            <li class="total">
+                                                                <span>total</span>
+                                                                <span><strong>$370.00</strong></span>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="minicart-button">
+                                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
+                                                            <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                                                        </div>
+                                                    </div>
                                     </li>
 
                                 </ul>

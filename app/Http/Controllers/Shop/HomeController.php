@@ -33,5 +33,11 @@ class HomeController extends Controller
         return view('shop.home')->with('category', $cate_product)->with('all_product',$all_product);
     }
 
+    public function history_ship()
+    {
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+
+        return view('shop.progress.progress')->with('category', $cate_product);
+    }
     
 }

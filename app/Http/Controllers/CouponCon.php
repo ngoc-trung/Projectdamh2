@@ -16,6 +16,8 @@ use GuzzleHttp\Psr7\Message;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session as FacadesSession;
+use Brian2694\Toastr\Facades\Toastr;
+
 
 session_start();
 class CouponCon extends Controller
@@ -40,7 +42,8 @@ class CouponCon extends Controller
 
         $coupon->save();
 
-        Session::put('message','Thêm mã giảm giá thành công');
+        Toastr::success('Thêm mã giảm giá thành công','Thành Công');
+
         return Redirect::to('all-coupon');
 
     }
@@ -50,6 +53,7 @@ class CouponCon extends Controller
         $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d/m/Y');
 
         $coupon = Coupon::orderby('coupon_id','DESC')->get();
+        
         return view('backend.admin.coupon.all_coupon')->with(compact('coupon','now'));
     }
 
@@ -58,7 +62,7 @@ class CouponCon extends Controller
         $coupon = Coupon::find($coupon_id);
         $coupon->delete();
 
-        Session::put('message','Xóa mã giảm giá thành công');
+        Toastr::success('Xóa mã giảm giá thành công','Thành Công');
         return Redirect::to('all-coupon');
     }
 }

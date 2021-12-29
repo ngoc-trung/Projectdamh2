@@ -22,6 +22,7 @@
             </th>
             <th>Mã Đơn Hàng</th>
             <th>Tình Trạng Đơn Hàng</th>
+            <th>Ngày Đặt Hàng</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
@@ -46,6 +47,7 @@
                 Đã Xử Lý
                 @endif
             </td>
+            <td>{{$ord->created_at}}</td>
             <td>
               <a href="{{URL::to('/view-order/'.$ord->order_code)}}" class="active" style="font-size: 20px;" ui-toggle-class="">
                   <i class="fa fa-eye text-active"></i></a>

@@ -28,6 +28,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 
+<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
 <meta name="csrf-token" content="{{csrf_token() }}" />
 
 <!-- //calendar -->
@@ -110,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</li>
 				<li>
 					<a href="">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-file-text-o"></i>
                         <span> Đơn hàng</span>
                     </a>
 					<ul class="sub">
@@ -120,13 +122,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</li>
 				<li>
 					<a href="{{URL::to('/customer')}}">
-                        <i class="fa fa-book"></i>
+					<i class="fa fa-user"></i>
                         <span>Quản lý khách hàng</span>
                     </a>
 				</li>
 				<li>
 					<a href="">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-brand"></i>
                         <span>Quản lý nhãn hàng</span>
                     </a>
 					<ul class="sub">
@@ -188,6 +190,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
 
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -325,6 +330,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    
    
 </script>
+
 
 <!-- ====== ajax them gallery =======  -->
 		<script type="text/javascript" >

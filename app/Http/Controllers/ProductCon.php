@@ -13,6 +13,7 @@ use GuzzleHttp\Psr7\Message;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session as FacadesSession;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ProductCon extends Controller
 {
@@ -79,20 +80,23 @@ class ProductCon extends Controller
         $gallery->product_id = $pro_id;
         $gallery->save();
 
-        Session::put('message','Thêm Sản Phẩm Thành Công');
+        Toastr::success('Thêm sản phẩm thành công','Thành Công');
+
         return Redirect::to('add-product');
 
     }
 
     public function unactive_product($product_id){
         DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status'=>1]);
-        Session::put('message','Khong kich hoat san pham thanh cong');
+        Toastr::success('Unactive sản phẩm thành công','Thành Công');;
         return Redirect::to('all-product');
     }
 
     public function active_product($product_id){
         DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status'=>0]);
-        Session::put('message',' kich hoat san pham thanh cong');
+
+        Toastr::success('Active sản phẩm thành công','Thành Công');
+        
         return Redirect::to('all-product');
 
     }
@@ -135,20 +139,26 @@ class ProductCon extends Controller
             $get_image->move('public/upload/product', $new_image);
             $data['product_image'] = $new_image;
             DB::table('tbl_product')->where('product_id',$product_id)->update($data);
-            Session::put('message','Thêm Sản Phẩm Thành Công');
+            Toastr::success('Cập nhập sản phẩm thành công','Thành Công');
             return Redirect::to('/all-product');
         }
 
 
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
-        Session::put('message','Thêm Thuong Hieu Sản Phẩm Thành Công');
+
+       
+
+        Toastr::success('Cập nhập sản phẩm thành công','Thành Công');
+
         return Redirect::to('/all-product');
     }
     public function delete_product( $product_id){
        
 
         DB::table('tbl_product')->where('product_id', $product_id)->delete();
-        Session::put('message',' Xoa san pham thanh cong');
+
+       Toastr::success('Xóa sản phẩm thành công','Thành Công');
+
         return Redirect::to('all-product');
     }
 

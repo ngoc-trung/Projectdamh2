@@ -22,7 +22,7 @@
                                     {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên San Pham</label>
-                                    <input type="text" name="product_name" class="form-control"  value="{{$pro->product_name}}">
+                                    <input type="text" name="product_name" onkeyup="ChangeToSlug();" id="slug" class="form-control"  value="{{$pro->product_name}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Số Lượng</label>
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Slug</label>
-                                    <input type="text" name="product_slug" class="form-control" id="exampleInputEmail1" value="{{$pro->product_slug}}">
+                                    <input type="text" name="product_slug" id="convert_slug" class="form-control" id="exampleInputEmail1" value="{{$pro->product_slug}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Thêm Giá</label>
@@ -53,14 +53,19 @@
                                     <label for="exampleInputPassword1">Nội Dung Sản Phẩm</label>
                                     <textarea class="form-control" name="product_content" id="" cols="30" rows="10" >{{$pro->product_content}}</textarea>
                                 </div>
+                               
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Danh mục sản phẩm</label>
                                       <select name="product_cate" class="form-control input-sm m-bot15">
                                         @foreach($cate_product as $key => $cate)
-                                            @if($cate->category_id==$pro->category_id)
-                                            <option selected value="{{$cate->category_id}}">{{$cate->category_name}}</option>
-                                            @else
-                                            <option value="{{$cate->category_id}}">{{$cate->category_name}}</option>
+                                            @if($cate->category_parent==0)
+                                                <option style="font-size: 15px" value="{{$cate->category_id}}">{{$cate->category_name}}</option>
+                                                @foreach($cate_product as $key => $cate_sub)
+                                                    @if($cate_sub->category_parent!=0 && $cate_sub->category_parent==$cate->category_id)
+                                                    <option style="color: red;font-size: 15px" value="{{$cate_sub->category_id}}">---{{$cate_sub->category_name}}</option>   
+                                                    @endif
+                                                @endforeach
+
                                             @endif
                                         @endforeach
                                             

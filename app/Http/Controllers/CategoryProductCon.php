@@ -16,6 +16,7 @@ use GuzzleHttp\Psr7\Message;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session as FacadesSession;
+use Brian2694\Toastr\Facades\Toastr;
 
 class CategoryProductCon extends Controller
 {
@@ -59,20 +60,25 @@ class CategoryProductCon extends Controller
         $data['category_status'] = $request->category_product_status;
 
         DB::table('tbl_category_product')->insert($data);
-        Session::put('message','Thêm Danh Mục Sản Phẩm Thành Công');
+
+        Toastr::success('Thêm danh mục sản phẩm thành công','Thành Công');
+
         return Redirect::to('/all-category-product');
 
     }
 
     public function unactive_category_product($category_product_id){
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>1]);
-        Session::put('message','Khong kich hoat danh muc san pham thanh cong');
+        Toastr::success('Unactive danh mục thành công','Thành Công');
+
         return Redirect::to('all-category-product');
     }
 
     public function active_category_product($category_product_id){
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>0]);
-        Session::put('message',' kich hoat danh muc san pham thanh cong');
+
+        Toastr::success('Active danh mục thành công','Thành Công');
+
         return Redirect::to('all-category-product');
 
     }
@@ -98,12 +104,15 @@ class CategoryProductCon extends Controller
         $data['slug_category_product'] = $request->slug_category_product;
 
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update($data);
-        Session::put('message','Sua Danh Mục Sản Phẩm Thành Công');
+        Toastr::success('Sửa danh mục sản phẩm thành công','Thành Công');
+
         return Redirect::to('all-category-product');
     }
     public function delete_category_product( $category_product_id){
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->delete();
-        Session::put('message',' Xoa danh muc san pham thanh cong');
+        
+        Toastr::success('Xóa danh mục sản phẩm thành công','Thành Công');
+
         return Redirect::to('all-category-product');
     }
 
@@ -137,6 +146,11 @@ class CategoryProductCon extends Controller
        }elseif($sort_by=='kytu_az'){
 
         $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_name','ASC')->paginate(6)->appends(request()->query());
+    }elseif(isset($_GET['cate'])){
+        $category_filter = $_GET['cate'];
+        $category_arr = explode(",",$category_filter);
+        $category_by_id = Product::with('category')->whereIn('category_id',$category_arr)->orderBy('product_id','DESC')->appends(request()->query());
+
     }
 }
 

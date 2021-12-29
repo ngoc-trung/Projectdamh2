@@ -110,7 +110,7 @@
             <td>
                 <span>
                       <?php
-                          if ($cou->coupon_date_end>$now) {
+                          if ($cou->coupon_date_end >= $now) {
                       ?>
                        <span style="color:green">Còn Hạn </span> 
                       <?php

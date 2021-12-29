@@ -98,9 +98,9 @@
                                     swal("Đơn Hàng!", "Đơn Hàng Của Bạn Đã Được Gửi Thành Công.", "success");
                                 }
                         });
-                            // window.setTimeout(function(){
-                            //     location.reload();
-                            // },3000);
+                            window.setTimeout(function(){ 
+                                window.location.href = "{{url('/history-order')}}";
+                            } ,3000);
                         
                     } else {
                         swal("Đóng", "Đơn Hàng Của Bạn Đã Chưa Được Thanh Toán", "error");
@@ -294,6 +294,24 @@
 
                      }); 
                 </script>
+<!-- ==================== Loc san pham theo danh muc ======================== -->
+                            <script type="text/javascript">
+                                                $('.category-filter').click(function(){
+                                                    var category = [], tempArray = [];
+
+                                                    $.each($("[data-filters='category']:checked"),function(){
+                                                        tempArray.push($(this).val());
+                                                    });
+
+                                                    tempArray.reverse();
+                                                    if (tempArray.length !==0 ) {
+                                                        category+='?cate='+tempArray.toString();
+                                                    }
+                                                    window.location.href = category;
+
+                                                });
+                                </script>
+
 </body>
 
 

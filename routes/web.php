@@ -97,6 +97,9 @@ Route::prefix('shop')->group(function () {
 
     });
 
+    Route::get('history',[App\Http\Controllers\Shop\HomeController::class ,'history_ship']);
+
+
     Route::get('category',[App\Http\Controllers\Shop\HomeController::class ,'category']);
 
     Route::get('/del-product/{session_id}', [App\Http\Controllers\Shop\CartController::class, 'del_product']);
@@ -163,6 +166,9 @@ Route::post('/delete-gallery', [App\Http\Controllers\Shop\GalleryController::cla
 
 Route::post('/update-gallery', [App\Http\Controllers\Shop\GalleryController::class, 'update_gallery']);
 
+// Xem Lịch Sử Đơn Hàng
+
+Route::get('/history-order', [App\Http\Controllers\Shop\HistoryController::class, 'history_order']);
 
 
 

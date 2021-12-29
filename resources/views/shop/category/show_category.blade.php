@@ -35,135 +35,36 @@
 <div class="shop-main-wrapper pt-50 pb-50">
     <div class="container">
         <div class="row">
-            <!-- sidebar area start -->
-            <div class="col-lg-3 order-2 order-lg-1">
-                <aside class="sidebar-wrapper">
-                    <!-- single sidebar start -->
-                    <div class="sidebar-single">
-                        <div class="sidebar-title">
-                            <h3>Danh Mục Sản Phẩm</h3>
-                        </div>
-                        <div class="sidebar-body">
-                            <!-- mobile menu navigation start -->
-                            <div class="shop-categories">
-                                @foreach($category as $key => $cate)
-                                <nav>
-                                    @if($cate->category_parent == 0)
-                                    <ul class="mobile-menu">
-                                        <li class="menu-item-has-children"><a href="">{{$cate->category_name}}</a>
-                                            <ul class="dropdown" id="{{$cate->slug_category_product}}">
-                                                @foreach($category as $key => $cate_sub)
-                                                @if($cate_sub->category_parent==$cate->category_id)
-                                                <li><a href="{{URL::to('/danh-muc/'.$cate->category_id)}}">{{$cate_sub->category_name}}</a></li>
-                                                @endif
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    @endif
-                                </nav>
-                                @endforeach
-                            </div>
-                            <!-- mobile menu navigation end -->
-                        </div>
-                    </div>
-                    <!-- single sidebar end -->
 
-                    <!-- single sidebar start -->
-                    <div class="sidebar-single">
-                        <div class="sidebar-title">
-                            <h3>Price filter</h3>
-                        </div>
-                        <div class="sidebar-body">
-                            <ul class="radio-container">
-                                <li>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" name="price" id="customCheck11">
-                                        <label class="custom-control-label" for="customCheck11">$7.00 - $9.00 (2)</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" name="price" id="customCheck21">
-                                        <label class="custom-control-label" for="customCheck21">$10.00 - $12.00 (3)</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" name="price" id="customCheck31">
-                                        <label class="custom-control-label" for="customCheck31">$17.00 - $20.00 (3)</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" name="price" id="customCheck41">
-                                        <label class="custom-control-label" for="customCheck41"> $21.00 - $22.00 (1)</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" name="price" id="customCheck51">
-                                        <label class="custom-control-label" for="customCheck51">$25.00 - $30.00 (3)</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- single sidebar end -->
+        <div class="col-md-12">
+            <label for="amount">Lọc Danh Mục Sản Phẩm</label><br>
+            <?php
+                $category_id = [];
+                $category_arr = [];
 
+                if (isset($_GET['cate'])) {
+                    $category_id = $_GET['cate'];
+
+                }else{
+                    $category_id = $name->category_id.",";
+
+                }
+                $category_arr = explode(",", $category_id);
+            ?>
+            @foreach($category as $key => $cate)
+                <label class="checkbox-inline">
                     
+                    <input  type="checkbox" 
+                    {{ in_array($cate->category_id, $category_arr) ? 'checked' : '' }}
+                    class="form-control-checkbox category-filter" data-filters="category" value="{{$cate->category_id}}" 
+                    name="category-filter">{{$cate->category_name}}
+                </label>
 
-                    <!-- single sidebar start -->
-                    <div class="sidebar-single">
-                        <div class="sidebar-title">
-                            <h3>size</h3>
-                        </div>
-                        <div class="sidebar-body">
-                            <ul class="checkbox-container">
-                                <li>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck111">
-                                        <label class="custom-control-label" for="customCheck111">S (4)</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck222">
-                                        <label class="custom-control-label" for="customCheck222">M (5)</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck333">
-                                        <label class="custom-control-label" for="customCheck333">L (7)</label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck444">
-                                        <label class="custom-control-label" for="customCheck444">XL (3)</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- single sidebar end -->
-
-                    <!-- single sidebar start -->
-                    <div class="sidebar-banner">
-                        <div class="img-container">
-                            <a href="#">
-                                <img src="{{ asset('public/frontend/assets/img/banner/sidebar-banner.jpg') }}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- single sidebar end -->
-                </aside>
-            </div>
-            <!-- sidebar area end -->
+            @endforeach
+        </div>
 
             <!-- shop main wrapper start -->
-            <div class="col-lg-9 order-1 order-lg-2">
+            <div class="col-lg-12 order-1 order-lg-2">
                 <div class="shop-product-wrapper">
                     <!-- shop product top wrap start -->
                     <div class="shop-top-bar">

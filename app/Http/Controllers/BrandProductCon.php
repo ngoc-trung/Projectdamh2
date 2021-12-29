@@ -12,6 +12,7 @@ use GuzzleHttp\Psr7\Message;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session as FacadesSession;
+use Brian2694\Toastr\Facades\Toastr;
 
 class BrandProductCon extends Controller
 {
@@ -49,7 +50,8 @@ class BrandProductCon extends Controller
 
         DB::table('tbl_brand')->insert($data);
 
-        Session::put('message','Thêm Thuong Hieu Sản Phẩm Thành Công');
+        Toastr::success('Thêm thương hiệu thành công','Thành Công');
+
         return Redirect::to('/all-brand-product');
 
     }
@@ -58,7 +60,8 @@ class BrandProductCon extends Controller
        
 
         DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status'=>1]);
-        Session::put('message','Khong kich hoat Thuong hieu san pham thanh cong');
+        Toastr::success('Unactive thương hiệu thành công','Thành Công');
+
         return Redirect::to('all-brand-product');
     }
 
@@ -66,7 +69,8 @@ class BrandProductCon extends Controller
        
 
         DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status'=>0]);
-        Session::put('message',' kich hoat thuong hieu san pham thanh cong');
+        Toastr::success('Active thương hiệu thành công','Thành Công');
+
         return Redirect::to('all-brand-product');
 
     }
@@ -87,14 +91,16 @@ class BrandProductCon extends Controller
         $data['brand_desc'] = $request->brand_product_desc;
 
         DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update($data);
-        Session::put('message','Sua Thuong Hieu Sản Phẩm Thành Công');
+        Toastr::success('Sửa thương hiệu thành công','Thành Công');
+
         return Redirect::to('all-brand-product');
     }
     public function delete_brand_product( $brand_product_id){
         
 
         DB::table('tbl_brand')->where('brand_id', $brand_product_id)->delete();
-        Session::put('message',' Xoa Thuong Hieu san pham thanh cong');
+        Toastr::success('Xóa thương hiệu thành công','Thành Công');
+
         return Redirect::to('all-brand-product');
     }
 }

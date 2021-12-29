@@ -7,6 +7,8 @@ use Mail;
 use Carbon\Carbon;
 use App\Models\Customer;
 use App\Models\Coupon;
+use Brian2694\Toastr\Facades\Toastr;
+
 
 class MailCon extends Controller
 {
@@ -55,7 +57,9 @@ class MailCon extends Controller
             $message->from($data['email'],$title_mail);//send from this mail
     });
 
-    return redirect()->back()->with('message','Gửi mã khuyến mãi khách thường thành công');
+    Toastr::success('Gửi Mã Khuyến Mãi Thành Công','Thành Công');
+
+    return redirect()->back();
 
     }
 
