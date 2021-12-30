@@ -99,6 +99,8 @@ Route::prefix('shop')->group(function () {
 
     Route::get('history',[App\Http\Controllers\Shop\HomeController::class ,'history_ship']);
 
+    Route::get('history2',[App\Http\Controllers\Shop\HomeController::class ,'history_ship2']);
+
 
     Route::get('category',[App\Http\Controllers\Shop\HomeController::class ,'category']);
 
@@ -241,6 +243,8 @@ Route::get('/delete-product/{product_id}', [App\Http\Controllers\ProductCon::cla
 
 Route::post('/update-product/{product_id}', [App\Http\Controllers\ProductCon::class, 'update_product']);
 
+
+Route::post('/uploads-ckeditor', [App\Http\Controllers\ProductCon::class ,'ckeditor_image']);
 
 
 // Thêm mã giảm giá

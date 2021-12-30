@@ -49,7 +49,7 @@
                                    <?php
                                }
                                ?>
-                                <li><a href="{{URL::to('/login-checkout')}}">Tài Khoản</a></li>
+                                <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
 
                                 <?php
                                 $customer_id = Session::get('customer_id');

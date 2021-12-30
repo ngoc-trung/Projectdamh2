@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('public/backend/js/jquery.slimscroll.js')}}"></script>
 <script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
-
+<script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
@@ -458,6 +458,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					duration: "slow"
 				});
 			} );
+			
+			</script>
+
+		<script>
+		var options = {
+			filebrowserImageBrowseUrl: 'laravel-filemanager?type=Images',
+			filebrowserImageUploadUrl: 'laravel-filemanager/upload?type=Images&_token=',
+			filebrowserBrowseUrl: 'laravel-filemanager?type=Files',
+			filebrowserUploadUrl: 'laravel-filemanager/upload?type=Files&_token='
+		};
+		</script>
+		<script>
+		CKEDITOR.replace('my-editor', options);
+		</script>
+
+
+			<script  type="text/javascript">
+				
+					
+					
+				CKEDITOR.replace('ckeditor');
+				CKEDITOR.replace('ckeditor1',{
+
+					filebrowserImageUploadUrl : "{{ url('uploads-ckeditor?_token='.csrf_token()) }}",
+					filebrowserBrowseUrl : "{{ url('file-browser?_token='.csrf_token()) }}",
+					filebrowserUploadMethod: 'form'
+
+				});
+
+				CKEDITOR.replace('ckeditor2', {
+
+					filebrowserImageUploadUrl : "{{ url('uploads-ckeditor?_token='.csrf_token()) }}",
+					filebrowserBrowseUrl : "{{ url('file-browser?_token='.csrf_token()) }}",
+					filebrowserUploadMethod: 'form'
+
+				});
+
+				CKEDITOR.replace('ckeditor3',{
+
+					filebrowserImageUploadUrl : "{{ url('uploads-ckeditor?_token='.csrf_token()) }}",
+					filebrowserBrowseUrl : "{{ url('file-browser?_token='.csrf_token()) }}",
+					filebrowserUploadMethod: 'form'
+				});
+				CKEDITOR.replace('id4');
+
+			
 			
 			</script>
 </body>

@@ -47,11 +47,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô Tả Sản Phẩm</label>
-                                    <textarea class="form-control" name="product_desc" id="" cols="30" rows="10"  value="">{{$pro->product_desc}}</textarea>
+                                    <textarea class="form-control" name="product_desc" id="ckeditor2" cols="30" rows="10"  value="">{{$pro->product_desc}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nội Dung Sản Phẩm</label>
-                                    <textarea class="form-control" name="product_content" id="" cols="30" rows="10" >{{$pro->product_content}}</textarea>
+                                    <textarea class="form-control" name="product_content" id="ckeditor3" cols="30" rows="10" >{{$pro->product_content}}</textarea>
                                 </div>
                                
                                 <div class="form-group">

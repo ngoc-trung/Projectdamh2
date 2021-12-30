@@ -43,11 +43,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô Tả Sản Phẩm</label>
-                                    <textarea class="form-control" name="product_desc" id="" cols="30" rows="10" ></textarea>
+                                    <textarea class="form-control" name="product_desc" id="ckeditor1" cols="30" rows="10" ></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Nội Dung Sản Phẩm</label>
-                                    <textarea class="form-control" name="product_content" id="" cols="30" rows="10" ></textarea>
+                                    <textarea class="form-control" name="product_content" id="my-editor" cols="30" rows="10" ></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Danh mục sản phẩm</label>

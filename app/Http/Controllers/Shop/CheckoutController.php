@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use DB;
 
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Session;
 use App\Http\Requests;
 use GuzzleHttp\Psr7\Message;
@@ -158,9 +158,7 @@ class CheckoutController extends Controller
               $order_details->save();
             }
           }
-        //   Session::forget('coupon');
-        //   Session::forget('cart');
-
+          
         //send mail confirm
         $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y H:i:s');
 

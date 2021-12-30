@@ -44,6 +44,9 @@
                                         Thứ Tự
                                         </th>
                                         <th>Mã Đơn Hàng</th>
+                                        <th>Tên Sản Phẩm</th>
+                                        <th>Hình Ảnh</th>
+                                        <th>Giá</th>
                                         <th>Tình Trạng Đơn Hàng</th>
                                         <th>Ngày Đặt Hàng</th>
                                         <th style="width:30px;"></th>
@@ -63,18 +66,25 @@
                                         <td>
                                             {{$ord->order_code}}
                                         </td>
+                                        <td>IPHONE 13 Pro Max</td>
+                                        <td><img width="50px" height="50px" src="{{ asset('public/frontend/assets/img/product/iphone_13-_pro-1_2_1.jpg') }}" alt=""></td>
+                                        <td>30.000.000 VND</td>
                                         <td>
                                             @if($ord->order_status==1)
-                                            Đơn Hàng Mới
+                                            Đang Xử Lý Đơn Hàng
                                             @else
                                             Đã Xử Lý
                                             @endif
                                         </td>
                                         <td>{{$ord->created_at}}</td>
                                         <td>
+                                        @if($ord->order_status==1)
                                         <a href="{{URL::to('/history')}}" class="active" style="font-size: 20px;" ui-toggle-class="">
                                             <i class="fa fa-eye text-active"></i></a>
-                                        
+                                         @else
+                                         <a href="{{URL::to('/history2')}}" class="active" style="font-size: 20px;" ui-toggle-class="">
+                                            <i class="fa fa-eye text-active"></i></a>
+                                        @endif
                                         </td>
                                     </tr>
                                     @endforeach

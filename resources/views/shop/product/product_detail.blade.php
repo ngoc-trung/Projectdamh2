@@ -143,7 +143,7 @@
                                 <div class="tab-content reviews-tab">
                                     <div class="tab-pane fade show active" id="tab_one">
                                         <div class="tab-one">
-                                            <p>{{$value->product_desc}}</p>
+                                        <p>{!!$value->product_desc!!}</p>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="tab_two">

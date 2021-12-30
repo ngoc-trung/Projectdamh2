@@ -40,4 +40,10 @@ class HomeController extends Controller
         return view('shop.progress.progress')->with('category', $cate_product);
     }
     
+    public function history_ship2()
+    {
+        $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
+
+        return view('shop.progress.progress2')->with('category', $cate_product);
+    }
 }

@@ -55,24 +55,24 @@
 		align-items: center;
 		font-size: 2rem;
 		height: 50px;
-		background: var(--line);
+		background: var(--light);
 		color: #fff;
 		border-radius: 50%;
 		z-index: 11111;
 	}
-	#progress li:last-child::before{
+	#progress li:first-child::before{
 		content: '\2713';
 		font-weight: bold;
-		background: var(--light);
+		background: var(--line);
 	}
 	#progress::before{
 		content: '';
 		position: absolute;
 		top: 20px;
-		width: 50%;
+		width: 0%;
 		margin-left: 35px;
 		height: 10px;
-		background: var(--line);
+		background: var(--light);
 		z-index: 111;
 	}
 	#progress::after{
