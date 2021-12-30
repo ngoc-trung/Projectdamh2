@@ -113,7 +113,7 @@ Route::post('/tim-kiem', [App\Http\Controllers\Shop\SearchController::class, 'ti
 Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::class, 'login_checkout']);
 // Dang kys tai khoan de thanh toan
 
-//  show category 
+//  show category
 Route::get('/danh-muc/{category_id}', [App\Http\Controllers\CategoryProductCon::class, 'show_category_home']);
 
 
@@ -228,7 +228,7 @@ Route::post('/update-product/{product_id}', [App\Http\Controllers\ProductCon::cl
 
 // Thêm mã giảm giá
 
-Route::get('/add-coupon', [App\Http\Controllers\CouponCon::class, 'add_coupon']); 
+Route::get('/add-coupon', [App\Http\Controllers\CouponCon::class, 'add_coupon']);
 
 Route::get('/all-coupon', [App\Http\Controllers\CouponCon::class, 'all_coupon']);
 
@@ -242,7 +242,7 @@ Route::get('/manage-order', [App\Http\Controllers\OrderCon::class, 'manage_order
 
 Route::get('/view-order/{order_code}', [App\Http\Controllers\OrderCon::class, 'view_order']);
 
-//In Hoa Don 
+//In Hoa Don
 
 Route::get('/print-order/{checkout_code}', [App\Http\Controllers\OrderCon::class, 'print_order']);
 

@@ -6,7 +6,7 @@
           <div class="header-top theme-color">
             <div class="container bdr-bottom">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="header-links">
                             <ul class="nav justify-content-end">
                             <?php
@@ -212,7 +212,7 @@
                                     <li><a href="shop.html">Tools</a></li>
                                     <li><a href="shop.html">Electronics</a></li>
                                     <li><a href="shop.html">Kitchenware</a></li> --}}
-                                    
+
                                 </ul>
                             </nav>
                         </div>

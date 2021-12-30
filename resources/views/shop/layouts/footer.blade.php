@@ -56,7 +56,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-widget-item">
                                 <div class="footer-widget-title">
-                                    <h5>Nhóm 3</h5>
+                                    <h5>Nhóm 11</h5>
                                 </div>
                                 <div class="footer-widget-body">
                                     <p>Chúng tôi nhóm 11 môn Tương tác người -máy</p>

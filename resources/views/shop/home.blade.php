@@ -104,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    {{--  <div class="row">
+                    <div class="row">
                         <div class="col-12">
                             <div class="deals-item-wrapper">
                                 <div class="deals-carousel-active slick-arrow-style slick-row-15">
@@ -120,12 +120,10 @@
                                                 </a>
                                                 <div class="add-to-links">
                                                     <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
+                                                        title="Thêm giỏ hàng"><i
                                                             class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span
-                                                            data-bs-toggle="tooltip" title="Quick View"><i
+                                                            data-bs-toggle="tooltip" title="Xem"><i
                                                                 class="ion-eye"></i></span></a>
                                                 </div>
                                             </div>
@@ -137,17 +135,55 @@
                                                     <span><i class="ion-android-star"></i></span>
                                                     <span><i class="ion-android-star"></i></span>
                                                 </div>
-                                                <h4 class="product-name"><a href="product-details.html">Crown Summit
-                                                        Backpack</a></h4>
-                                                <p class="product-desc">Convenience is next to nothing when your day is
-                                                    crammed with action.</p>
+                                                <h4 class="product-name"><a href="product-details.html">Tên sản phẩm</a></h4>
+                                                <p class="product-desc">Giới thiệu sản phẩm</p>
                                                 <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
+                                                    <span class="price-regular">giá mới</span>
+                                                    <span class="price-old"><del>giá cũ</del></span>
                                                 </div>
                                                 <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i>
                                                     Thêm vào giỏ hàng</a>
-                                                <div class="product-countdown" data-countdown="2021/12/20"></div>
+                                                <div class="product-countdown" data-countdown="2021/12/30"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- deals single item start -->
+                                    <!-- deals single item start -->
+                                    <div class="deals-slider-item">
+                                        <div class="deals-item">
+                                            <div class="deals-thumb">
+                                                <a href="product-details.html">
+                                                    <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-1.jpg') }}"
+                                                        alt="">
+                                                    <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-14.jpg') }}"
+                                                        alt="">
+                                                </a>
+                                                <div class="add-to-links">
+                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
+                                                        title="Thêm giỏ hàng"><i
+                                                            class="ion-android-favorite-outline"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span
+                                                            data-bs-toggle="tooltip" title="Xem"><i
+                                                                class="ion-eye"></i></span></a>
+                                                </div>
+                                            </div>
+                                            <div class="deals-content">
+                                                <div class="ratings">
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                </div>
+                                                <h4 class="product-name"><a href="product-details.html">Tên sản phẩm</a></h4>
+                                                <p class="product-desc">Giới thiệu sản phẩm</p>
+                                                <div class="price-box">
+                                                    <span class="price-regular">giá mới</span>
+                                                    <span class="price-old"><del>giá cũ</del></span>
+                                                </div>
+                                                <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i>
+                                                    Thêm vào giỏ hàng</a>
+                                                <div class="product-countdown" data-countdown="2021/12/30"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -158,19 +194,17 @@
                                         <div class="deals-item">
                                             <div class="deals-thumb">
                                                 <a href="product-details.html">
-                                                    <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-5.jpg') }}"
+                                                    <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-1.jpg') }}"
                                                         alt="">
-                                                    <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-10.jpg') }}"
+                                                    <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-14.jpg') }}"
                                                         alt="">
                                                 </a>
                                                 <div class="add-to-links">
                                                     <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
+                                                        title="Thêm giỏ hàng"><i
                                                             class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span
-                                                            data-bs-toggle="tooltip" title="Quick View"><i
+                                                            data-bs-toggle="tooltip" title="Xem"><i
                                                                 class="ion-eye"></i></span></a>
                                                 </div>
                                             </div>
@@ -182,77 +216,30 @@
                                                     <span><i class="ion-android-star"></i></span>
                                                     <span><i class="ion-android-star"></i></span>
                                                 </div>
-                                                <h4 class="product-name"><a href="product-details.html">Strive Shoulder
-                                                        Handbag</a></h4>
-                                                <p class="product-desc">Convenience is next to nothing when your day is
-                                                    crammed with action.</p>
+                                                <h4 class="product-name"><a href="product-details.html">Tên sản phẩm</a></h4>
+                                                <p class="product-desc">Giới thiệu sản phẩm</p>
                                                 <div class="price-box">
-                                                    <span class="price-regular">$40.00</span>
-                                                    <span class="price-old"><del>$59.99</del></span>
+                                                    <span class="price-regular">giá mới</span>
+                                                    <span class="price-old"><del>giá cũ</del></span>
                                                 </div>
                                                 <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i>
                                                     Thêm vào giỏ hàng</a>
-                                                <div class="product-countdown" data-countdown="2021/12/16"></div>
+                                                <div class="product-countdown" data-countdown="2021/12/30"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- deals single item start -->
 
-                                    <!-- deals single item start -->
-                                    <div class="deals-slider-item">
-                                        <div class="deals-item">
-                                            <div class="deals-thumb">
-                                                <a href="product-details.html">
-                                                    <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-4.jpg') }}"
-                                                        alt="">
-                                                    <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-2.jpg') }}"
-                                                        alt="">
-                                                </a>
-                                                <div class="add-to-links">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#quick_view"><span
-                                                            data-bs-toggle="tooltip" title="Quick View"><i
-                                                                class="ion-eye"></i></span></a>
-                                                </div>
-                                            </div>
-                                            <div class="deals-content">
-                                                <div class="ratings">
-                                                    <span><i class="ion-android-star"></i></span>
-                                                    <span><i class="ion-android-star"></i></span>
-                                                    <span><i class="ion-android-star"></i></span>
-                                                    <span><i class="ion-android-star"></i></span>
-                                                    <span><i class="ion-android-star"></i></span>
-                                                </div>
-                                                <h4 class="product-name"><a href="product-details.html">Brown Summit
-                                                        Backpack</a></h4>
-                                                <p class="product-desc">Convenience is next to nothing when your day is
-                                                    crammed with action.</p>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$70.00</span>
-                                                    <span class="price-old"><del>$75.00</del></span>
-                                                </div>
-                                                <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i>
-                                                    Thêm vào giỏ hàng</a>
-                                                <div class="product-countdown" data-countdown="2021/12/29"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- deals single item start -->
                                 </div>
                             </div>
                         </div>
-                    </div>  --}}
+                    </div>
                 </div>
             </div>
         </section>
         <!-- deals area end -->
 
 
-        <!-- features categories area end -->
 
         <!-- features categories area start -->
         <!-- Sản Phẩm -->
@@ -269,14 +256,14 @@
                                 <!-- section title start -->
 
                                 <!-- product tab menu start -->
-                                <div class="feature-menu">
+                                {{--  <div class="feature-menu">
                                     <ul class="nav justify-content-start justify-content-lg-end">
                                         <li><a data-bs-toggle="tab" class="active" href="#four">Mua Nhiều</a>
                                         </li>
                                         <li><a data-bs-toggle="tab" href="#five">Đánh Giá Cao</a></li>
                                         <li><a data-bs-toggle="tab" href="#six">Được Yêu Thích</a></li>
                                     </ul>
-                                </div>
+                                </div>  --}}
                                 <!-- product tab menu start -->
                             </div>
                         </div>
@@ -286,50 +273,102 @@
                             <div class="products-area-wrapper mt-30">
                                 <div class="tab-content">
 
-                                    <div class="tab-pane fade active show" id="four">
+                                    <div class="tab-pane fade active show" id="one">
 
                                         <div class="features-categories-wrapper">
                                             <div class="features-categories-active slick-arrow-style">
                                                 <!-- product item start -->
-
                                                 <div class="product-slide-item">
                                                     <div class="product-item">
                                                         <div class="product-thumb">
                                                             <a href="product-details.html">
-                                                                <img class="pri-img"
-                                                                    src="" alt="">
-                                                                <img class="sec-img"
-                                                                    src="" alt="">
+                                                                <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-4.jpg') }}" alt="">
+                                                                <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-8.jpg') }}" alt="">
                                                             </a>
-                                                            <div class="add-to-links">
-                                                                <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                                    title="Add to Wishlist"><i
-                                                                        class="ion-android-favorite-outline"></i></a>
-                                                                <a href="compare.html" data-bs-toggle="tooltip"
-                                                                    title="Add to Compare"><i
-                                                                        class="ion-stats-bars"></i></a>
-                                                                <a href="#" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick_view"><span
-                                                                        data-bs-toggle="tooltip" title="Quick View"><i
-                                                                            class="ion-eye"></i></span></a>
-                                                            </div>
+
                                                         </div>
                                                         <div class="product-content">
-                                                            <h5 class="product-name"><a href="product-details.html">
-                                                            </a></h5>
+                                                            <h5 class="product-name"><a href="product-details.html">Tên sản phẩm</a></h5>
                                                             <div class="price-box">
-                                                                <span class="price-regular"></span>
-
+                                                                <span class="price-regular">giá mới</span>
+                                                                <span class="price-old"><del>giá cũ</del></span>
                                                             </div>
                                                             <div class="product-item-action">
-                                                                <a class="btn btn-cart" href="cart.html"><i
-                                                                        class="ion-bag"></i> Add To Cart</a>
+                                                                <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i> Thêm vào giỏ hàng</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <!-- product item start -->
+                                                <div class="product-slide-item">
+                                                    <div class="product-item">
+                                                        <div class="product-thumb">
+                                                            <a href="product-details.html">
+                                                                <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-4.jpg') }}" alt="">
+                                                                <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-8.jpg') }}" alt="">
+                                                            </a>
+
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h5 class="product-name"><a href="product-details.html">Tên sản phẩm</a></h5>
+                                                            <div class="price-box">
+                                                                <span class="price-regular">giá mới</span>
+                                                                <span class="price-old"><del>giá cũ</del></span>
+                                                            </div>
+                                                            <div class="product-item-action">
+                                                                <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i> Thêm vào giỏ hàng</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- product item start -->
+                                                <div class="product-slide-item">
+                                                    <div class="product-item">
+                                                        <div class="product-thumb">
+                                                            <a href="product-details.html">
+                                                                <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-4.jpg') }}" alt="">
+                                                                <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-8.jpg') }}" alt="">
+                                                            </a>
+
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h5 class="product-name"><a href="product-details.html">Tên sản phẩm</a></h5>
+                                                            <div class="price-box">
+                                                                <span class="price-regular">giá mới</span>
+                                                                <span class="price-old"><del>giá cũ</del></span>
+                                                            </div>
+                                                            <div class="product-item-action">
+                                                                <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i> Thêm vào giỏ hàng</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- product item start -->
+                                                <div class="product-slide-item">
+                                                    <div class="product-item">
+                                                        <div class="product-thumb">
+                                                            <a href="product-details.html">
+                                                                <img class="pri-img" src="{{ asset('public/frontend/assets/img/product/product-4.jpg') }}" alt="">
+                                                                <img class="sec-img" src="{{ asset('public/frontend/assets/img/product/product-8.jpg') }}" alt="">
+                                                            </a>
+
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h5 class="product-name"><a href="product-details.html">Tên sản phẩm</a></h5>
+                                                            <div class="price-box">
+                                                                <span class="price-regular">giá mới</span>
+                                                                <span class="price-old"><del>giá cũ</del></span>
+                                                            </div>
+                                                            <div class="product-item-action">
+                                                                <a class="btn btn-cart" href="cart.html"><i class="ion-bag"></i> Thêm vào giỏ hàng</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -337,14 +376,14 @@
                                 </div>
                                 <div class="img-container">
                                     <a href="#">
-                                        <img src="assets/img/banner/ca2_bottom.jpg" alt="">
+                                        <img src="{{ asset('public/frontend/assets/img/banner/ca1_bottom.jpg') }}" alt="">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="section-banner">
-                                <img src="assets/img/banner/ca2.jpg" alt="">
+                                <img src="{{ asset('public/frontend/assets/img/banner/ca1.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -357,8 +396,46 @@
         <div class="group-list-products pt-50">
             <div class="container">
                 <div class="row">
-                    <!-- best sellers group start -->
 
+                    <!-- best sellers group start -->
+                    <div class="col-lg-4">
+                        <div class="group-list-wrapper">
+                            <div class="group-list-header">
+                                <h4 class="group-list-title">Đặc biệt</h4>
+                                <div class="slick-append"></div>
+                            </div>
+                            <div class="group-list-item-wrapper">
+                                <div class="group-list-carousel">
+                                    <!-- group list item start -->
+                                    <div class="group-slide-item">
+                                        <div class="group-item">
+                                            <div class="group-item-thumb">
+                                                <a href="product-details.html">
+                                                    <img src="{{ asset('public/frontend/assets/img/product/product-7.jpg') }}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="group-item-desc">
+                                                <h5 class="group-product-name"><a href="product-details.html">
+                                                        Tên sản phẩm
+                                                    </a></h5>
+                                                <div class="price-box">
+                                                    <span class="price-regular">giá mới</span>
+                                                    <span class="price-old"><del>giá cũ</del></span>
+                                                </div>
+                                                <div class="add-to-links group-action-link">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- group list item end -->
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- best sellers group end -->
 
                     <!-- new product group start -->
@@ -371,184 +448,30 @@
                             <div class="group-list-item-wrapper">
                                 <div class="group-list-carousel">
                                     <!-- group list item start -->
-                                    {{--  <div class="group-slide-item">
+                                    <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
-                                                    <img src="assets/img/product/product-7.jpg" alt="">
+                                                    <img src="{{ asset('public/frontend/assets/img/product/product-7.jpg') }}" alt="">
                                                 </a>
                                             </div>
                                             <div class="group-item-desc">
                                                 <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
+                                                        Tên sản phẩm
                                                     </a></h5>
                                                 <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
+                                                    <span class="price-regular">giá mới</span>
+                                                    <span class="price-old"><del>giá cũ</del></span>
                                                 </div>
                                                 <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
+
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>  --}}
+                                    </div>
                                     <!-- group list item end -->
 
-                                    <!-- group list item start -->
-                                    {{--  <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-8.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>  --}}
-                                    <!-- group list item end -->
 
-                                    <!-- group list item start -->
-                                    {{--  <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-9.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>  --}}
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    {{--  <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-10.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>  --}}
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    {{--  <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-11.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>  --}}
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    {{--  <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-12.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>  --}}
-                                    <!-- group list item end -->
                                 </div>
                             </div>
                         </div>
@@ -559,195 +482,44 @@
                     <div class="col-lg-4">
                         <div class="group-list-wrapper">
                             <div class="group-list-header">
-                                <h4 class="group-list-title">Được xem nhiều nhất</h4>
+                                <h4 class="group-list-title">Quan tâm</h4>
                                 <div class="slick-append"></div>
                             </div>
-                            {{--  <div class="group-list-item-wrapper">
+                            <div class="group-list-item-wrapper">
                                 <div class="group-list-carousel">
                                     <!-- group list item start -->
                                     <div class="group-slide-item">
                                         <div class="group-item">
                                             <div class="group-item-thumb">
                                                 <a href="product-details.html">
-                                                    <img src="assets/img/product/product-4.jpg" alt="">
+                                                    <img src="{{ asset('public/frontend/assets/img/product/product-7.jpg') }}" alt="">
                                                 </a>
                                             </div>
                                             <div class="group-item-desc">
                                                 <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
+                                                        Tên sản phẩm
                                                     </a></h5>
                                                 <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
+                                                    <span class="price-regular">giá mới</span>
+                                                    <span class="price-old"><del>giá cũ</del></span>
                                                 </div>
                                                 <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- group list item end -->
 
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-5.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
 
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-6.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-3.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-2.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
-
-                                    <!-- group list item start -->
-                                    <div class="group-slide-item">
-                                        <div class="group-item">
-                                            <div class="group-item-thumb">
-                                                <a href="product-details.html">
-                                                    <img src="assets/img/product/product-1.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="group-item-desc">
-                                                <h5 class="group-product-name"><a href="product-details.html">
-                                                        Strive Shoulder Pack
-                                                    </a></h5>
-                                                <div class="price-box">
-                                                    <span class="price-regular">$50.00</span>
-                                                    <span class="price-old"><del>$29.99</del></span>
-                                                </div>
-                                                <div class="add-to-links group-action-link">
-                                                    <a href="wishlist.html" data-bs-toggle="tooltip"
-                                                        title="Add to Wishlist"><i
-                                                            class="ion-android-favorite-outline"></i></a>
-                                                    <a href="compare.html" data-bs-toggle="tooltip"
-                                                        title="Add to Compare"><i class="ion-stats-bars"></i></a>
-                                                    <a href="cart.html" data-bs-toggle="tooltip" title="Add to Cart"><i
-                                                            class="ion-bag"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- group list item end -->
                                 </div>
-                            </div>  --}}
+                            </div>
                         </div>
                     </div>
                     <!-- most view group end -->
+
+
+
                 </div>
             </div>
         </div>
