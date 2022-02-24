@@ -38,13 +38,11 @@
                         </div> <!-- single sidebar end -->
                         <div class="blog-sidebar">
                             <h4 class="title">Chủ đề</h4>
+                            @foreach($cate_post as $key => $post)
                             <ul class="blog-archive blog-category">
-                                <li><a href="#">Điện thoại (10)</a></li>
-                                <li><a href="#">Máy tính (08)</a></li>
-                                <li><a href="#">Đồng hồ (07)</a></li>
-                                <li><a href="#">Máy tính bảng (14)</a></li>
-                                <li><a href="#">Khác (10)</a></li>
+                                <li><a href="{{URL::to('/danh-muc-post/' .$post->cate_post_slug)}}">{{$post->cate_post_name}}</a></li><br>
                             </ul>
+                            @endforeach
                         </div> <!-- single sidebar end -->
                         <div class="blog-sidebar">
                             <h4 class="title">Bài viết gần đây </h4>
@@ -52,7 +50,7 @@
                                 <div class="recent-post-item">
                                     <div class="product-thumb">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('public/frontend/assets/img/blog/blog-large-4.jpg') }}" alt="">
+                                            <img src="{{ asset('public/frontend/assets/img/post/images (1).jpg') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="recent-post-description">
@@ -65,7 +63,7 @@
                                 <div class="recent-post-item">
                                     <div class="product-thumb">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('public/frontend/assets/img/blog/blog-large-6.jpg') }}" alt="">
+                                            <img src="{{ asset('public/frontend/assets/img/post/450_1000.jpeg') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="recent-post-description">
@@ -78,7 +76,7 @@
                                 <div class="recent-post-item">
                                     <div class="product-thumb">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('public/frontend/assets/img/blog/blog-large-7.jpg') }}" alt="">
+                                            <img src="{{ asset('public/frontend/assets/img/post/images.jpg') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="recent-post-description">
@@ -98,8 +96,8 @@
                         <!-- blog single item start -->
                         <div class="blog-post-item mb-30">
                             <div class="blog-post-thumb">
-                                <a href="{{ route('post.show') }}">
-                                    <img src="{{ asset('public/frontend/assets/img/blog/blog-details-4.jpg') }}" alt="">
+                                <a href="#">
+                                    <img src="{{ asset('public/frontend/assets/img/blog/iphone-13mini-1020x570 (1).jpg') }}" alt="">
                                 </a>
                             </div>
                             <div class="post-info-wrapper">
@@ -123,7 +121,7 @@
                                     <p>Mô tả bài viết
                                     </p>
                                 </div>
-                                <a href="{{ route('post.show') }}" class="btn btn-read">Đọc thêm</a>
+                                <a href="#" class="btn btn-read">Đọc thêm</a>
                             </div>
                         </div>
                         <!-- blog single item end -->
@@ -131,8 +129,8 @@
                         <!-- blog single item start -->
                         <div class="blog-post-item mb-30">
                             <div class="blog-post-thumb">
-                                <a href="{{ route('post.show') }}">
-                                    <img src="{{ asset('public/frontend/assets/img/blog/blog-details-4.jpg') }}" alt="">
+                                <a href="#">
+                                    <img src="{{ asset('public/frontend/assets/img/blog/i537805.jpeg') }}" alt="">
                                 </a>
                             </div>
                             <div class="post-info-wrapper">
@@ -156,7 +154,7 @@
                                     <p>Mô tả bài viết
                                     </p>
                                 </div>
-                                <a href="{{ route('post.show') }}" class="btn btn-read">Đọc thêm</a>
+                                <a href="#" class="btn btn-read">Đọc thêm</a>
                             </div>
                         </div>
                         <!-- blog single item end -->

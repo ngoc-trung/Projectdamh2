@@ -46,8 +46,9 @@
             <th>Tên Danh Mục</th>
             <th>Thuộc danh mục</th>
             <th>Slug</th>
-            <th>Thứ tự danh mục</th>
+            
             <th>Hiển Thị </th>
+            <th>Quản Lý</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>

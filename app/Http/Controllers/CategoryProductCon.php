@@ -17,6 +17,7 @@ use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session as FacadesSession;
 use Brian2694\Toastr\Facades\Toastr;
+use Str;
 
 class CategoryProductCon extends Controller
 {
@@ -55,7 +56,7 @@ class CategoryProductCon extends Controller
         $data = array();
         $data['category_name'] = $request->category_product_name;
         $data['category_parent'] = $request->category_parent;
-        $data['slug_category_product'] = $request->slug_category_product;
+        $data['slug_category_product'] = \Str::slug($request->category_product_name).'-'.\Carbon\Carbon::now()->timestamp;
         $data['category_desc'] = $request->category_product_desc;
         $data['category_status'] = $request->category_product_status;
 
@@ -116,14 +117,17 @@ class CategoryProductCon extends Controller
         return Redirect::to('all-category-product');
     }
 
-    public function show_category_home(Request $request, $category_id)
+    public function show_category_home(Request $request, $slug_category_product)
     {
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); 
 
         $brand_product = DB::table('tbl_brand')->where('brand_status','0')->orderby('brand_id','desc')->get(); 
 
-        $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_id','DESC')->paginate(6);
+        $category_by_slug = CategoryProductModel::where('slug_category_product',$slug_category_product)->first();
 
+       
+         $category_id = $category_by_slug->category_id;
+        
 
 
         if(isset($_GET['sort_by'])){
@@ -152,9 +156,11 @@ class CategoryProductCon extends Controller
         $category_by_id = Product::with('category')->whereIn('category_id',$category_arr)->orderBy('product_id','DESC')->appends(request()->query());
 
     }
+}else{
+    $category_by_id = Product::with('category')->where('category_id',$category_id)->orderBy('product_id','DESC')->paginate(6);
 }
 
-        $category_name = DB::table('tbl_category_product')->where('tbl_category_product.category_id',$category_id)->limit(1)->get();
+        $category_name = DB::table('tbl_category_product')->where('tbl_category_product.slug_category_product',$slug_category_product)->limit(1)->get();
 
 
 

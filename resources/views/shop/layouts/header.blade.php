@@ -10,17 +10,17 @@
                                     <div class="header-top-settings">
                                         <ul class="nav align-items-center">
                                             <li class="language">
-                                                <span>Language:</span>
-                                                <img src="assets/img/icon/en.png" alt=""> English
+                                                <span>@lang('lang.languge')</span>
                                                 <i class="fa fa-angle-down"></i>
                                                 <ul class="dropdown-list">
-                                                    <li><a href="#"><img src="assets/img/icon/en.png" alt=""> english</a></li>
-                                                    <li><a href="#"><img src="assets/img/icon/fr.png" alt=""> french</a></li>
+                                                    <li><a href="{{'lang/vn'}}"><img style="height: 15px; width: 17px;" src="{{ asset('public/frontend/assets/img/icon/vietnam.png') }}" alt=""> Tiếng Việt</a></li>
+                                                    <li><a href="{{'lang/en'}}"><img src="{{ asset('public/frontend/assets/img/icon/en.png') }}" alt=""> English</a></li>
+                                                    <li><a href="#"><img src="{{ asset('public/frontend/assets/img/icon/fr.png') }}" alt=""> french</a></li>
                                                 </ul>
                                             </li>
                                             <li class="curreny-wrap">
-                                                <span>Currency:</span>
-                                                $ USD
+                                                <span>@lang('lang.Unit'): </span>
+                                                VND
                                                 <i class="fa fa-angle-down"></i>
                                                 <ul class="dropdown-list curreny-list">
                                                     <li><a href="#">$ usd</a></li>
@@ -39,17 +39,17 @@
                                     ?>
 
                                     <li>
-                                        <a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a> <br>
+                                        <a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> @lang('lang.Logout')</a> <br>
                                         <p>{{Session::get('customer_name')}}</p>
                                     </li>
                                   <?php
                                 }else{
                                    ?>
-                                   <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                                   <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> @lang('lang.Login')</a></li>
                                    <?php
                                }
                                ?>
-                                <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
+                                <li><a href="{{URL::to('/my-account')}}"><i class="fa fa-user"></i> @lang('lang.Account')</a></li>
 
                                 <?php
                                 $customer_id = Session::get('customer_id');
@@ -57,7 +57,7 @@
                                     ?>
 
                                     <li>
-                                        <a href="{{URL::to('/history-order')}}"><i class="fa fa-history"></i> Lịch Sử Đơn Hàng</a> <br>
+                                        <a href="{{URL::to('/history-order')}}"><i class="fa fa-history"></i> @lang('lang.Order History')</a> <br>
                                         
                                     </li>
                                   <?php
@@ -83,7 +83,7 @@
                     <div class="col-lg-3">
                         <div class="logo">
                             <a href="{{ route('home') }}">
-                                <h5>LOGO</h5>
+                                <img src="{{ asset('public/frontend/assets/img/logo/logo.png') }}" alt="">
                             </a>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                          <form class="search-box-inner" action="{{URL::to('/tim-kiem')}}" method="POST">
                              {{ csrf_field() }}
                              <div class="search-box-wrapper">
-                                <input type="text" class="search-field" placeholder="Tìm kiếm sản phẩm" name="keywords_submit">
+                                <input type="text" class="search-field" placeholder="@lang('lang.Find')" name="keywords_submit">
                                 <button class="search-btn" name="search_items" value="Tìm Kiếm"><i class="ion-ios-search"></i></button>
                             </div>
                         </form>
@@ -109,7 +109,7 @@
                                     <i class="ion-android-call"></i>
                                 </div>
                                 <div class="support-info">
-                                    <p>Gọi tư vấn miễn phí:</p>
+                                    <p>@lang('lang.Call'):</p>
                                     <strong><a href="tel:+881234567899">0123456789</a></strong>
                                 </div>
                             </div>
@@ -130,12 +130,12 @@
                                                         <ul class="cart-list">
                                                             <li>
                                                                 <div class="cart-img">
-                                                                    <a href="product-details.html"><img src="assets/img/cart/cart-1.jpg" alt=""></a>
+                                                                    <a href="product-details.html"><img src="{{ asset('public/frontend/assets/img/product/iphone_13-_pro-2_2_1.jpg') }}" alt=""></a>
                                                                 </div>
                                                                 <div class="cart-info">
-                                                                    <h4><a href="product-details.html">7th Generation classic smart headset</a></h4>
-                                                                    <span class="cart-qty">Qty: 1</span>
-                                                                    <span>$60.00</span>
+                                                                    <h4><a href="product-details.html">iPhone 13 Pro Max | Chính hãng VN/A</a></h4>
+                                                                    <span class="cart-qty">Số lượng: 1</span>
+                                                                    <span>33.000.000 VND</span>
                                                                 </div>
                                                                 <div class="del-icon">
                                                                     <i class="fa fa-times"></i>
@@ -143,12 +143,12 @@
                                                             </li>
                                                             <li>
                                                                 <div class="cart-img">
-                                                                    <a href="product-details.html"><img src="assets/img/cart/cart-2.jpg" alt=""></a>
+                                                                    <a href="product-details.html"><img src="{{ asset('public/frontend/assets/img/product/iphone-12-pro-max_2_.jpg') }}" alt=""></a>
                                                                 </div>
                                                                 <div class="cart-info">
-                                                                    <h4><a href="product-details.html">Digital 8th generation gadget product</a></h4>
-                                                                    <span class="cart-qty">Qty: 2</span>
-                                                                    <span>$70.00</span>
+                                                                    <h4><a href="product-details.html">iPhone 12 Pro Max | Chính hãng VN/A</a></h4>
+                                                                    <span class="cart-qty">Số lượng: 2</span>
+                                                                    <span>23.000.000 VND</span>
                                                                 </div>
                                                                 <div class="del-icon">
                                                                     <i class="fa fa-times"></i>
@@ -157,25 +157,22 @@
                                                         </ul>
                                                         <ul class="minicart-pricing-box">
                                                             <li>
-                                                                <span>sub-total</span>
-                                                                <span><strong>$300.00</strong></span>
+                                                                <span>Thành tiền</span>
+                                                                <span><strong>79.000.000 VND</strong></span>
                                                             </li>
                                                             <li>
-                                                                <span>Eco Tax (-2.00)</span>
-                                                                <span><strong>$10.00</strong></span>
+                                                                <span>Phí Ship</span>
+                                                                <span><strong>100.00 VND</strong></span>
                                                             </li>
-                                                            <li>
-                                                                <span>VAT (20%)</span>
-                                                                <span><strong>$60.00</strong></span>
-                                                            </li>
+                                                
                                                             <li class="total">
-                                                                <span>total</span>
-                                                                <span><strong>$370.00</strong></span>
+                                                                <span>Tổng Tiền</span>
+                                                                <span><strong>78.9000.000 VND</strong></span>
                                                             </li>
                                                         </ul>
                                                         <div class="minicart-button">
-                                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i> view cart</a>
-                                                            <a href="cart.html"><i class="fa fa-share"></i> checkout</a>
+                                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i>Xem Giỏ Hàng</a>
+                                                            <a href="cart.html"><i class="fa fa-share"></i> Thanh Toán</a>
                                                         </div>
                                                     </div>
                                     </li>
@@ -197,19 +194,21 @@
                     <div class="col-lg-3">
                         <div class="category-toggle-wrap">
                             <div class="category-toggle">
-                                <i class="ion-android-menu"></i>Danh mục Sản Phẩm </div>
+                                <i class="ion-android-menu"></i>@lang('lang.category')</div>
                             <nav class="category-menu">
                                     <ul class="categories-list">
                                     @foreach($category as $key => $cate)
                                         @if($cate->category_parent == 0)
-                                        <li class="menu-item-has-children"><a href="">{{$cate->category_name}}</a>
+                                        <li class="menu-item-has-children"><a href="{{URL::to('/danh-muc/'.$cate->slug_category_product)}}">{{$cate->category_name}}</a>
                                         
+                                        
+
                                             <!-- Mega Category Menu Start -->
                                             <ul class="category-mega-menu dropdown">
                                             @foreach($category as $key => $cate_sub)
                                                  @if($cate_sub->category_parent==$cate->category_id)
                                                     <li class="menu-item-has-children">
-                                                        <a href="{{URL::to('/danh-muc/'.$cate_sub->category_id)}}">{{$cate_sub->category_name}}</a>
+                                                        <a href="{{URL::to('/danh-muc/'.$cate_sub->slug_category_product)}}">{{$cate_sub->category_name}}</a>
                                                         <ul class="dropdown">
                                                             <li><a href="shop.html">Samsome</a></li>
                                                             <li><a href="shop.html">Samsome</a></li>
@@ -238,15 +237,15 @@
                             <!-- main menu navbar start -->
                             <nav class="desktop-menu">
                                 <ul>
-                                    <li class="active"><a href="{{ route('home') }}">Trang chủ</a>
+                                    <li class="active"><a href="{{ route('home') }}">@lang('lang.home')</a>
                                     </li>
-                                    <li><a href="{{route('san-pham')}}">Sản phẩm </a>
+                                    <li><a href="{{route('san-pham')}}">@lang('lang.product')</a>
                                     </li>
-                                    <li><a href="{{ route('post.index') }}">Bài viết </a>
+                                    <li><a href="{{ URL::to('/bai-viet') }}">@lang('lang.post')</a>
                                     </li>
-                                    <li><a href="{{ route('page.index') }}">Về chúng tôi </a>
+                                    <li><a href="{{ route('page.index') }}">@lang('lang.about') </a>
                                     </li>
-                                    <li><a href="{{ route('lien-he') }}">Liên hệ</a></li>
+                                    <li><a href="{{ route('lien-he') }}">@lang('lang.contact')</a></li>
                                 </ul>
                             </nav>
                             <!-- main menu navbar end -->

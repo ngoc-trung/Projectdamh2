@@ -17,7 +17,7 @@ s<!DOCTYPE html>
 
 				
 				<div class="col-md-6" style="text-align: center;color: #fff;font-weight: bold;font-size: 30px">
-					<h4 style="margin:0">CÔNG TY BÁN HÀNG NHOM 3</h4>
+					<h4 style="margin:0">CÔNG TY BÁN HÀNG NHOM 11</h4>
 					<h6 style="margin:0">DỊCH VỤ BÁN HÀNG - VẬN CHUYỂN - NHẬP KHẨU CHUYÊN NGHIỆP</h5>
 				</div>
 

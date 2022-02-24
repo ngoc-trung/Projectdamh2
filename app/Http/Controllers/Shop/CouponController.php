@@ -14,7 +14,7 @@ use GuzzleHttp\Psr7\Message;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session as FacadesSession;
-
+use Brian2694\Toastr\Facades\Toastr;
 session_start();
 
 class CouponController extends Controller
@@ -57,6 +57,7 @@ class CouponController extends Controller
                                         Session::put('coupon',$cou);
                                     }
                                     Session::save();
+                                    
                                     return redirect()->back()->with('message','Thêm mã giảm giá thành công');
                                 }
                     

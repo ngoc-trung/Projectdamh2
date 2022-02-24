@@ -39,13 +39,11 @@
                         </div> <!-- single sidebar end -->
                         <div class="blog-sidebar">
                             <h4 class="title">Chủ đề</h4>
+                            @foreach($cate_post as $key => $post)
                             <ul class="blog-archive blog-category">
-                                <li><a href="#">Điện thoại (10)</a></li>
-                                <li><a href="#">Máy tính (08)</a></li>
-                                <li><a href="#">Đồng hồ (07)</a></li>
-                                <li><a href="#">Máy tính bảng (14)</a></li>
-                                <li><a href="#">Khác (10)</a></li>
+                                <li><a href="{{URL::to('/danh-muc/' .$post->cate_post_slug)}}">{{$post->cate_post_name}}</a></li><br>
                             </ul>
+                            @endforeach
                         </div>
                         <!-- single sidebar end -->
 
@@ -55,7 +53,7 @@
                                 <div class="recent-post-item">
                                     <div class="product-thumb">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('public/frontend/assets/img/blog/blog-large-4.jpg') }}" alt="">
+                                            <img src="{{ asset('public/frontend/assets/img/blog/iphone-13mini-1020x570 (1).jpg') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="recent-post-description">
@@ -147,10 +145,10 @@
                         <div class="blog-post-thumb">
                             <div class="blog-carousel-active slick-arrow-style slick-dot-style">
                                 <div class="blog-single-slide">
-                                    <img src="{{ asset('public/frontend/assets/img/blog/blog-details-1.jpg') }}" alt="">
+                                    <img src="{{ asset('public/frontend/assets/img/blog/gaming_startframe__dl65keesyd8i_large.jpg') }}" alt="">
                                 </div>
                                 <div class="blog-single-slide">
-                                    <img src="{{ asset('public/frontend/assets/img/blog/blog-details-4.jpg') }}" alt="">
+                                    <img src="{{ asset('public/frontend/assets/img/blog/iPhone-13-Pink-Sforum-10.webp') }}" alt="">
                                 </div>
                                 <div class="blog-single-slide">
                                     <img src="{{ asset('public/frontend/assets/img/blog/blog-details-2.jpg') }}" alt="">

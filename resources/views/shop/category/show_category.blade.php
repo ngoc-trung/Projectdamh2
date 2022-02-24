@@ -38,7 +38,7 @@
 
         <div class="col-md-12">
             <label for="amount">Lọc Danh Mục Sản Phẩm</label><br>
-            <?php
+            @php
                 $category_id = [];
                 $category_arr = [];
 
@@ -50,7 +50,8 @@
 
                 }
                 $category_arr = explode(",", $category_id);
-            ?>
+            @endphp
+            
             @foreach($category as $key => $cate)
                 <label class="checkbox-inline">
                     
@@ -58,6 +59,7 @@
                     {{ in_array($cate->category_id, $category_arr) ? 'checked' : '' }}
                     class="form-control-checkbox category-filter" data-filters="category" value="{{$cate->category_id}}" 
                     name="category-filter">{{$cate->category_name}}
+                     
                 </label>
 
             @endforeach
@@ -70,14 +72,22 @@
                     <div class="shop-top-bar">
                         <div class="row align-items-center">
                             <div class="col-lg-7 col-md-6 order-2 order-md-1">
-                                <div class="top-bar-left">
-                                    <div class="product-view-mode">
-                                        <a class="active" href="#" data-target="grid-view"><i class="fa fa-th"></i></a>
-                                        <a href="#" data-target="list-view"><i class="fa fa-list"></i></a>
-                                    </div>
-                                    <div class="product-amount">
-                                        <p>Showing 1–16 of 21 results</p>
-                                    </div>
+                                <div class="col-md-4">
+                                        
+                                        <label for="amount">Lọc giá theo</label>
+
+                                        <form>
+                                            <div id="slider-range"></div>
+                                            <style type="text/css">
+                                                .style-range p {
+                                                    float: left;
+                                                    width: 40%;
+                                                }
+                                            </style>
+                                            
+                                            <input type="submit" name="filter_price" value="Lọc giá" class="btn btn-sm btn-default">
+                                        </form>
+                                
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-6 order-1 order-md-2">
@@ -109,7 +119,7 @@
                         <div class="col-md-4 col-sm-6">
 
                             <!-- product grid start -->
-                            <div class="product-item">
+                            <div class="product-item" style="width: 200px;">
                                 <form >
                                     @csrf
                                     <input type="hidden" value="{{$pro->product_id}}" class="cart_product_id_{{$pro->product_id}}">

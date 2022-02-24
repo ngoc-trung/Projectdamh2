@@ -7,6 +7,7 @@ use App\Http\Controllers\Shop\HomeController;
 use App\Http\Controllers\Shop\PageController;
 use App\Http\Controllers\Shop\PostController;
 use App\Http\Controllers\Shop\ProductController;
+use App\Http\Controllers\Shop\ShowPostController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,17 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+//Change languge 
+Route::get('lang/{locale}', function($locale){
+	if (! in_array($locale, ['en', 'vn'])) {
+        abort(404);
+    }
+	session()->put('locale', $locale);
+	return redirect()->back();
+});
+
 //fontend
+
 
 Route::prefix('shop')->group(function () {
     // Trang chủ
@@ -36,8 +47,8 @@ Route::prefix('shop')->group(function () {
     // Route::post();
 
     //Trang bài viết
-    Route::get('/bai-viet',[PostController::class,'index'] )->name('post.index');
-    Route::get('/bai-viet-chi-tiet',[PostController::class, 'show'])->name('post.show') ;
+    // Route::get('/bai-viet',[ShowPostController::class,'index'] )->name('post.index');
+    // Route::get('/bai-viet-chi-tiet',[ShowPostController::class, 'show'])->name('post.show') ;
 
     //Trang trắng thông tin
     Route::get('/trang' ,[PageController::class,'index'] )->name('page.index');
@@ -122,7 +133,11 @@ Route::get('/login-checkout', [App\Http\Controllers\Shop\CheckoutController::cla
 // Dang kys tai khoan de thanh toan
 
 //  show category 
-Route::get('/danh-muc/{category_id}', [App\Http\Controllers\CategoryProductCon::class, 'show_category_home']);
+Route::get('/danh-muc/{slug_category_product}', [App\Http\Controllers\CategoryProductCon::class, 'show_category_home']);
+
+
+// Chuyeen doi slug
+
 
 
 
@@ -172,6 +187,17 @@ Route::post('/update-gallery', [App\Http\Controllers\Shop\GalleryController::cla
 
 Route::get('/history-order', [App\Http\Controllers\Shop\HistoryController::class, 'history_order']);
 
+//  Quan ly tai khoan
+
+Route::get('/my-account', [App\Http\Controllers\Shop\AccountController::class, 'my_account']);
+
+// Quan Lý  Bài Viết Frontend
+
+Route::get('/bai-viet', [App\Http\Controllers\Shop\ShowPostController::class, 'index']);
+
+Route::get('/danh-muc-post/{cate_post_slug}', [App\Http\Controllers\Shop\ShowPostController::class, 'show']);
+
+
 
 
 
@@ -181,7 +207,47 @@ Route::get('/history-order', [App\Http\Controllers\Shop\HistoryController::class
 // ============================================= backend =========================================================
 
 
+//  Quản Lý Danh Mục Bài Viết
+
+Route::get('/add-cate-post', [App\Http\Controllers\CatePostController::class, 'add_post']);
+
+Route::post('/save-cate-post', [App\Http\Controllers\CatePostController::class, 'save_post']);
+
+Route::get('/all-cate-post', [App\Http\Controllers\CatePostController::class, 'all_post']);
+
+Route::get('/edit-cate-post/{cate_post_id}', [App\Http\Controllers\CatePostController::class, 'edit_post']);
+
+Route::post('/update-cate-post/{id}', [App\Http\Controllers\CatePostController::class, 'update_post']);
+
+Route::get('/delete-cate-post/{id}', [App\Http\Controllers\CatePostController::class, 'delete_post']);
+
+//  Quản Lý Bài Viết
+
+Route::get('/add-post', [App\Http\Controllers\PostController::class, 'add']);
+
+Route::post('/save-post', [App\Http\Controllers\PostController::class, 'save']);
+
+Route::get('/all-post', [App\Http\Controllers\PostController::class, 'show']);
+
+Route::get('/delete-post/{post_id}', [App\Http\Controllers\PostController::class, 'delete']);
+
+
+
+
+
+
+
+
 Route::get('/admin_login', [App\Http\Controllers\AdminController::class, 'Admin']);
+
+
+// Doanh thu hang thang
+
+
+
+Route::post('/filter-by-date', [App\Http\Controllers\AdminController::class, 'filter_by_date']);
+
+
 
 
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'show_dashboard']);

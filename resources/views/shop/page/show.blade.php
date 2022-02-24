@@ -72,7 +72,7 @@
                     <div class="team-content text-center">
                         <h3>Nguyễn Ngọc Trung</h3>
                         <h6>Trưởng nhóm</h6>
-                        <p>Phụ trách về giao nhiệm vụ cho các thành viên, tạo giao diện và thiết kế backend.</p>
+                        <p>Phụ trách về giao nhiệm vụ cho các thành viên, tạo giao diện và thiết kế frontend.</p>
                     </div>
                 </div>
             </div> <!-- end single team member -->
@@ -90,7 +90,7 @@
                     <div class="team-content text-center">
                         <h3>Trần Hữu Định</h3>
                         <h6>Thành viên nhóm</h6>
-                        <p>Phụ trách về liên kết backend và frontend.</p>
+                        <p>Phụ trách về frontend.</p>
                     </div>
                 </div>
             </div> <!-- end single team member -->
@@ -108,7 +108,7 @@
                     <div class="team-content text-center">
                         <h3>Bùi Minh Đức</h3>
                         <h6>Thành viên nhóm</h6>
-                        <p>Phụ trách thiết kế frontend, giao diện các trang.</p>
+                        <p>Phụ trách thiết kế frontend.</p>
                     </div>
                 </div>
             </div> <!-- end single team member -->
@@ -124,9 +124,27 @@
                         </div>
                     </div>
                     <div class="team-content text-center">
-                        <h3>Phùng Minh Đức</h3>
+                        <h3>Nguyễn Thanh Tùng</h3>
                         <h6>Thành viên nhóm</h6>
-                        <p>Phụ trách thiết kế CSDL, thiết kế backend.</p>
+                        <p>Tìm hiểu, đóng góp ý kiến.</p>
+                    </div>
+                </div>
+            </div> <!-- end single team member -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="team-member mb-30">
+                    <div class="team-thumb img-full">
+                      <img height="380px"  src="{{ asset('public/frontend/assets/img/team/team_member_4.jpg') }}" alt="">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content text-center">
+                        <h3>Phan Thanh Sơn</h3>
+                        <h6>Thành viên nhóm</h6>
+                        <p>Tìm hiểu, đóng góp ý kiến.</p>
                     </div>
                 </div>
             </div> <!-- end single team member -->

@@ -49,10 +49,9 @@
             </td>
             <td>{{$ord->created_at}}</td>
             <td>
-              <a href="{{URL::to('/view-order/'.$ord->order_code)}}" class="active" style="font-size: 20px;" ui-toggle-class="">
-                  <i class="fa fa-eye text-active"></i></a>
-              <a onclick="return confirm('Bạn có muốn xóa thương hiệu này không ?')" href="{{URL::to('/delete-order/'.$ord->order_code)}}">
-                  <i class="fa fa-times text-danger text" style="font-size: 20px;"></i></a>
+              <a href="{{URL::to('/view-order/'.$ord->order_code)}}" class="btn btn-success" style="font-size: 20px;" ui-toggle-class="">
+                  Xem</a>
+              
             </td>
           </tr>
           @endforeach

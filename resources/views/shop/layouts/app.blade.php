@@ -25,6 +25,9 @@
     <link href="{{ asset('public/frontend/assets/css/lightslider.css') }}" rel="stylesheet">
     <link href="{{ asset('public/frontend/assets/css/prettify.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
 
     {{--  <link href="{{ asset('public/frontend/assets/css/style-2.css') }}" rel="stylesheet">  --}}
 
@@ -60,6 +63,26 @@
     <script src="{{ asset('public/frontend/assets/js/lightslider.js') }}"></script>
 
     <script src="{{ asset('public/frontend/assets/js/prettify.js') }}"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- loc sp theo gia -->
+	<script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      orientation: "horizontal",
+      range: true,
+      min: 0,
+      max: 100,
+      value: 60,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      }
+    });
+    $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
+  } );
+  </script>
+
 
 
     <!-- Ajax xác nhận đơn hàng -->
@@ -307,7 +330,7 @@
                                                     if (tempArray.length !==0 ) {
                                                         category+='?cate='+tempArray.toString();
                                                     }
-                                                    window.location.href = category;
+                                                    window.location.href = category
 
                                                 });
                                 </script>

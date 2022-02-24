@@ -30,6 +30,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+
 <meta name="csrf-token" content="{{csrf_token() }}" />
 
 <!-- //calendar -->
@@ -37,6 +40,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('public/backend/js/jquery2.0.3.min.js')}}"></script>
 <script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
 <script src="{{asset('public/backend/js/morris.js')}}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
 <section id="container">
@@ -62,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="{{asset('public/backend/images/2.png')}}">
+                <img style="height: 35px;" src="{{asset('public/frontend/assets/img/team/trug.jpg')}}">
                 <span class="username">
 				@php
 					$name = Auth::user();
@@ -128,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</li>
 				<li>
 					<a href="">
-                        <i class="fa fa-brand"></i>
+                        <i class="fa fa-cc-discover"></i>
                         <span>Quản lý nhãn hàng</span>
                     </a>
 					<ul class="sub">
@@ -139,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</li>
 				<li>
 					<a href="">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-cc-amex"></i>
                         <span>Quản lý mã giảm giá</span>
                     </a>
 					<ul class="sub">
@@ -150,12 +159,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</li>
 				<li>
 					<a href="">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-shopping-bag"></i>
                         <span>Quản lý Sản Phẩm</span>
                     </a>
 					<ul class="sub">
 						<li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
 						<li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>
+                        
+                    </ul>
+				</li>
+				<li>
+					<a href="">
+                        <i class="fa  fa-envelope"></i>
+                        <span>Danh Mục Bài Viết</span>
+                    </a>
+					<ul class="sub">
+						<li><a href="{{URL::to('/add-cate-post')}}">Thêm danh mục bài biết</a></li>
+						<li><a href="{{URL::to('/all-cate-post')}}">Liệt kê danh mục bài viết</a></li>
+                        
+                    </ul>
+				</li>
+				<li>
+					<a href="">
+                        <i class="fa  fa-envelope"></i>
+                        <span> Bài Viết</span>
+                    </a>
+					<ul class="sub">
+						<li><a href="{{URL::to('/add-post')}}">Thêm bài biết</a></li>
+						<li><a href="{{URL::to('/all-post')}}">Liệt kê bài viết</a></li>
                         
                     </ul>
 				</li>
@@ -196,9 +227,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
 <script type="text/javascript">
 	$(document).ready( function () {
     	$('#myTable').DataTable();
+} );
+</script>
+
+<script type="text/javascript">
+	$(document).ready( function () {
+    	$('#myTable2').DataTable();
 } );
 </script>
 
@@ -461,6 +499,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			</script>
 
+
+<script type="text/javascript">
+			
+			$( function() {
+				$( "#datepicker" ).datepicker({
+					prevText:"Tháng trước",
+					nextText:"Tháng sau",
+					dateFormat:"dd/mm/yy",
+					dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+					duration: "slow"
+				});
+				$( "#datepicker2" ).datepicker({
+					prevText:"Tháng trước",
+					nextText:"Tháng sau",
+					dateFormat:"dd/mm/yy",
+					dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+					duration: "slow"
+				});
+			} );
+			
+			</script>
+			
+
 		<script>
 		var options = {
 			filebrowserImageBrowseUrl: 'laravel-filemanager?type=Images',
@@ -506,5 +567,155 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			
 			</script>
+
+			<!-- Doanh so cong ty -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+        // chart60daysorder();
+
+        // var chart = new Morris.Bar({
+             
+        //       element: 'chart',
+        //       //option chart
+        //       lineColors: ['#819C79', '#fc8710','#FF6541', '#A4ADD3', '#766B56'],
+        //         parseTime: false,
+        //         hideHover: 'auto',
+        //         xkey: 'period',
+        //         ykeys: ['order','sales','profit','quantity'],
+        //         labels: ['đơn hàng','doanh số','lợi nhuận','số lượng']
+            
+        //     });
+
+			var chart = new Morris.Bar({
+			// ID of the element in which to draw the chart.
+			element: 'chart',
+			// Chart data records -- each entry in this array corresponds to a point on
+			// the chart.
+			lineColors: ['#', '#fc8710','#FF6541', '#A4ADD3', '#766B56', '#ffffff'],
+			parseTime: false,
+            hideHover: 'auto',
+			data: [
+				{ period: '2021-11-28', order: 50, sales: 23000000, profit:25000000, quantity:90 },
+				{ period: '2021-11-27', order: 7, sales: 68000000, profit:9000000, quantity:60 },
+				{ period: '2021-11-26', order: 8, sales: 30000000, profit:3000000, quantity:45 },
+				{ period: '2021-11-25', order: 9, sales: 45000000, profit:3800000, quantity:90 },
+				{ period: '2021-11-24', order: 12, sales: 1500000, profit:36000000, quantity:100 },
+				{ period: '2021-11-23', order: 30, sales: 20000000, profit:70000000, quantity:25 },
+				{ period: '2021-11-22', order: 20, sales: 28000000, profit:25000000, quantity:30 },
+				{ period: '2021-11-21', order: 6, sales: 13000000, profit:68000000, quantity:70},
+				{ period: '2021-11-20', order: 10, sales: 17000000, profit:63000000, quantity: 75},
+				{ period: '2021-11-19', order: 18, sales: 18000000, profit:50000000, quantity:63},
+				{ period: '2021-11-17', order: 32, sales: 7000000, profit:33000000, quantity:52},
+				{ period: '2021-11-16', order: 21, sales: 20000000, profit:70000000, quantity:23 },
+				{ period: '2021-11-15', order: 5, sales: 15000000, profit:12000000, quantity:61},
+				{ period: '2021-11-14', order: 35, sales: 20000000, profit:70000000, quantity:59 },
+				{ period: '2021-11-13', order: 40, sales: 3000000, profit:70000000, quantity:32},
+				{ period: '2021-11-12', order: 45, sales: 20000000, profit:12000000, quantity:20 },
+				{ period: '2021-11-11', order: 65, sales: 19000000, profit:12000000, quantity:33 },
+				{ period: '2021-11-10', order: 60, sales: 20000000, profit:25000000, quantity:42 },
+				{ period: '2021-11-9', order: 12, sales: 20000000, profit:70000000, quantity:41},
+				{ period: '2021-11-8', order: 4, sales: 18000000, profit:25000000, quantity:47},
+				{ period: '2021-11-7', order: 30, sales: 20000000, profit:70000000, quantity:50 },
+
+				
+			],
+			// The name of the data record attribute that contains x-values.
+			xkey: 'period',
+			// A list of names of data record attributes that contain y-values.
+			ykeys: ['order','sales','profit','quantity'],
+			// Labels for the ykeys -- will be displayed when you hover over the
+			// chart.
+			labels: ['đơn hàng','doanh số','lợi nhuận','số lượng']
+			});
+
+
+       
+        function chart60daysorder(){
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url:"{{url('/days-order')}}",
+                method:"POST",
+                dataType:"JSON",
+                data:{_token:_token},
+                
+                success:function(data)
+                    {
+                        chart.setData(data);
+                    }   
+            });
+        }
+
+    $('.dashboard-filter').change(function(){
+        var dashboard_value = $(this).val();
+        var _token = $('input[name="_token"]').val();
+        // alert(dashboard_value);
+        $.ajax({
+            url:"{{url('/dashboard-filter')}}",
+            method:"POST",
+            dataType:"JSON",
+            data:{dashboard_value:dashboard_value,_token:_token},
+            
+            success:function(data)
+                {
+                    chart.setData(data);
+                }   
+            });
+
+    });
+
+    $('#btn-dashboard-filter').click(function(){
+       
+        var _token = $('input[name="_token"]').val();
+
+        var from_date = $('#datepicker').val();
+        var to_date = $('#datepicker2').val();
+
+         $.ajax({
+            url:"{{url('/filter-by-date')}}",
+            method:"POST",
+            dataType:"JSON",
+            data:{from_date:from_date,to_date:to_date,_token:_token},
+            
+            success:function(data)
+                {
+                     chart.setData(data);
+                }   
+        });
+
+    });
+
+});
+    
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+      
+        //     });
+        var donut = Morris.Donut({
+          element: 'donut',
+          resize: true,
+          colors: [
+            '#a8328e',
+            '#61a1ce',
+            '#ce8f61',
+            '#f5b942',
+            '#4842f5'
+            
+          ],
+          //labelColor:"#cccccc", // text color
+          //backgroundColor: '#333333', // border color
+          data: [
+            {label:"Sản Phẩm", value:100},
+            {label:"Bài Viết", value:200},
+            {label:"Đơn Hàng", value:1000},
+            {label:"Khách Hàng", value:205} 
+          ]
+        });
+     
+});
+</script>
 </body>
 </html>

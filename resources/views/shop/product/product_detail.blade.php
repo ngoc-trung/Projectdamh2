@@ -53,17 +53,17 @@
                                     <span><i class="ion-android-star"></i></span>
                                     <span><i class="ion-android-star"></i></span>
                                     <div class="pro-review">
-                                        <span>1 review(s)</span>
+                                        <span>200 review(s)</span>
                                     </div>
                                 </div>
                                 <div class="price-box">
                                     <span class="price-regular">{{number_format($value->product_price).' '.'VND'}}</span>
                                     <span class="price-old"><del></del></span>
                                 </div>
-                                <p>{{$value->product_content}}</p>
+                                <p>{!!$value->product_content!!}</p>
                                 <div class="availability mt-10 mb-20">
                                     <i class="ion-checkmark-circled"></i>
-                                    <span>200 in stock</span>
+                                    <span>Còn Hàng</span>
                                 </div>
 
                                 <form >
@@ -82,7 +82,7 @@
                                     <input type="hidden" name="productid_hidden" value="{{$value->product_id}}" />
 
                                     <a class="btn btn-cart" type="submit"><i class="ion-bag"></i>
-                                    <button class="add-to-cart2" name="add-to-cart2" type="button" data-id_product="{{$value->product_id}}"> Add to cart</button></a>
+                                    <button class="add-to-cart2" name="add-to-cart2" type="button" data-id_product="{{$value->product_id}}">Thêm Sản Phẩm</button></a>
       
                                 </div>
 
@@ -95,14 +95,15 @@
                                     <h5>Thương Hiệu: {{$value->brand_name}} </h5>
                                 </div>
                                 <div class="color-option mb-26">
-                                    <h5>color : {{$value->product_color}}</h5>
+                                    <h5>Màu Sắc : {{$value->product_color}}</h5>
+                                    
                                    
                                 </div>
                                 <div class="useful-links mt-28">
                                     <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Compare"><i
-                                            class="ion-ios-shuffle"></i>compare</a>
+                                            class="ion-ios-shuffle"></i>So Sánh</a>
                                     <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist"><i
-                                            class="ion-android-favorite-outline"></i>wishlist</a>
+                                            class="ion-android-favorite-outline"></i>Yêu Thích</a>
                                 </div>
                                 <div class="like-icon mt-20">
                                     <a class="facebook" href="#"><i class="fa fa-facebook"></i>like</a>
@@ -111,7 +112,7 @@
                                     <a class="google" href="#"><i class="fa fa-google-plus"></i>share</a>
                                 </div>
                                 <div class="share-icon mt-18">
-                                    <h5>share product:</h5>
+                                    <h5>Chia Sẻ :</h5>
                                     <a href="#"><i class="fa fa-facebook"></i></a>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                     <a href="#"><i class="fa fa-pinterest"></i></a>
@@ -131,13 +132,13 @@
                             <div class="product-review-info">
                                 <ul class="nav review-tab">
                                     <li>
-                                        <a class="active" data-bs-toggle="tab" href="#tab_one">description</a>
+                                        <a class="active" data-bs-toggle="tab" href="#tab_one">Mô Tả Sản Phẩm</a>
                                     </li>
                                     <li>
-                                        <a data-bs-toggle="tab" href="#tab_two">information</a>
+                                        <a data-bs-toggle="tab" href="#tab_two">Thông số kỹ thuật</a>
                                     </li>
                                     <li>
-                                        <a data-bs-toggle="tab" href="#tab_three">reviews (1)</a>
+                                        <a data-bs-toggle="tab" href="#tab_three">Đánh Giá (1)</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content reviews-tab">
@@ -150,19 +151,44 @@
                                         <table class="table table-bordered">
                                             <tbody>
                                                 <tr>
-                                                    <td>color</td>
-                                                    <td>black, blue, red</td>
+                                                    <td>Màu Sắc</td>
+                                                    <td>Trắng</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>size</td>
-                                                    <td>L, M, S</td>
+                                                    <td>Bộ Nhớ </td>
+                                                    <td>256G</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kích thước màn hình </td>
+                                                    <td>6.7 inches</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Công nghệ màn hình</td>
+                                                    <td>OLED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Camera sau</td>
+                                                    <td>Camera góc rộng: 12MP, ƒ/1.5
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Chipset</td>
+                                                    <td>Apple A15</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dung lượng RAM</td>
+                                                    <td>6 GB</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pin </td>
+                                                    <td>4,325mAh</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="tab-pane fade" id="tab_three">
                                         <form action="#" class="review-form">
-                                            <h5>1 review for <span>Chaz Kangeroo</span></h5>
+                                            <h5>1 đánh giá <span> N.trung</span></h5>
                                             <div class="total-reviews">
                                                 <div class="rev-avatar">
                                                     <img src="assets/img/about/avatar.jpg" alt="">
@@ -176,38 +202,31 @@
                                                         <span><i class="fa fa-star"></i></span>
                                                     </div>
                                                     <div class="post-author">
-                                                        <p><span>admin -</span> 30 Mar, 2019</p>
+                                                        <p><span>ntrung -</span> 1 jan, 2022</p>
                                                     </div>
-                                                    <p>Aliquam fringilla euismod risus ac bibendum. Sed sit
-                                                        amet sem varius ante feugiat lacinia. Nunc ipsum nulla,
-                                                        vulputate ut venenatis vitae, malesuada ut mi. Quisque
-                                                        iaculis, dui congue placerat pretium, augue erat
-                                                        accumsan lacus</p>
+                                                    <p>máy mượt nhanh pin dùng 2 ngày mới hết. nhân viên hỗ trợ nhiệt tình </p>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col">
                                                     <label class="col-form-label"><span class="text-danger">*</span>
-                                                        Your Name</label>
+                                                        Tên Của Bạn</label>
                                                     <input type="text" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col">
                                                     <label class="col-form-label"><span class="text-danger">*</span>
-                                                        Your Email</label>
+                                                        Email</label>
                                                     <input type="email" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col">
                                                     <label class="col-form-label"><span class="text-danger">*</span>
-                                                        Your Review</label>
+                                                        Đáng Giá</label>
                                                     <textarea class="form-control" required></textarea>
-                                                    <div class="help-block pt-10"><span
-                                                            class="text-danger">Note:</span>
-                                                        HTML is not translated!
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -228,7 +247,7 @@
                                                 </div>
                                             </div>
                                             <div class="buttons">
-                                                <button class="sqr-btn" type="submit">Continue</button>
+                                                <button class="btn btn-success" type="submit">Gửi Đánh Giá</button>
                                             </div>
                                         </form> <!-- end of review-form -->
                                     </div>
