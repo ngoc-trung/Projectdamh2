@@ -43,8 +43,10 @@
             <td>
                 @if($ord->order_status==1)
                 Đơn Hàng Mới
-                @else
+                @elseif($ord->order_status==2)
                 Đã Xử Lý
+                @else($ord->order_status==3)
+                Đơn hàng bị hủy
                 @endif
             </td>
             <td>{{$ord->created_at}}</td>

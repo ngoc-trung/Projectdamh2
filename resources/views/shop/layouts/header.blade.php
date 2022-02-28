@@ -35,12 +35,13 @@
                             <ul class="nav justify-content-end">
                             <?php
                                 $customer_id = Session::get('customer_id');
+                               
                                 if($customer_id!=NULL){
                                     ?>
-
+                                       
                                     <li>
-                                        <a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> @lang('lang.Logout')</a> <br>
-                                        <p>{{Session::get('customer_name')}}</p>
+                                        <a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> @lang('lang.Logout')</a><br>
+                                       
                                     </li>
                                   <?php
                                 }else{
@@ -49,7 +50,8 @@
                                    <?php
                                }
                                ?>
-                                <li><a href="{{URL::to('/my-account')}}"><i class="fa fa-user"></i> @lang('lang.Account')</a></li>
+                                <li><a href="{{URL::to('/my-account')}}"><i class="fa fa-user"></i> @lang('lang.Account')</a> 
+                                
 
                                 <?php
                                 $customer_id = Session::get('customer_id');
@@ -58,7 +60,6 @@
 
                                     <li>
                                         <a href="{{URL::to('/history-order')}}"><i class="fa fa-history"></i> @lang('lang.Order History')</a> <br>
-                                        
                                     </li>
                                   <?php
                                 }else{
@@ -121,63 +122,15 @@
                                             <span class="notify">0</span>
                                         </a>
                                     </li>
-                                    <li class="mini-cart-wrap">
-                                            <a href="{{ route('cart') }}">
-                                                <i class="ion-bag"></i>
-                                                <span class="notify">2</span>
-                                            </a>
-                                                    <div class="cart-list-wrapper">
-                                                        <ul class="cart-list">
-                                                            <li>
-                                                                <div class="cart-img">
-                                                                    <a href="product-details.html"><img src="{{ asset('public/frontend/assets/img/product/iphone_13-_pro-2_2_1.jpg') }}" alt=""></a>
-                                                                </div>
-                                                                <div class="cart-info">
-                                                                    <h4><a href="product-details.html">iPhone 13 Pro Max | Chính hãng VN/A</a></h4>
-                                                                    <span class="cart-qty">Số lượng: 1</span>
-                                                                    <span>33.000.000 VND</span>
-                                                                </div>
-                                                                <div class="del-icon">
-                                                                    <i class="fa fa-times"></i>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="cart-img">
-                                                                    <a href="product-details.html"><img src="{{ asset('public/frontend/assets/img/product/iphone-12-pro-max_2_.jpg') }}" alt=""></a>
-                                                                </div>
-                                                                <div class="cart-info">
-                                                                    <h4><a href="product-details.html">iPhone 12 Pro Max | Chính hãng VN/A</a></h4>
-                                                                    <span class="cart-qty">Số lượng: 2</span>
-                                                                    <span>23.000.000 VND</span>
-                                                                </div>
-                                                                <div class="del-icon">
-                                                                    <i class="fa fa-times"></i>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                        <ul class="minicart-pricing-box">
-                                                            <li>
-                                                                <span>Thành tiền</span>
-                                                                <span><strong>79.000.000 VND</strong></span>
-                                                            </li>
-                                                            <li>
-                                                                <span>Phí Ship</span>
-                                                                <span><strong>100.00 VND</strong></span>
-                                                            </li>
-                                                
-                                                            <li class="total">
-                                                                <span>Tổng Tiền</span>
-                                                                <span><strong>78.9000.000 VND</strong></span>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="minicart-button">
-                                                            <a href="cart.html"><i class="fa fa-shopping-cart"></i>Xem Giỏ Hàng</a>
-                                                            <a href="cart.html"><i class="fa fa-share"></i> Thanh Toán</a>
-                                                        </div>
-                                                    </div>
-                                    </li>
-
-                                </ul>
+                                    
+                                    <li class="mini-cart-wrap cart-hover">
+                                        <a href= "{{route('cart')}}">
+                                            <i class="ion-bag"></i>
+                                            <span class="notify" id="show-cart"></span>
+                                        </a>
+                                        <span class="hover-cart"></span>
+                                </li>
+                             </ul>
                             </div>
                         </div>
                     </div>

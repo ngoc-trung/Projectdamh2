@@ -116,14 +116,14 @@
                             url: "{{ url('/comfirm-order') }}",
                             method: 'POST',
                             data:{shipping_name:shipping_name,shipping_email:shipping_email,shipping_address:shipping_address,
-                                shipping_phone:shipping_phone,shipping_note:shipping_note,order_coupon:order_coupon,_token :_token,shipping_method:shipping_method },
+                                shipping_phone:shipping_phone,shipping_note:shipping_note,order_coupon:order_coupon,_token:_token,shipping_method:shipping_method },
                                 success:function(){
                                     swal("Đơn Hàng!", "Đơn Hàng Của Bạn Đã Được Gửi Thành Công.", "success");
                                 }
                         });
-                            window.setTimeout(function(){ 
-                                window.location.href = "{{url('/history-order')}}";
-                            } ,3000);
+                            // window.setTimeout(function(){ 
+                            //     window.location.href = "{{url('/history-order')}}";
+                            // } ,3000);
                         
                     } else {
                         swal("Đóng", "Đơn Hàng Của Bạn Đã Chưa Được Thanh Toán", "error");
@@ -162,6 +162,19 @@
     <!-- Thêm sp vào giỏ hàng -->
     <script type="text/javascript">
         $(document).ready(function(){
+            cart();
+            // show - cart
+            function cart(){
+                $.ajax({
+						url: "{{ url('show-cart') }}",
+						method: "GET",
+						success:function(data){
+							$('#show-cart').html(data);
+                            
+						}
+                        
+					 });
+            }
             $('.add-to-cart').click(function(){
                 var id = $(this).data('id_product');
                 var cart_product_id = $('.cart_product_id_' + id).val();
@@ -189,6 +202,7 @@
                                     function(){
                                     window.location.href = "{{ route('cart') }}"
                                  });
+                                 cart();
                         }
                 });
             });
@@ -198,6 +212,19 @@
 <!-- thêm sp vào giỏ hàng ở trang detail -->
 <script type="text/javascript">
         $(document).ready(function(){
+            cart();
+            // show - cart
+            function cart(){
+                $.ajax({
+						url: "{{ url('show-cart') }}",
+						method: "GET",
+						success:function(data){
+							$('#show-cart').html(data);
+                            
+						}
+                        
+					 });
+            }
             $('.add-to-cart2').click(function(){
                 var id = $(this).data('id_product');
                 var cart_product_id = $('.cart_product_id_' + id).val();
@@ -225,6 +252,7 @@
                                     function(){
                                     window.location.href = "{{ route('cart') }}"
                                  });
+                                 cart();
                         }
                 });
             });
@@ -233,6 +261,19 @@
 
 <script type="text/javascript">
         $(document).ready(function(){
+            cart();
+            // show - cart
+            function cart(){
+                $.ajax({
+						url: "{{ url('show-cart') }}",
+						method: "GET",
+						success:function(data){
+							$('#show-cart').html(data);
+                            
+						}
+                        
+					 });
+            }
             $('.add-to-cart3').click(function(){
                 var id = $(this).data('id_product');
                 var cart_product_id = $('.cart_product_id_' + id).val();
@@ -260,6 +301,7 @@
                                     function(){
                                     window.location.href = "{{ route('cart') }}"
                                  });
+                                 cart();
                         }
                 });
             });
@@ -268,6 +310,37 @@
 
 <script type="text/javascript">
         $(document).ready(function(){
+            // hover-cart
+            hover_cart();
+            cart();
+
+            function hover_cart(){
+                $.ajax({
+						url: "{{ url('hover-cart') }}",
+						method: "GET",
+						success:function(data){
+							$('.hover-cart').html(data);
+                            
+						}
+                        
+					 });
+            }
+
+            
+            // show - cart
+            function cart(){
+                $.ajax({
+						url: "{{ url('show-cart') }}",
+						method: "GET",
+						success:function(data){
+							$('#show-cart').html(data);
+                            
+						}
+                        
+					 });
+            }
+
+
             $('.add-to-cart4').click(function(){
                 var id = $(this).data('id_product');
                 var cart_product_id = $('.cart_product_id_' + id).val();
@@ -294,7 +367,12 @@
                                     },
                                     function(){
                                     window.location.href = "{{ route('cart') }}"
-                                 });
+                                 }); 
+                                 
+                                 hover_cart();
+                                 
+                                 cart();
+                                
                         }
                 });
             });

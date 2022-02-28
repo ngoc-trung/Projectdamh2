@@ -18,6 +18,12 @@ session_start();
 class CartController extends Controller
 
 {
+
+    public function cart_menu(){
+        $cart = count(Session::get('cart'));
+ 
+       echo $cart;
+    }
     // Thêm sản phẩm vào giỏ hàng
     public function add_cart_ajax(Request $request){
         $data = $request->all();
@@ -62,6 +68,42 @@ class CartController extends Controller
     }
 
 
+    public function hover_cart(){
+        $cart = count(Session::get('cart'));
+        $output = '';
+
+        if ($cart > 0) {
+            $output.='
+                            <div class="cart-list-wrapper">';
+                                    foreach(Session::get('cart') as $key => $value){
+                                        $output.='<ul class="cart-list">
+                                                <li>
+                                                    <div class="cart-img">
+                                                        <a href="product-details.html"><img src="'.asset('public/upload/product/'.$value['product_image']).'" ></a>
+                                                    </div>
+                                                    <div class="cart-info">
+                                                        <h4><a href="product-details.html">iPhone 13 Pro Max | Chính hãng VN/A</a></h4>
+                                                        <span class="cart-qty">Số lượng: '.$value['product_qty'].'</span>
+                                                        <span>'.number_format($value['product_price'],0,',','.').' VND</span>
+                                                    </div>
+                                                    <div class="del-icon">
+                                                        
+                                                    
+                                                         <i class="fa fa-times"></i>
+                                                    
+                                                        
+                                                    </div>
+                                                </li>
+                                            </ul>';
+                                    }
+                                              
+                        $output.='</div>';
+                
+                 
+        }echo $output;
+    }
+
+
     public function gio_hang(Request $request){
         //seo
         $meta_desc = "Giỏ hàng của bạn";
@@ -99,6 +141,19 @@ class CartController extends Controller
             Session::forget('cart');
             return redirect()->back()->with('message' ,'Xóa Giỏ Hàng Thành Công');
         }
+    }
+
+    public function cart_session(){
+   
+        $output ='';
+        
+        if(Session::get('cart')==true){
+            foreach(Session::get('cart') as $key => $value){
+               
+                $output.= '<input type="hidden" class="cart_id" value="'.$value['product_id'].'">';
+            }
+        }
+        echo $output;
     }
 
 

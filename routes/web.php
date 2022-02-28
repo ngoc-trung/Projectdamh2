@@ -123,6 +123,10 @@ Route::prefix('shop')->group(function () {
 
     Route::post('/update-cart', [App\Http\Controllers\Shop\CartController::class, 'update_cart']);
 
+    Route::get('/show-cart', [App\Http\Controllers\Shop\CartController::class, 'cart_menu']);
+
+    Route::get('/hover-cart', [App\Http\Controllers\Shop\CartController::class, 'hover_cart']);
+
 
 // Tìm Kiếm Sản Phẩm
 
@@ -328,6 +332,11 @@ Route::get('/delete-coupon/{coupon_id}', [App\Http\Controllers\CouponCon::class,
 Route::get('/manage-order', [App\Http\Controllers\OrderCon::class, 'manage_order']);
 
 Route::get('/view-order/{order_code}', [App\Http\Controllers\OrderCon::class, 'view_order']);
+
+Route::post('/update-order-qty', [App\Http\Controllers\OrderCon::class, 'update_order_qty']);
+
+Route::post('/update-qty', [App\Http\Controllers\OrderCon::class, 'update_qty']);
+
 
 //In Hoa Don 
 

@@ -9,11 +9,6 @@ use DB;
 
 use Illuminate\Support\Facades\Mail;
 use Session;
-use App\Http\Requests;
-use GuzzleHttp\Psr7\Message;
-use Illuminate\Contracts\Session\Session as SessionSession;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session as FacadesSession;
 
 use App\Models\Shipping;
 use App\Models\Order;
@@ -22,7 +17,7 @@ use App\Models\Coupon;
 use App\Http\Controllers\Shop\CartController;
 use Carbon\Carbon;
 use App\Models\Customer;
-
+use Illuminate\Support\Facades\Redirect;
 session_start();
 class CheckoutController extends Controller
 {
